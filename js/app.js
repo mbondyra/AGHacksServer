@@ -9,12 +9,16 @@
  * Main module of the application.
  */
 
-var app = angular.module('trunkApp', ['ngRoute']);
+var app = angular.module('hacksApp', ['ngRoute']);
 
 // basic routing config
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+        })
+        .when('/new', {
             templateUrl: 'views/start.html',
             controller: 'NewGameCtrl'
         })
@@ -30,10 +34,14 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/end.html',
             controller: 'GameOverCtrl'
         })
+        .when('/howto', {
+            templateUrl: 'views/howto.html',
+            controller: 'HowToCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
-})
+    })
     .filter('forceInt', function(){
         return function(input) {
             return parseInt(input, 10);
@@ -47,6 +55,7 @@ app.config(function ($routeProvider) {
 
 
 
+
 app.constant('appConfig',{
-    gameServerApi:'http://localhost:3000',
+    gameServerApi:'http://localhost:3000'
 });
