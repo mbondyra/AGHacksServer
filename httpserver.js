@@ -9,6 +9,14 @@ var database = 'database.json';
 
 var express = require('express');
 
+var allowCrossDomain = function(req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+	next();
+};
+
 var app = express();
 
 app.get('/readTime', function (req, res) {
@@ -21,11 +29,12 @@ app.get('/readTime', function (req, res) {
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(allowCrossDomain);
 
 // POST http://localhost:8080/api/users
 // parameters sent with 
 app.post('/modifyTime', function(req, res) {
-    
+	console.log(req);
 	res.send('It Works!! Path Hit: ' + req.url);
     //res.send(user_id + ' ' + token + ' ' + geo);
 });

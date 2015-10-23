@@ -54,8 +54,12 @@ app.config(function ($routeProvider) {
     });
 
 
+app.config(['$httpProvider', function($httpProvider) {
 
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+}]);
 
 app.constant('appConfig',{
-    gameServerApi:'http://localhost:3000'
+    gameServerApi:'http://localhost:8081'
 });

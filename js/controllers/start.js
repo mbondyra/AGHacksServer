@@ -8,13 +8,11 @@ app.controller('NewGameCtrl',['$scope', '$location', '$http', 'appConfig', funct
     $scope.game = {};
 
     $scope.create = function(game){
-        $http.post(appConfig.gameServerApi+'/new/game',game)
-            .success(function(){
-
-            })
-            .error(function(){
-
-            })
-
+        $http.post(appConfig.gameServerApi+'/modifyTime',game)
+            .then(function(response){
+                console.log(response);
+            },function(error){
+                console.log(error)
+            });
     }
 }]);
