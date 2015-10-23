@@ -1,0 +1,44 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html>
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Node/Angular Todo App</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #todo-list              { margin-bottom:30px; }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/end.js"></script>
+    <script src="js/controllers/start.js"></script>
+    <script src="js/controllers/game.js"></script>
+    <script src="js/controllers/rank.js"></script>
+    <script src="js/services/timeSync.js"></script>
+    <script src="js/services/serverAPI.js"></script>
+    <script src="js/services/puzzles.js"></script>
+    <script src="js/services/gameData.js"></script>
+
+
+
+</head>
+
+<body>
+<div class="container">
+    <div ng-view=""></div>
+</div>
+
+</body>
+</html>
