@@ -1,15 +1,15 @@
 //Lets require/import the HTTP module
 var http = require('http');
 var fs = require('fs');
+var bodyParser = require('body-parser');
+var spawn = require("child_process").spawn;
+var express = require('express');
 
 //Lets define a port we want to listen to
 const PORT=8081; 
 var database = 'database.json';
-var spawn = require("child_process").spawn;
-var express = require('express');
 
 var app = express();
-var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
@@ -29,10 +29,17 @@ app.post('/updateTime', function(req, res) {
 	timeHandler.updateFile(dt, function(){
 		res.send(dt);
 	});
-	
-	//spawn('/usr/bin/sudo', ['/usr/bin/python', "/home/pi/System/start_led.py", '3']);
+});
 
-    //res.send(user_id + ' ' + token + ' ' + geo);
+var conf;
+
+app.post('/new/game', function(req, res) {
+    //getCurrentTime
+	conf = req.body;
+	conf.timeRemaining = timeHandler.convertTimeToEpoch(conf.time);
+	timeHandler.saveTimeToFile();
+	console.log("kons")
+	res.send("Game started");
 });
 
 
@@ -40,31 +47,29 @@ app.post('/updateTime', function(req, res) {
 //var server = http.createServer(handleRequest);
 //Lets start our server
 var server = app.listen(PORT, function(){
-	var realTime = new Date().getTime();
-	var timeRemaining = realTime+60;
     console.log("Server listening on: http://localhost:%s", PORT);
 });
 
 
-
 var timeHandler = {
-	updateFile:function(dt, callback){
-		console.log(dt);
-		callback()
+	saveTimeToFile: function(){
+		fs.writeFile(database,JSON.stringify({"timeRemaining":conf.timeRemaining}));
 	},
-	
-	
-	/*, callback){
-		fs.readFile(database, function(err, data){
-			var data = JSON.parse(data);
-			console.log(data);
-			data.realTime = timeHandler.updateRealTime();
-			data.timeRemaining = timeHandler.updateTimeRemaining(data.timeRemaining, dt);
-			console.log(data);
-			fs.writeFile(database,JSON.stringify(data));
+	convertTimeToEpoch:function(min){
+		return new Date().getTime() + min * 60;
+	},
+	updateFile: function(dt, callback){
+		console.log(dt);
+		 fs.readFile(database, function(err, data){
+			var objFile = JSON.parse(data);
+			console.log(objFile);
+			objFile.realTime = timeHandler.updateRealTime();
+			objFile.timeRemaining = timeHandler.updateTimeRemaining(objFile.timeRemaining, dt);
+			console.log(objFile);
+			fs.writeFile(database,JSON.stringify(objFile));
 			callback();
 		});
-	},*/
+	},
 	updateRealTime: function(){
 		return new Date().getTime();
 	},
