@@ -1,0 +1,2320 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'body-parser',
+1 verbose cli   '--save' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.5
+4 verbose install initial load of C:\Users\saphire\Desktop\server\AGHacksServer\package.json
+5 verbose installManyTop reading scoped package data from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\express\package.json
+6 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\package.json
+7 silly cache add args [ 'body-parser', null ]
+8 verbose cache add spec body-parser
+9 silly cache add parsed spec { raw: 'body-parser',
+9 silly cache add   scope: null,
+9 silly cache add   name: 'body-parser',
+9 silly cache add   rawSpec: '',
+9 silly cache add   spec: '*',
+9 silly cache add   type: 'range' }
+10 silly addNamed body-parser@*
+11 verbose addNamed "*" is a valid semver range for body-parser
+12 silly addNameRange { name: 'body-parser', range: '*', hasData: false }
+13 silly mapToRegistry name body-parser
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry uri https://registry.npmjs.org/body-parser
+17 verbose addNameRange registry:https://registry.npmjs.org/body-parser not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/body-parser
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 22:48:01
+21 verbose request id f8be81c924b43ac4
+22 verbose etag "7WXOIBXXDRW2HB7JWJQ61LVW4"
+23 http request GET https://registry.npmjs.org/body-parser
+24 http 200 https://registry.npmjs.org/body-parser
+25 silly get cb [ 200,
+25 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+25 silly get     etag: '"971E3ZIAJ2SVFIFQH6XAGGE9T"',
+25 silly get     'content-type': 'application/json',
+25 silly get     'cache-control': 'max-age=60',
+25 silly get     'content-length': '110632',
+25 silly get     'accept-ranges': 'bytes',
+25 silly get     date: 'Fri, 23 Oct 2015 20:47:59 GMT',
+25 silly get     via: '1.1 varnish',
+25 silly get     age: '15',
+25 silly get     connection: 'keep-alive',
+25 silly get     'x-served-by': 'cache-fra1221-FRA',
+25 silly get     'x-cache': 'HIT',
+25 silly get     'x-cache-hits': '1',
+25 silly get     'x-timer': 'S1445633279.458357,VS0,VE0',
+25 silly get     vary: 'Accept' } ]
+26 verbose get saving body-parser to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\body-parser\.cache.json
+27 silly addNameRange number 2 { name: 'body-parser', range: '*', hasData: true }
+28 silly addNameRange versions [ 'body-parser',
+28 silly addNameRange   [ '1.0.0',
+28 silly addNameRange     '1.0.1',
+28 silly addNameRange     '1.0.2',
+28 silly addNameRange     '1.1.0',
+28 silly addNameRange     '1.1.1',
+28 silly addNameRange     '1.1.2',
+28 silly addNameRange     '1.2.0',
+28 silly addNameRange     '1.2.1',
+28 silly addNameRange     '1.2.2',
+28 silly addNameRange     '1.3.0',
+28 silly addNameRange     '1.3.1',
+28 silly addNameRange     '1.4.0',
+28 silly addNameRange     '1.4.1',
+28 silly addNameRange     '1.4.2',
+28 silly addNameRange     '1.4.3',
+28 silly addNameRange     '1.5.0',
+28 silly addNameRange     '1.5.1',
+28 silly addNameRange     '1.5.2',
+28 silly addNameRange     '1.6.0',
+28 silly addNameRange     '1.6.1',
+28 silly addNameRange     '1.6.2',
+28 silly addNameRange     '1.6.3',
+28 silly addNameRange     '1.6.4',
+28 silly addNameRange     '1.6.5',
+28 silly addNameRange     '1.6.6',
+28 silly addNameRange     '1.6.7',
+28 silly addNameRange     '1.7.0',
+28 silly addNameRange     '1.8.0',
+28 silly addNameRange     '1.8.1',
+28 silly addNameRange     '1.8.2',
+28 silly addNameRange     '1.8.3',
+28 silly addNameRange     '1.8.4',
+28 silly addNameRange     '1.9.0',
+28 silly addNameRange     '1.9.1',
+28 silly addNameRange     '1.9.2',
+28 silly addNameRange     '1.9.3',
+28 silly addNameRange     '1.10.0',
+28 silly addNameRange     '1.10.1',
+28 silly addNameRange     '1.10.2',
+28 silly addNameRange     '1.11.0',
+28 silly addNameRange     '1.12.0',
+28 silly addNameRange     '1.12.1',
+28 silly addNameRange     '1.12.2',
+28 silly addNameRange     '1.12.3',
+28 silly addNameRange     '1.12.4',
+28 silly addNameRange     '1.13.0',
+28 silly addNameRange     '1.13.1',
+28 silly addNameRange     '1.13.2',
+28 silly addNameRange     '1.13.3',
+28 silly addNameRange     '1.14.0',
+28 silly addNameRange     '1.14.1' ] ]
+29 silly addNamed body-parser@1.14.1
+30 verbose addNamed "1.14.1" is a plain semver version for body-parser
+31 silly mapToRegistry name body-parser
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npmjs.org/
+34 silly mapToRegistry uri https://registry.npmjs.org/body-parser
+35 verbose addRemoteTarball https://registry.npmjs.org/body-parser/-/body-parser-1.14.1.tgz not in flight; adding
+36 verbose addRemoteTarball [ 'https://registry.npmjs.org/body-parser/-/body-parser-1.14.1.tgz',
+36 verbose addRemoteTarball   'ffe921eba3ce8f191e2a8a8803844bd025f3c6dc' ]
+37 info retry fetch attempt 1 at 22:48:10
+38 info attempt registry request try #1 at 22:48:10
+39 http fetch GET https://registry.npmjs.org/body-parser/-/body-parser-1.14.1.tgz
+40 http fetch 200 https://registry.npmjs.org/body-parser/-/body-parser-1.14.1.tgz
+41 silly fetchAndShaCheck shasum ffe921eba3ce8f191e2a8a8803844bd025f3c6dc
+42 verbose addTmpTarball C:\Users\saphire\AppData\Local\Temp\npm-3580-400a3a76\registry.npmjs.org\body-parser\-\body-parser-1.14.1.tgz not in flight; adding
+43 verbose addTmpTarball already have metadata; skipping unpack for body-parser@1.14.1
+44 silly cache afterAdd body-parser@1.14.1
+45 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\body-parser\1.14.1\package\package.json not in flight; writing
+46 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\body-parser\1.14.1\package\package.json written
+47 silly install resolved [ { name: 'body-parser',
+47 silly install resolved     description: 'Node.js body parsing middleware',
+47 silly install resolved     version: '1.14.1',
+47 silly install resolved     contributors: [ [Object], [Object] ],
+47 silly install resolved     license: 'MIT',
+47 silly install resolved     repository: { type: 'git', url: 'https://github.com/expressjs/body-parser' },
+47 silly install resolved     dependencies:
+47 silly install resolved      { bytes: '2.1.0',
+47 silly install resolved        'content-type': '~1.0.1',
+47 silly install resolved        debug: '~2.2.0',
+47 silly install resolved        depd: '~1.1.0',
+47 silly install resolved        'http-errors': '~1.3.1',
+47 silly install resolved        'iconv-lite': '0.4.12',
+47 silly install resolved        'on-finished': '~2.3.0',
+47 silly install resolved        qs: '5.1.0',
+47 silly install resolved        'raw-body': '~2.1.4',
+47 silly install resolved        'type-is': '~1.6.9' },
+47 silly install resolved     devDependencies:
+47 silly install resolved      { istanbul: '0.3.21',
+47 silly install resolved        methods: '~1.1.1',
+47 silly install resolved        mocha: '2.2.5',
+47 silly install resolved        supertest: '1.1.0' },
+47 silly install resolved     files: [ 'lib/', 'LICENSE', 'HISTORY.md', 'index.js' ],
+47 silly install resolved     engines: { node: '>= 0.8' },
+47 silly install resolved     scripts:
+47 silly install resolved      { test: 'mocha --require test/support/env --reporter spec --check-leaks --bail test/',
+47 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/',
+47 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/' },
+47 silly install resolved     gitHead: '7847af6e5a36129eea0e0becfbcc521b839313ae',
+47 silly install resolved     bugs: { url: 'https://github.com/expressjs/body-parser/issues' },
+47 silly install resolved     homepage: 'https://github.com/expressjs/body-parser',
+47 silly install resolved     _id: 'body-parser@1.14.1',
+47 silly install resolved     _shasum: 'ffe921eba3ce8f191e2a8a8803844bd025f3c6dc',
+47 silly install resolved     _from: 'body-parser@*',
+47 silly install resolved     _npmVersion: '1.4.28',
+47 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+47 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+47 silly install resolved     dist:
+47 silly install resolved      { shasum: 'ffe921eba3ce8f191e2a8a8803844bd025f3c6dc',
+47 silly install resolved        tarball: 'http://registry.npmjs.org/body-parser/-/body-parser-1.14.1.tgz' },
+47 silly install resolved     directories: {},
+47 silly install resolved     _resolved: 'https://registry.npmjs.org/body-parser/-/body-parser-1.14.1.tgz' } ]
+48 info install body-parser@1.14.1 into C:\Users\saphire\Desktop\server\AGHacksServer
+49 info installOne body-parser@1.14.1
+50 verbose installOne of body-parser to C:\Users\saphire\Desktop\server\AGHacksServer not in flight; installing
+51 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\body-parser-e056565f2e430f35.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+52 silly install write writing body-parser 1.14.1 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+53 verbose unbuild node_modules\body-parser
+54 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+55 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+56 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\body-parser\1.14.1\package.tgz
+57 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+58 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser is being purged
+59 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+60 silly gunzTarPerm modes [ '777', '666' ]
+61 silly gunzTarPerm extractEntry package.json
+62 silly gunzTarPerm extractEntry README.md
+63 silly gunzTarPerm extractEntry LICENSE
+64 silly gunzTarPerm extractEntry index.js
+65 silly gunzTarPerm extractEntry HISTORY.md
+66 silly gunzTarPerm extractEntry lib/read.js
+67 silly gunzTarPerm extractEntry lib/types/json.js
+68 silly gunzTarPerm extractEntry lib/types/raw.js
+69 silly gunzTarPerm extractEntry lib/types/text.js
+70 silly gunzTarPerm extractEntry lib/types/urlencoded.js
+71 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\package.json
+72 info preinstall body-parser@1.14.1
+73 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\package.json
+74 silly prepareForInstallMany adding bytes@2.1.0 from body-parser dependencies
+75 silly prepareForInstallMany adding content-type@~1.0.1 from body-parser dependencies
+76 silly prepareForInstallMany adding debug@~2.2.0 from body-parser dependencies
+77 silly prepareForInstallMany adding depd@~1.1.0 from body-parser dependencies
+78 silly prepareForInstallMany adding http-errors@~1.3.1 from body-parser dependencies
+79 silly prepareForInstallMany adding iconv-lite@0.4.12 from body-parser dependencies
+80 silly prepareForInstallMany adding on-finished@~2.3.0 from body-parser dependencies
+81 silly prepareForInstallMany adding qs@5.1.0 from body-parser dependencies
+82 silly prepareForInstallMany adding raw-body@~2.1.4 from body-parser dependencies
+83 silly prepareForInstallMany adding type-is@~1.6.9 from body-parser dependencies
+84 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\package.json
+85 silly cache add args [ 'debug@~2.2.0', null ]
+86 verbose cache add spec debug@~2.2.0
+87 silly cache add parsed spec { raw: 'debug@~2.2.0',
+87 silly cache add   scope: null,
+87 silly cache add   name: 'debug',
+87 silly cache add   rawSpec: '~2.2.0',
+87 silly cache add   spec: '>=2.2.0 <2.3.0',
+87 silly cache add   type: 'range' }
+88 silly addNamed debug@>=2.2.0 <2.3.0
+89 verbose addNamed ">=2.2.0 <2.3.0" is a valid semver range for debug
+90 silly addNameRange { name: 'debug', range: '>=2.2.0 <2.3.0', hasData: false }
+91 silly mapToRegistry name debug
+92 silly mapToRegistry using default registry
+93 silly mapToRegistry registry https://registry.npmjs.org/
+94 silly mapToRegistry uri https://registry.npmjs.org/debug
+95 verbose addNameRange registry:https://registry.npmjs.org/debug not in flight; fetching
+96 silly cache add args [ 'content-type@~1.0.1', null ]
+97 verbose cache add spec content-type@~1.0.1
+98 silly cache add parsed spec { raw: 'content-type@~1.0.1',
+98 silly cache add   scope: null,
+98 silly cache add   name: 'content-type',
+98 silly cache add   rawSpec: '~1.0.1',
+98 silly cache add   spec: '>=1.0.1 <1.1.0',
+98 silly cache add   type: 'range' }
+99 silly addNamed content-type@>=1.0.1 <1.1.0
+100 verbose addNamed ">=1.0.1 <1.1.0" is a valid semver range for content-type
+101 silly addNameRange { name: 'content-type', range: '>=1.0.1 <1.1.0', hasData: false }
+102 silly mapToRegistry name content-type
+103 silly mapToRegistry using default registry
+104 silly mapToRegistry registry https://registry.npmjs.org/
+105 silly mapToRegistry uri https://registry.npmjs.org/content-type
+106 verbose addNameRange registry:https://registry.npmjs.org/content-type not in flight; fetching
+107 silly cache add args [ 'depd@~1.1.0', null ]
+108 verbose cache add spec depd@~1.1.0
+109 silly cache add parsed spec { raw: 'depd@~1.1.0',
+109 silly cache add   scope: null,
+109 silly cache add   name: 'depd',
+109 silly cache add   rawSpec: '~1.1.0',
+109 silly cache add   spec: '>=1.1.0 <1.2.0',
+109 silly cache add   type: 'range' }
+110 silly addNamed depd@>=1.1.0 <1.2.0
+111 verbose addNamed ">=1.1.0 <1.2.0" is a valid semver range for depd
+112 silly addNameRange { name: 'depd', range: '>=1.1.0 <1.2.0', hasData: false }
+113 silly mapToRegistry name depd
+114 silly mapToRegistry using default registry
+115 silly mapToRegistry registry https://registry.npmjs.org/
+116 silly mapToRegistry uri https://registry.npmjs.org/depd
+117 verbose addNameRange registry:https://registry.npmjs.org/depd not in flight; fetching
+118 silly cache add args [ 'http-errors@~1.3.1', null ]
+119 verbose cache add spec http-errors@~1.3.1
+120 silly cache add parsed spec { raw: 'http-errors@~1.3.1',
+120 silly cache add   scope: null,
+120 silly cache add   name: 'http-errors',
+120 silly cache add   rawSpec: '~1.3.1',
+120 silly cache add   spec: '>=1.3.1 <1.4.0',
+120 silly cache add   type: 'range' }
+121 silly addNamed http-errors@>=1.3.1 <1.4.0
+122 verbose addNamed ">=1.3.1 <1.4.0" is a valid semver range for http-errors
+123 silly addNameRange { name: 'http-errors', range: '>=1.3.1 <1.4.0', hasData: false }
+124 silly mapToRegistry name http-errors
+125 silly mapToRegistry using default registry
+126 silly mapToRegistry registry https://registry.npmjs.org/
+127 silly mapToRegistry uri https://registry.npmjs.org/http-errors
+128 verbose addNameRange registry:https://registry.npmjs.org/http-errors not in flight; fetching
+129 silly cache add args [ 'iconv-lite@0.4.12', null ]
+130 verbose cache add spec iconv-lite@0.4.12
+131 silly cache add parsed spec { raw: 'iconv-lite@0.4.12',
+131 silly cache add   scope: null,
+131 silly cache add   name: 'iconv-lite',
+131 silly cache add   rawSpec: '0.4.12',
+131 silly cache add   spec: '0.4.12',
+131 silly cache add   type: 'version' }
+132 silly addNamed iconv-lite@0.4.12
+133 verbose addNamed "0.4.12" is a plain semver version for iconv-lite
+134 silly mapToRegistry name iconv-lite
+135 silly mapToRegistry using default registry
+136 silly mapToRegistry registry https://registry.npmjs.org/
+137 silly mapToRegistry uri https://registry.npmjs.org/iconv-lite
+138 verbose addNameVersion registry:https://registry.npmjs.org/iconv-lite not in flight; fetching
+139 silly cache add args [ 'on-finished@~2.3.0', null ]
+140 verbose cache add spec on-finished@~2.3.0
+141 silly cache add parsed spec { raw: 'on-finished@~2.3.0',
+141 silly cache add   scope: null,
+141 silly cache add   name: 'on-finished',
+141 silly cache add   rawSpec: '~2.3.0',
+141 silly cache add   spec: '>=2.3.0 <2.4.0',
+141 silly cache add   type: 'range' }
+142 silly addNamed on-finished@>=2.3.0 <2.4.0
+143 verbose addNamed ">=2.3.0 <2.4.0" is a valid semver range for on-finished
+144 silly addNameRange { name: 'on-finished', range: '>=2.3.0 <2.4.0', hasData: false }
+145 silly mapToRegistry name on-finished
+146 silly mapToRegistry using default registry
+147 silly mapToRegistry registry https://registry.npmjs.org/
+148 silly mapToRegistry uri https://registry.npmjs.org/on-finished
+149 verbose addNameRange registry:https://registry.npmjs.org/on-finished not in flight; fetching
+150 silly cache add args [ 'qs@5.1.0', null ]
+151 verbose cache add spec qs@5.1.0
+152 silly cache add parsed spec { raw: 'qs@5.1.0',
+152 silly cache add   scope: null,
+152 silly cache add   name: 'qs',
+152 silly cache add   rawSpec: '5.1.0',
+152 silly cache add   spec: '5.1.0',
+152 silly cache add   type: 'version' }
+153 silly addNamed qs@5.1.0
+154 verbose addNamed "5.1.0" is a plain semver version for qs
+155 silly mapToRegistry name qs
+156 silly mapToRegistry using default registry
+157 silly mapToRegistry registry https://registry.npmjs.org/
+158 silly mapToRegistry uri https://registry.npmjs.org/qs
+159 verbose addNameVersion registry:https://registry.npmjs.org/qs not in flight; fetching
+160 silly cache add args [ 'raw-body@~2.1.4', null ]
+161 verbose cache add spec raw-body@~2.1.4
+162 silly cache add parsed spec { raw: 'raw-body@~2.1.4',
+162 silly cache add   scope: null,
+162 silly cache add   name: 'raw-body',
+162 silly cache add   rawSpec: '~2.1.4',
+162 silly cache add   spec: '>=2.1.4 <2.2.0',
+162 silly cache add   type: 'range' }
+163 silly addNamed raw-body@>=2.1.4 <2.2.0
+164 verbose addNamed ">=2.1.4 <2.2.0" is a valid semver range for raw-body
+165 silly addNameRange { name: 'raw-body', range: '>=2.1.4 <2.2.0', hasData: false }
+166 silly mapToRegistry name raw-body
+167 silly mapToRegistry using default registry
+168 silly mapToRegistry registry https://registry.npmjs.org/
+169 silly mapToRegistry uri https://registry.npmjs.org/raw-body
+170 verbose addNameRange registry:https://registry.npmjs.org/raw-body not in flight; fetching
+171 silly cache add args [ 'type-is@~1.6.9', null ]
+172 verbose cache add spec type-is@~1.6.9
+173 silly cache add parsed spec { raw: 'type-is@~1.6.9',
+173 silly cache add   scope: null,
+173 silly cache add   name: 'type-is',
+173 silly cache add   rawSpec: '~1.6.9',
+173 silly cache add   spec: '>=1.6.9 <1.7.0',
+173 silly cache add   type: 'range' }
+174 silly addNamed type-is@>=1.6.9 <1.7.0
+175 verbose addNamed ">=1.6.9 <1.7.0" is a valid semver range for type-is
+176 silly addNameRange { name: 'type-is', range: '>=1.6.9 <1.7.0', hasData: false }
+177 silly mapToRegistry name type-is
+178 silly mapToRegistry using default registry
+179 silly mapToRegistry registry https://registry.npmjs.org/
+180 silly mapToRegistry uri https://registry.npmjs.org/type-is
+181 verbose addNameRange registry:https://registry.npmjs.org/type-is not in flight; fetching
+182 silly cache add args [ 'bytes@2.1.0', null ]
+183 verbose cache add spec bytes@2.1.0
+184 silly cache add parsed spec { raw: 'bytes@2.1.0',
+184 silly cache add   scope: null,
+184 silly cache add   name: 'bytes',
+184 silly cache add   rawSpec: '2.1.0',
+184 silly cache add   spec: '2.1.0',
+184 silly cache add   type: 'version' }
+185 silly addNamed bytes@2.1.0
+186 verbose addNamed "2.1.0" is a plain semver version for bytes
+187 silly mapToRegistry name bytes
+188 silly mapToRegistry using default registry
+189 silly mapToRegistry registry https://registry.npmjs.org/
+190 silly mapToRegistry uri https://registry.npmjs.org/bytes
+191 verbose addNameVersion registry:https://registry.npmjs.org/bytes not in flight; fetching
+192 verbose request uri https://registry.npmjs.org/debug
+193 verbose request no auth needed
+194 info attempt registry request try #1 at 22:48:11
+195 verbose etag "AQKAUT1G5OT5GHIVZR2Y6B5S2"
+196 http request GET https://registry.npmjs.org/debug
+197 verbose request uri https://registry.npmjs.org/content-type
+198 verbose request no auth needed
+199 info attempt registry request try #1 at 22:48:11
+200 verbose etag "A61HQDKGOUEM3F9DCWTGYV4NW"
+201 http request GET https://registry.npmjs.org/content-type
+202 verbose request uri https://registry.npmjs.org/depd
+203 verbose request no auth needed
+204 info attempt registry request try #1 at 22:48:11
+205 verbose etag "D51XQ8IB2NO2EXAU1UFAY1A1L"
+206 http request GET https://registry.npmjs.org/depd
+207 verbose request uri https://registry.npmjs.org/http-errors
+208 verbose request no auth needed
+209 info attempt registry request try #1 at 22:48:11
+210 verbose etag "SXH43K3HIBV84M1DG2Y3Y70Q"
+211 http request GET https://registry.npmjs.org/http-errors
+212 verbose request uri https://registry.npmjs.org/on-finished
+213 verbose request no auth needed
+214 info attempt registry request try #1 at 22:48:11
+215 verbose etag "ED1AKTIT9T4NCR5HG7HQSOW1M"
+216 http request GET https://registry.npmjs.org/on-finished
+217 verbose request uri https://registry.npmjs.org/qs
+218 verbose request no auth needed
+219 info attempt registry request try #1 at 22:48:11
+220 verbose etag "1VPW8KWY7X8AGUKB3KFVMZOLG"
+221 http request GET https://registry.npmjs.org/qs
+222 verbose request uri https://registry.npmjs.org/type-is
+223 verbose request no auth needed
+224 info attempt registry request try #1 at 22:48:11
+225 verbose etag "1SX8NTQL2R12BOVDW5BB0QNXP"
+226 http request GET https://registry.npmjs.org/type-is
+227 verbose request uri https://registry.npmjs.org/iconv-lite
+228 verbose request no auth needed
+229 info attempt registry request try #1 at 22:48:11
+230 verbose etag "2I2AL0EDCCD3EABII0UX8OAP1"
+231 http request GET https://registry.npmjs.org/iconv-lite
+232 verbose request uri https://registry.npmjs.org/raw-body
+233 verbose request no auth needed
+234 info attempt registry request try #1 at 22:48:11
+235 verbose etag "2BX8CP4JQ0P5EZ26SS8MJX2OY"
+236 http request GET https://registry.npmjs.org/raw-body
+237 verbose request uri https://registry.npmjs.org/bytes
+238 verbose request no auth needed
+239 info attempt registry request try #1 at 22:48:11
+240 verbose etag "1H3BDDKW7WRQB0Y48B8NCXDO5"
+241 http request GET https://registry.npmjs.org/bytes
+242 http 304 https://registry.npmjs.org/qs
+243 silly get cb [ 304,
+243 silly get   { date: 'Fri, 23 Oct 2015 20:48:08 GMT',
+243 silly get     via: '1.1 varnish',
+243 silly get     'cache-control': 'max-age=60',
+243 silly get     etag: '"1VPW8KWY7X8AGUKB3KFVMZOLG"',
+243 silly get     age: '5',
+243 silly get     connection: 'keep-alive',
+243 silly get     'x-served-by': 'cache-fra1225-FRA',
+243 silly get     'x-cache': 'HIT',
+243 silly get     'x-cache-hits': '1',
+243 silly get     'x-timer': 'S1445633288.751652,VS0,VE0',
+243 silly get     vary: 'Accept' } ]
+244 verbose etag https://registry.npmjs.org/qs from cache
+245 verbose get saving qs to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\qs\.cache.json
+246 silly mapToRegistry name qs
+247 silly mapToRegistry using default registry
+248 silly mapToRegistry registry https://registry.npmjs.org/
+249 silly mapToRegistry uri https://registry.npmjs.org/qs
+250 verbose addRemoteTarball https://registry.npmjs.org/qs/-/qs-5.1.0.tgz not in flight; adding
+251 verbose addRemoteTarball [ 'https://registry.npmjs.org/qs/-/qs-5.1.0.tgz',
+251 verbose addRemoteTarball   '4d932e5c7ea411cca76a312d39a606200fd50cd9' ]
+252 info retry fetch attempt 1 at 22:48:13
+253 info attempt registry request try #1 at 22:48:13
+254 http fetch GET https://registry.npmjs.org/qs/-/qs-5.1.0.tgz
+255 http 304 https://registry.npmjs.org/depd
+256 silly get cb [ 304,
+256 silly get   { date: 'Fri, 23 Oct 2015 20:48:08 GMT',
+256 silly get     via: '1.1 varnish',
+256 silly get     'cache-control': 'max-age=60',
+256 silly get     etag: '"D51XQ8IB2NO2EXAU1UFAY1A1L"',
+256 silly get     age: '30',
+256 silly get     connection: 'keep-alive',
+256 silly get     'x-served-by': 'cache-fra1247-FRA',
+256 silly get     'x-cache': 'HIT',
+256 silly get     'x-cache-hits': '1',
+256 silly get     'x-timer': 'S1445633288.968368,VS0,VE0',
+256 silly get     vary: 'Accept' } ]
+257 verbose etag https://registry.npmjs.org/depd from cache
+258 verbose get saving depd to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\depd\.cache.json
+259 silly addNameRange number 2 { name: 'depd', range: '>=1.1.0 <1.2.0', hasData: true }
+260 silly addNameRange versions [ 'depd',
+260 silly addNameRange   [ '0.0.0',
+260 silly addNameRange     '0.0.1',
+260 silly addNameRange     '0.1.0',
+260 silly addNameRange     '0.2.0',
+260 silly addNameRange     '0.3.0',
+260 silly addNameRange     '0.4.0',
+260 silly addNameRange     '0.4.1',
+260 silly addNameRange     '0.4.2',
+260 silly addNameRange     '0.4.3',
+260 silly addNameRange     '0.4.4',
+260 silly addNameRange     '0.4.5',
+260 silly addNameRange     '1.0.0',
+260 silly addNameRange     '1.0.1',
+260 silly addNameRange     '1.1.0' ] ]
+261 silly addNamed depd@1.1.0
+262 verbose addNamed "1.1.0" is a plain semver version for depd
+263 silly mapToRegistry name depd
+264 silly mapToRegistry using default registry
+265 silly mapToRegistry registry https://registry.npmjs.org/
+266 silly mapToRegistry uri https://registry.npmjs.org/depd
+267 verbose addRemoteTarball https://registry.npmjs.org/depd/-/depd-1.1.0.tgz not in flight; adding
+268 verbose addRemoteTarball [ 'https://registry.npmjs.org/depd/-/depd-1.1.0.tgz',
+268 verbose addRemoteTarball   'e1bd82c6aab6ced965b97b88b17ed3e528ca18c3' ]
+269 info retry fetch attempt 1 at 22:48:14
+270 info attempt registry request try #1 at 22:48:14
+271 http fetch GET https://registry.npmjs.org/depd/-/depd-1.1.0.tgz
+272 http 200 https://registry.npmjs.org/bytes
+273 silly get cb [ 200,
+273 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+273 silly get     etag: '"7AHQR6U0PXDAZMV2HQZ8GPN8Q"',
+273 silly get     'content-type': 'application/json',
+273 silly get     'cache-control': 'max-age=60',
+273 silly get     'content-length': '13377',
+273 silly get     'accept-ranges': 'bytes',
+273 silly get     date: 'Fri, 23 Oct 2015 20:48:08 GMT',
+273 silly get     via: '1.1 varnish',
+273 silly get     age: '0',
+273 silly get     connection: 'keep-alive',
+273 silly get     'x-served-by': 'cache-fra1227-FRA',
+273 silly get     'x-cache': 'HIT',
+273 silly get     'x-cache-hits': '1',
+273 silly get     'x-timer': 'S1445633288.819187,VS0,VE106',
+273 silly get     vary: 'Accept' } ]
+274 verbose get saving bytes to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\bytes\.cache.json
+275 silly mapToRegistry name bytes
+276 silly mapToRegistry using default registry
+277 silly mapToRegistry registry https://registry.npmjs.org/
+278 silly mapToRegistry uri https://registry.npmjs.org/bytes
+279 verbose addRemoteTarball https://registry.npmjs.org/bytes/-/bytes-2.1.0.tgz not in flight; adding
+280 verbose addRemoteTarball [ 'https://registry.npmjs.org/bytes/-/bytes-2.1.0.tgz',
+280 verbose addRemoteTarball   'ac93c410e2ffc9cc7cf4b464b38289067f5e47b4' ]
+281 info retry fetch attempt 1 at 22:48:14
+282 info attempt registry request try #1 at 22:48:14
+283 http fetch GET https://registry.npmjs.org/bytes/-/bytes-2.1.0.tgz
+284 http 304 https://registry.npmjs.org/on-finished
+285 silly get cb [ 304,
+285 silly get   { date: 'Fri, 23 Oct 2015 20:48:08 GMT',
+285 silly get     via: '1.1 varnish',
+285 silly get     'cache-control': 'max-age=60',
+285 silly get     etag: '"ED1AKTIT9T4NCR5HG7HQSOW1M"',
+285 silly get     age: '9',
+285 silly get     connection: 'keep-alive',
+285 silly get     'x-served-by': 'cache-fra1240-FRA',
+285 silly get     'x-cache': 'HIT',
+285 silly get     'x-cache-hits': '1',
+285 silly get     'x-timer': 'S1445633288.689053,VS0,VE0',
+285 silly get     vary: 'Accept' } ]
+286 verbose etag https://registry.npmjs.org/on-finished from cache
+287 verbose get saving on-finished to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\on-finished\.cache.json
+288 silly addNameRange number 2 { name: 'on-finished', range: '>=2.3.0 <2.4.0', hasData: true }
+289 silly addNameRange versions [ 'on-finished',
+289 silly addNameRange   [ '2.0.0', '2.1.0', '2.1.1', '2.2.0', '2.2.1', '2.3.0' ] ]
+290 silly addNamed on-finished@2.3.0
+291 verbose addNamed "2.3.0" is a plain semver version for on-finished
+292 silly cache afterAdd on-finished@2.3.0
+293 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\on-finished\2.3.0\package\package.json not in flight; writing
+294 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\on-finished\2.3.0\package\package.json written
+295 http 304 https://registry.npmjs.org/type-is
+296 silly get cb [ 304,
+296 silly get   { date: 'Fri, 23 Oct 2015 20:48:10 GMT',
+296 silly get     via: '1.1 varnish',
+296 silly get     'cache-control': 'max-age=60',
+296 silly get     etag: '"1SX8NTQL2R12BOVDW5BB0QNXP"',
+296 silly get     age: '5',
+296 silly get     connection: 'keep-alive',
+296 silly get     'x-served-by': 'cache-fra1235-FRA',
+296 silly get     'x-cache': 'HIT',
+296 silly get     'x-cache-hits': '1',
+296 silly get     'x-timer': 'S1445633290.014967,VS0,VE0',
+296 silly get     vary: 'Accept' } ]
+297 verbose etag https://registry.npmjs.org/type-is from cache
+298 verbose get saving type-is to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\type-is\.cache.json
+299 http 304 https://registry.npmjs.org/http-errors
+300 silly get cb [ 304,
+300 silly get   { date: 'Fri, 23 Oct 2015 20:48:10 GMT',
+300 silly get     via: '1.1 varnish',
+300 silly get     'cache-control': 'max-age=60',
+300 silly get     etag: '"SXH43K3HIBV84M1DG2Y3Y70Q"',
+300 silly get     age: '40',
+300 silly get     connection: 'keep-alive',
+300 silly get     'x-served-by': 'cache-fra1235-FRA',
+300 silly get     'x-cache': 'HIT',
+300 silly get     'x-cache-hits': '1',
+300 silly get     'x-timer': 'S1445633290.015068,VS0,VE0',
+300 silly get     vary: 'Accept' } ]
+301 verbose etag https://registry.npmjs.org/http-errors from cache
+302 verbose get saving http-errors to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\http-errors\.cache.json
+303 http 304 https://registry.npmjs.org/content-type
+304 silly get cb [ 304,
+304 silly get   { date: 'Fri, 23 Oct 2015 20:48:10 GMT',
+304 silly get     via: '1.1 varnish',
+304 silly get     'cache-control': 'max-age=60',
+304 silly get     etag: '"A61HQDKGOUEM3F9DCWTGYV4NW"',
+304 silly get     age: '10',
+304 silly get     connection: 'keep-alive',
+304 silly get     'x-served-by': 'cache-fra1222-FRA',
+304 silly get     'x-cache': 'HIT',
+304 silly get     'x-cache-hits': '1',
+304 silly get     'x-timer': 'S1445633290.015277,VS0,VE0',
+304 silly get     vary: 'Accept' } ]
+305 verbose etag https://registry.npmjs.org/content-type from cache
+306 verbose get saving content-type to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\content-type\.cache.json
+307 silly addNameRange number 2 { name: 'type-is', range: '>=1.6.9 <1.7.0', hasData: true }
+308 silly addNameRange versions [ 'type-is',
+308 silly addNameRange   [ '1.0.0',
+308 silly addNameRange     '1.0.1',
+308 silly addNameRange     '1.1.0',
+308 silly addNameRange     '1.2.0',
+308 silly addNameRange     '1.2.1',
+308 silly addNameRange     '1.2.2',
+308 silly addNameRange     '1.3.0',
+308 silly addNameRange     '1.3.1',
+308 silly addNameRange     '1.3.2',
+308 silly addNameRange     '1.4.0',
+308 silly addNameRange     '1.5.0',
+308 silly addNameRange     '1.5.1',
+308 silly addNameRange     '1.5.2',
+308 silly addNameRange     '1.5.3',
+308 silly addNameRange     '1.5.4',
+308 silly addNameRange     '1.5.5',
+308 silly addNameRange     '1.5.6',
+308 silly addNameRange     '1.5.7',
+308 silly addNameRange     '1.6.0',
+308 silly addNameRange     '1.6.1',
+308 silly addNameRange     '1.6.2',
+308 silly addNameRange     '1.6.3',
+308 silly addNameRange     '1.6.4',
+308 silly addNameRange     '1.6.5',
+308 silly addNameRange     '1.6.6',
+308 silly addNameRange     '1.6.7',
+308 silly addNameRange     '1.6.8',
+308 silly addNameRange     '1.6.9' ] ]
+309 silly addNamed type-is@1.6.9
+310 verbose addNamed "1.6.9" is a plain semver version for type-is
+311 silly addNameRange number 2 { name: 'http-errors', range: '>=1.3.1 <1.4.0', hasData: true }
+312 silly addNameRange versions [ 'http-errors',
+312 silly addNameRange   [ '0.0.1',
+312 silly addNameRange     '1.0.0',
+312 silly addNameRange     '1.0.1',
+312 silly addNameRange     '1.1.0',
+312 silly addNameRange     '1.2.0',
+312 silly addNameRange     '1.2.1',
+312 silly addNameRange     '1.2.2',
+312 silly addNameRange     '1.2.3',
+312 silly addNameRange     '1.2.4',
+312 silly addNameRange     '1.2.5',
+312 silly addNameRange     '1.2.6',
+312 silly addNameRange     '1.2.7',
+312 silly addNameRange     '1.2.8',
+312 silly addNameRange     '1.3.0',
+312 silly addNameRange     '1.3.1' ] ]
+313 silly addNamed http-errors@1.3.1
+314 verbose addNamed "1.3.1" is a plain semver version for http-errors
+315 silly addNameRange number 2 { name: 'content-type', range: '>=1.0.1 <1.1.0', hasData: true }
+316 silly addNameRange versions [ 'content-type', [ '0.0.1', '1.0.0', '1.0.1' ] ]
+317 silly addNamed content-type@1.0.1
+318 verbose addNamed "1.0.1" is a plain semver version for content-type
+319 silly cache afterAdd http-errors@1.3.1
+320 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\http-errors\1.3.1\package\package.json not in flight; writing
+321 silly cache afterAdd content-type@1.0.1
+322 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\content-type\1.0.1\package\package.json not in flight; writing
+323 silly cache afterAdd type-is@1.6.9
+324 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\type-is\1.6.9\package\package.json not in flight; writing
+325 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\content-type\1.0.1\package\package.json written
+326 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\type-is\1.6.9\package\package.json written
+327 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\http-errors\1.3.1\package\package.json written
+328 http 304 https://registry.npmjs.org/debug
+329 silly get cb [ 304,
+329 silly get   { date: 'Fri, 23 Oct 2015 20:48:10 GMT',
+329 silly get     via: '1.1 varnish',
+329 silly get     'cache-control': 'max-age=60',
+329 silly get     etag: '"AQKAUT1G5OT5GHIVZR2Y6B5S2"',
+329 silly get     age: '53',
+329 silly get     connection: 'keep-alive',
+329 silly get     'x-served-by': 'cache-fra1222-FRA',
+329 silly get     'x-cache': 'HIT',
+329 silly get     'x-cache-hits': '3',
+329 silly get     'x-timer': 'S1445633290.395581,VS0,VE0',
+329 silly get     vary: 'Accept' } ]
+330 verbose etag https://registry.npmjs.org/debug from cache
+331 verbose get saving debug to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\debug\.cache.json
+332 silly addNameRange number 2 { name: 'debug', range: '>=2.2.0 <2.3.0', hasData: true }
+333 silly addNameRange versions [ 'debug',
+333 silly addNameRange   [ '0.0.1',
+333 silly addNameRange     '0.1.0',
+333 silly addNameRange     '0.2.0',
+333 silly addNameRange     '0.3.0',
+333 silly addNameRange     '0.4.0',
+333 silly addNameRange     '0.4.1',
+333 silly addNameRange     '0.5.0',
+333 silly addNameRange     '0.6.0',
+333 silly addNameRange     '0.7.0',
+333 silly addNameRange     '0.7.1',
+333 silly addNameRange     '0.7.2',
+333 silly addNameRange     '0.7.3',
+333 silly addNameRange     '0.7.4',
+333 silly addNameRange     '0.8.0',
+333 silly addNameRange     '0.8.1',
+333 silly addNameRange     '1.0.0',
+333 silly addNameRange     '1.0.1',
+333 silly addNameRange     '1.0.2',
+333 silly addNameRange     '1.0.3',
+333 silly addNameRange     '1.0.4',
+333 silly addNameRange     '2.0.0',
+333 silly addNameRange     '2.1.0',
+333 silly addNameRange     '2.1.1',
+333 silly addNameRange     '2.1.2',
+333 silly addNameRange     '2.1.3',
+333 silly addNameRange     '2.2.0' ] ]
+334 silly addNamed debug@2.2.0
+335 verbose addNamed "2.2.0" is a plain semver version for debug
+336 silly cache afterAdd debug@2.2.0
+337 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\debug\2.2.0\package\package.json not in flight; writing
+338 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\debug\2.2.0\package\package.json written
+339 http 200 https://registry.npmjs.org/raw-body
+340 silly get cb [ 200,
+340 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+340 silly get     etag: '"5WM81GVYRMNLA4FAX9J53JRBU"',
+340 silly get     'content-type': 'application/json',
+340 silly get     'cache-control': 'max-age=60',
+340 silly get     'content-length': '48117',
+340 silly get     'accept-ranges': 'bytes',
+340 silly get     date: 'Fri, 23 Oct 2015 20:48:08 GMT',
+340 silly get     via: '1.1 varnish',
+340 silly get     age: '9',
+340 silly get     connection: 'keep-alive',
+340 silly get     'x-served-by': 'cache-fra1245-FRA',
+340 silly get     'x-cache': 'HIT',
+340 silly get     'x-cache-hits': '1',
+340 silly get     'x-timer': 'S1445633288.689974,VS0,VE0',
+340 silly get     vary: 'Accept' } ]
+341 verbose get saving raw-body to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\raw-body\.cache.json
+342 silly addNameRange number 2 { name: 'raw-body', range: '>=2.1.4 <2.2.0', hasData: true }
+343 silly addNameRange versions [ 'raw-body',
+343 silly addNameRange   [ '0.0.1',
+343 silly addNameRange     '0.0.2',
+343 silly addNameRange     '0.0.3',
+343 silly addNameRange     '0.1.0',
+343 silly addNameRange     '0.1.1',
+343 silly addNameRange     '0.2.0',
+343 silly addNameRange     '1.0.0',
+343 silly addNameRange     '1.0.1',
+343 silly addNameRange     '1.1.0',
+343 silly addNameRange     '1.1.1',
+343 silly addNameRange     '1.1.2',
+343 silly addNameRange     '1.1.3',
+343 silly addNameRange     '1.1.4',
+343 silly addNameRange     '1.1.5',
+343 silly addNameRange     '1.1.6',
+343 silly addNameRange     '1.1.7',
+343 silly addNameRange     '1.2.0',
+343 silly addNameRange     '1.2.1',
+343 silly addNameRange     '1.2.2',
+343 silly addNameRange     '1.2.3',
+343 silly addNameRange     '1.3.0',
+343 silly addNameRange     '1.3.1',
+343 silly addNameRange     '1.3.2',
+343 silly addNameRange     '1.3.3',
+343 silly addNameRange     '1.3.4',
+343 silly addNameRange     '2.0.0',
+343 silly addNameRange     '2.0.1',
+343 silly addNameRange     '2.0.2',
+343 silly addNameRange     '2.1.0',
+343 silly addNameRange     '2.1.1',
+343 silly addNameRange     '2.1.2',
+343 silly addNameRange     '2.1.3',
+343 silly addNameRange     '2.1.4' ] ]
+344 silly addNamed raw-body@2.1.4
+345 verbose addNamed "2.1.4" is a plain semver version for raw-body
+346 silly mapToRegistry name raw-body
+347 silly mapToRegistry using default registry
+348 silly mapToRegistry registry https://registry.npmjs.org/
+349 silly mapToRegistry uri https://registry.npmjs.org/raw-body
+350 verbose addRemoteTarball https://registry.npmjs.org/raw-body/-/raw-body-2.1.4.tgz not in flight; adding
+351 verbose addRemoteTarball [ 'https://registry.npmjs.org/raw-body/-/raw-body-2.1.4.tgz',
+351 verbose addRemoteTarball   'dcc3afe2e1fdfc620a812376f8e0fc3d2e62cb50' ]
+352 info retry fetch attempt 1 at 22:48:16
+353 info attempt registry request try #1 at 22:48:16
+354 http fetch GET https://registry.npmjs.org/raw-body/-/raw-body-2.1.4.tgz
+355 http fetch 200 https://registry.npmjs.org/depd/-/depd-1.1.0.tgz
+356 silly fetchAndShaCheck shasum e1bd82c6aab6ced965b97b88b17ed3e528ca18c3
+357 verbose addTmpTarball C:\Users\saphire\AppData\Local\Temp\npm-3580-400a3a76\registry.npmjs.org\depd\-\depd-1.1.0.tgz not in flight; adding
+358 verbose addTmpTarball already have metadata; skipping unpack for depd@1.1.0
+359 silly cache afterAdd depd@1.1.0
+360 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\depd\1.1.0\package\package.json not in flight; writing
+361 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\depd\1.1.0\package\package.json written
+362 http fetch 200 https://registry.npmjs.org/bytes/-/bytes-2.1.0.tgz
+363 silly fetchAndShaCheck shasum ac93c410e2ffc9cc7cf4b464b38289067f5e47b4
+364 verbose addTmpTarball C:\Users\saphire\AppData\Local\Temp\npm-3580-400a3a76\registry.npmjs.org\bytes\-\bytes-2.1.0.tgz not in flight; adding
+365 verbose addTmpTarball already have metadata; skipping unpack for bytes@2.1.0
+366 silly cache afterAdd bytes@2.1.0
+367 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\bytes\2.1.0\package\package.json not in flight; writing
+368 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\bytes\2.1.0\package\package.json written
+369 http 200 https://registry.npmjs.org/iconv-lite
+370 silly get cb [ 200,
+370 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+370 silly get     etag: '"BFX9VE0WW4BBYFIXO1QLOPZY"',
+370 silly get     'content-type': 'application/json',
+370 silly get     'cache-control': 'max-age=60',
+370 silly get     'content-length': '59488',
+370 silly get     'accept-ranges': 'bytes',
+370 silly get     date: 'Fri, 23 Oct 2015 20:48:08 GMT',
+370 silly get     via: '1.1 varnish',
+370 silly get     age: '35',
+370 silly get     connection: 'keep-alive',
+370 silly get     'x-served-by': 'cache-fra1230-FRA',
+370 silly get     'x-cache': 'HIT',
+370 silly get     'x-cache-hits': '1',
+370 silly get     'x-timer': 'S1445633288.734901,VS0,VE0',
+370 silly get     vary: 'Accept' } ]
+371 verbose get saving iconv-lite to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\iconv-lite\.cache.json
+372 silly mapToRegistry name iconv-lite
+373 silly mapToRegistry using default registry
+374 silly mapToRegistry registry https://registry.npmjs.org/
+375 silly mapToRegistry uri https://registry.npmjs.org/iconv-lite
+376 verbose addRemoteTarball https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.12.tgz not in flight; adding
+377 verbose addRemoteTarball [ 'https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.12.tgz',
+377 verbose addRemoteTarball   'ef4bb2cb28f406d3c05fc89feea4504624b5ac87' ]
+378 info retry fetch attempt 1 at 22:48:17
+379 info attempt registry request try #1 at 22:48:17
+380 http fetch GET https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.12.tgz
+381 http fetch 200 https://registry.npmjs.org/raw-body/-/raw-body-2.1.4.tgz
+382 silly fetchAndShaCheck shasum dcc3afe2e1fdfc620a812376f8e0fc3d2e62cb50
+383 verbose addTmpTarball C:\Users\saphire\AppData\Local\Temp\npm-3580-400a3a76\registry.npmjs.org\raw-body\-\raw-body-2.1.4.tgz not in flight; adding
+384 verbose addTmpTarball already have metadata; skipping unpack for raw-body@2.1.4
+385 silly cache afterAdd raw-body@2.1.4
+386 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\raw-body\2.1.4\package\package.json not in flight; writing
+387 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\raw-body\2.1.4\package\package.json written
+388 http fetch 200 https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.12.tgz
+389 http fetch 200 https://registry.npmjs.org/qs/-/qs-5.1.0.tgz
+390 silly fetchAndShaCheck shasum 4d932e5c7ea411cca76a312d39a606200fd50cd9
+391 verbose addTmpTarball C:\Users\saphire\AppData\Local\Temp\npm-3580-400a3a76\registry.npmjs.org\qs\-\qs-5.1.0.tgz not in flight; adding
+392 verbose addTmpTarball already have metadata; skipping unpack for qs@5.1.0
+393 silly cache afterAdd qs@5.1.0
+394 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\qs\5.1.0\package\package.json not in flight; writing
+395 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\qs\5.1.0\package\package.json written
+396 silly fetchAndShaCheck shasum ef4bb2cb28f406d3c05fc89feea4504624b5ac87
+397 verbose addTmpTarball C:\Users\saphire\AppData\Local\Temp\npm-3580-400a3a76\registry.npmjs.org\iconv-lite\-\iconv-lite-0.4.12.tgz not in flight; adding
+398 verbose addTmpTarball already have metadata; skipping unpack for iconv-lite@0.4.12
+399 silly cache afterAdd iconv-lite@0.4.12
+400 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\iconv-lite\0.4.12\package\package.json not in flight; writing
+401 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\iconv-lite\0.4.12\package\package.json written
+402 silly install resolved [ { name: 'on-finished',
+402 silly install resolved     description: 'Execute a callback when a request closes, finishes, or errors',
+402 silly install resolved     version: '2.3.0',
+402 silly install resolved     contributors: [ [Object], [Object] ],
+402 silly install resolved     license: 'MIT',
+402 silly install resolved     repository:
+402 silly install resolved      { type: 'git',
+402 silly install resolved        url: 'git+https://github.com/jshttp/on-finished.git' },
+402 silly install resolved     dependencies: { 'ee-first': '1.1.1' },
+402 silly install resolved     devDependencies: { istanbul: '0.3.9', mocha: '2.2.5' },
+402 silly install resolved     engines: { node: '>= 0.8' },
+402 silly install resolved     files: [ 'HISTORY.md', 'LICENSE', 'index.js' ],
+402 silly install resolved     scripts:
+402 silly install resolved      { test: 'mocha --reporter spec --bail --check-leaks test/',
+402 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/',
+402 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/' },
+402 silly install resolved     gitHead: '34babcb58126a416fcf5205768204f2e12699dda',
+402 silly install resolved     bugs: { url: 'https://github.com/jshttp/on-finished/issues' },
+402 silly install resolved     homepage: 'https://github.com/jshttp/on-finished',
+402 silly install resolved     _id: 'on-finished@2.3.0',
+402 silly install resolved     _shasum: '20f1336481b083cd75337992a16971aa2d906947',
+402 silly install resolved     _from: 'on-finished@>=2.3.0 <2.4.0',
+402 silly install resolved     _npmVersion: '1.4.28',
+402 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+402 silly install resolved     maintainers: [ [Object], [Object] ],
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: '20f1336481b083cd75337992a16971aa2d906947',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/on-finished/-/on-finished-2.3.0.tgz' },
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/on-finished/-/on-finished-2.3.0.tgz',
+402 silly install resolved     readme: 'ERROR: No README data found!' },
+402 silly install resolved   { name: 'content-type',
+402 silly install resolved     description: 'Create and parse HTTP Content-Type header',
+402 silly install resolved     version: '1.0.1',
+402 silly install resolved     author:
+402 silly install resolved      { name: 'Douglas Christopher Wilson',
+402 silly install resolved        email: 'doug@somethingdoug.com' },
+402 silly install resolved     license: 'MIT',
+402 silly install resolved     keywords: [ 'content-type', 'http', 'req', 'res', 'rfc7231' ],
+402 silly install resolved     repository:
+402 silly install resolved      { type: 'git',
+402 silly install resolved        url: 'git+https://github.com/jshttp/content-type.git' },
+402 silly install resolved     devDependencies: { istanbul: '0.3.5', mocha: '~1.21.5' },
+402 silly install resolved     files: [ 'LICENSE', 'HISTORY.md', 'README.md', 'index.js' ],
+402 silly install resolved     engines: { node: '>= 0.6' },
+402 silly install resolved     scripts:
+402 silly install resolved      { test: 'mocha --reporter spec --check-leaks --bail test/',
+402 silly install resolved        'test-ci': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/',
+402 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/' },
+402 silly install resolved     gitHead: '3aa58f9c5a358a3634b8601602177888b4a477d8',
+402 silly install resolved     bugs: { url: 'https://github.com/jshttp/content-type/issues' },
+402 silly install resolved     homepage: 'https://github.com/jshttp/content-type',
+402 silly install resolved     _id: 'content-type@1.0.1',
+402 silly install resolved     _shasum: 'a19d2247327dc038050ce622b7a154ec59c5e600',
+402 silly install resolved     _from: 'content-type@>=1.0.1 <1.1.0',
+402 silly install resolved     _npmVersion: '1.4.28',
+402 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+402 silly install resolved     maintainers: [ [Object] ],
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: 'a19d2247327dc038050ce622b7a154ec59c5e600',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/content-type/-/content-type-1.0.1.tgz' },
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/content-type/-/content-type-1.0.1.tgz',
+402 silly install resolved     readme: 'ERROR: No README data found!' },
+402 silly install resolved   { name: 'type-is',
+402 silly install resolved     description: 'Infer the content-type of a request.',
+402 silly install resolved     version: '1.6.9',
+402 silly install resolved     contributors: [ [Object], [Object] ],
+402 silly install resolved     license: 'MIT',
+402 silly install resolved     repository:
+402 silly install resolved      { type: 'git',
+402 silly install resolved        url: 'git+https://github.com/jshttp/type-is.git' },
+402 silly install resolved     dependencies: { 'media-typer': '0.3.0', 'mime-types': '~2.1.7' },
+402 silly install resolved     devDependencies: { istanbul: '0.3.21', mocha: '~1.21.5' },
+402 silly install resolved     engines: { node: '>= 0.6' },
+402 silly install resolved     files: [ 'LICENSE', 'HISTORY.md', 'index.js' ],
+402 silly install resolved     scripts:
+402 silly install resolved      { test: 'mocha --reporter spec --check-leaks --bail test/',
+402 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/',
+402 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/' },
+402 silly install resolved     keywords: [ 'content', 'type', 'checking' ],
+402 silly install resolved     gitHead: '2f5999d6f2d88f2f36eeb1e8db78c2ec43fdbf13',
+402 silly install resolved     bugs: { url: 'https://github.com/jshttp/type-is/issues' },
+402 silly install resolved     homepage: 'https://github.com/jshttp/type-is',
+402 silly install resolved     _id: 'type-is@1.6.9',
+402 silly install resolved     _shasum: '87f3e88b92ff5ac30fbc1acf9a9d00cbc38b3d7a',
+402 silly install resolved     _from: 'type-is@>=1.6.9 <1.7.0',
+402 silly install resolved     _npmVersion: '1.4.28',
+402 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+402 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: '87f3e88b92ff5ac30fbc1acf9a9d00cbc38b3d7a',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/type-is/-/type-is-1.6.9.tgz' },
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/type-is/-/type-is-1.6.9.tgz',
+402 silly install resolved     readme: 'ERROR: No README data found!' },
+402 silly install resolved   { name: 'http-errors',
+402 silly install resolved     description: 'Create HTTP error objects',
+402 silly install resolved     version: '1.3.1',
+402 silly install resolved     author:
+402 silly install resolved      { name: 'Jonathan Ong',
+402 silly install resolved        email: 'me@jongleberry.com',
+402 silly install resolved        url: 'http://jongleberry.com' },
+402 silly install resolved     contributors: [ [Object], [Object] ],
+402 silly install resolved     license: 'MIT',
+402 silly install resolved     repository:
+402 silly install resolved      { type: 'git',
+402 silly install resolved        url: 'git+https://github.com/jshttp/http-errors.git' },
+402 silly install resolved     dependencies: { inherits: '~2.0.1', statuses: '1' },
+402 silly install resolved     devDependencies: { istanbul: '0', mocha: '1' },
+402 silly install resolved     engines: { node: '>= 0.6' },
+402 silly install resolved     scripts:
+402 silly install resolved      { test: 'mocha --reporter spec --bail',
+402 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot',
+402 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot' },
+402 silly install resolved     keywords: [ 'http', 'error' ],
+402 silly install resolved     files: [ 'index.js', 'HISTORY.md', 'LICENSE', 'README.md' ],
+402 silly install resolved     gitHead: '89a8502b40d5dd42da2908f265275e2eeb8d0699',
+402 silly install resolved     bugs: { url: 'https://github.com/jshttp/http-errors/issues' },
+402 silly install resolved     homepage: 'https://github.com/jshttp/http-errors',
+402 silly install resolved     _id: 'http-errors@1.3.1',
+402 silly install resolved     _shasum: '197e22cdebd4198585e8694ef6786197b91ed942',
+402 silly install resolved     _from: 'http-errors@>=1.3.1 <1.4.0',
+402 silly install resolved     _npmVersion: '1.4.28',
+402 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+402 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: '197e22cdebd4198585e8694ef6786197b91ed942',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/http-errors/-/http-errors-1.3.1.tgz' },
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/http-errors/-/http-errors-1.3.1.tgz',
+402 silly install resolved     readme: 'ERROR: No README data found!' },
+402 silly install resolved   { name: 'debug',
+402 silly install resolved     version: '2.2.0',
+402 silly install resolved     repository: { type: 'git', url: 'git://github.com/visionmedia/debug.git' },
+402 silly install resolved     description: 'small debugging utility',
+402 silly install resolved     keywords: [ 'debug', 'log', 'debugger' ],
+402 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+402 silly install resolved     contributors: [ [Object] ],
+402 silly install resolved     license: 'MIT',
+402 silly install resolved     dependencies: { ms: '0.7.1' },
+402 silly install resolved     devDependencies: { browserify: '9.0.3', mocha: '*' },
+402 silly install resolved     main: './node.js',
+402 silly install resolved     browser: './browser.js',
+402 silly install resolved     component: { scripts: [Object] },
+402 silly install resolved     gitHead: 'b38458422b5aa8aa6d286b10dfe427e8a67e2b35',
+402 silly install resolved     bugs: { url: 'https://github.com/visionmedia/debug/issues' },
+402 silly install resolved     homepage: 'https://github.com/visionmedia/debug',
+402 silly install resolved     _id: 'debug@2.2.0',
+402 silly install resolved     scripts: {},
+402 silly install resolved     _shasum: 'f87057e995b1a1f6ae6a4960664137bc56f039da',
+402 silly install resolved     _from: 'debug@>=2.2.0 <2.3.0',
+402 silly install resolved     _npmVersion: '2.7.4',
+402 silly install resolved     _nodeVersion: '0.12.2',
+402 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+402 silly install resolved     maintainers: [ [Object], [Object] ],
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: 'f87057e995b1a1f6ae6a4960664137bc56f039da',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/debug/-/debug-2.2.0.tgz' },
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/debug/-/debug-2.2.0.tgz',
+402 silly install resolved     readme: 'ERROR: No README data found!' },
+402 silly install resolved   { name: 'depd',
+402 silly install resolved     description: 'Deprecate all the things',
+402 silly install resolved     version: '1.1.0',
+402 silly install resolved     author:
+402 silly install resolved      { name: 'Douglas Christopher Wilson',
+402 silly install resolved        email: 'doug@somethingdoug.com' },
+402 silly install resolved     license: 'MIT',
+402 silly install resolved     keywords: [ 'deprecate', 'deprecated' ],
+402 silly install resolved     repository:
+402 silly install resolved      { type: 'git',
+402 silly install resolved        url: 'https://github.com/dougwilson/nodejs-depd' },
+402 silly install resolved     browser: 'lib/browser/index.js',
+402 silly install resolved     devDependencies:
+402 silly install resolved      { benchmark: '1.0.0',
+402 silly install resolved        'beautify-benchmark': '0.2.4',
+402 silly install resolved        istanbul: '0.3.5',
+402 silly install resolved        mocha: '~1.21.5' },
+402 silly install resolved     files: [ 'lib/', 'History.md', 'LICENSE', 'index.js', 'Readme.md' ],
+402 silly install resolved     engines: { node: '>= 0.6' },
+402 silly install resolved     scripts:
+402 silly install resolved      { bench: 'node benchmark/index.js',
+402 silly install resolved        test: 'mocha --reporter spec --bail test/',
+402 silly install resolved        'test-ci': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --no-exit test/',
+402 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/' },
+402 silly install resolved     gitHead: '78c659de20283e3a6bee92bda455e6daff01686a',
+402 silly install resolved     bugs: { url: 'https://github.com/dougwilson/nodejs-depd/issues' },
+402 silly install resolved     homepage: 'https://github.com/dougwilson/nodejs-depd',
+402 silly install resolved     _id: 'depd@1.1.0',
+402 silly install resolved     _shasum: 'e1bd82c6aab6ced965b97b88b17ed3e528ca18c3',
+402 silly install resolved     _from: 'depd@>=1.1.0 <1.2.0',
+402 silly install resolved     _npmVersion: '1.4.28',
+402 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+402 silly install resolved     maintainers: [ [Object] ],
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: 'e1bd82c6aab6ced965b97b88b17ed3e528ca18c3',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/depd/-/depd-1.1.0.tgz' },
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/depd/-/depd-1.1.0.tgz' },
+402 silly install resolved   { name: 'bytes',
+402 silly install resolved     description: 'Utility to parse a string bytes to bytes and vice-versa',
+402 silly install resolved     version: '2.1.0',
+402 silly install resolved     author:
+402 silly install resolved      { name: 'TJ Holowaychuk',
+402 silly install resolved        email: 'tj@vision-media.ca',
+402 silly install resolved        url: 'http://tjholowaychuk.com' },
+402 silly install resolved     contributors: [ [Object] ],
+402 silly install resolved     license: 'MIT',
+402 silly install resolved     keywords:
+402 silly install resolved      [ 'byte',
+402 silly install resolved        'bytes',
+402 silly install resolved        'utility',
+402 silly install resolved        'parse',
+402 silly install resolved        'parser',
+402 silly install resolved        'convert',
+402 silly install resolved        'converter' ],
+402 silly install resolved     repository: { type: 'git', url: 'https://github.com/visionmedia/bytes.js' },
+402 silly install resolved     component: { scripts: [Object] },
+402 silly install resolved     devDependencies: { mocha: '*' },
+402 silly install resolved     files: [ 'History.md', 'LICENSE', 'Readme.md', 'index.js' ],
+402 silly install resolved     scripts: { test: 'mocha --check-leaks --reporter spec' },
+402 silly install resolved     gitHead: '86e4520cc369b34866154a53344ca50b2bb5ddcd',
+402 silly install resolved     bugs: { url: 'https://github.com/visionmedia/bytes.js/issues' },
+402 silly install resolved     homepage: 'https://github.com/visionmedia/bytes.js',
+402 silly install resolved     _id: 'bytes@2.1.0',
+402 silly install resolved     _shasum: 'ac93c410e2ffc9cc7cf4b464b38289067f5e47b4',
+402 silly install resolved     _from: 'bytes@2.1.0',
+402 silly install resolved     _npmVersion: '1.4.28',
+402 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+402 silly install resolved     maintainers: [ [Object], [Object] ],
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: 'ac93c410e2ffc9cc7cf4b464b38289067f5e47b4',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/bytes/-/bytes-2.1.0.tgz' },
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/bytes/-/bytes-2.1.0.tgz' },
+402 silly install resolved   { name: 'raw-body',
+402 silly install resolved     description: 'Get and validate the raw body of a readable stream.',
+402 silly install resolved     version: '2.1.4',
+402 silly install resolved     author:
+402 silly install resolved      { name: 'Jonathan Ong',
+402 silly install resolved        email: 'me@jongleberry.com',
+402 silly install resolved        url: 'http://jongleberry.com' },
+402 silly install resolved     contributors: [ [Object], [Object] ],
+402 silly install resolved     license: 'MIT',
+402 silly install resolved     repository: { type: 'git', url: 'https://github.com/stream-utils/raw-body' },
+402 silly install resolved     dependencies: { bytes: '2.1.0', 'iconv-lite': '0.4.12', unpipe: '1.0.0' },
+402 silly install resolved     devDependencies:
+402 silly install resolved      { bluebird: '2.10.1',
+402 silly install resolved        istanbul: '0.3.21',
+402 silly install resolved        mocha: '2.2.5',
+402 silly install resolved        'readable-stream': '2.0.2',
+402 silly install resolved        through2: '2.0.0' },
+402 silly install resolved     engines: { node: '>= 0.8' },
+402 silly install resolved     files: [ 'HISTORY.md', 'LICENSE', 'README.md', 'index.js' ],
+402 silly install resolved     scripts:
+402 silly install resolved      { test: 'mocha --trace-deprecation --reporter spec --bail --check-leaks test/',
+402 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --trace-deprecation --reporter dot --check-leaks test/',
+402 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --trace-deprecation --reporter spec --check-leaks test/' },
+402 silly install resolved     gitHead: '66f380f89b1975b3e6c670faa8ebdb67919652ee',
+402 silly install resolved     bugs: { url: 'https://github.com/stream-utils/raw-body/issues' },
+402 silly install resolved     homepage: 'https://github.com/stream-utils/raw-body',
+402 silly install resolved     _id: 'raw-body@2.1.4',
+402 silly install resolved     _shasum: 'dcc3afe2e1fdfc620a812376f8e0fc3d2e62cb50',
+402 silly install resolved     _from: 'raw-body@>=2.1.4 <2.2.0',
+402 silly install resolved     _npmVersion: '1.4.28',
+402 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+402 silly install resolved     maintainers: [ [Object], [Object] ],
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: 'dcc3afe2e1fdfc620a812376f8e0fc3d2e62cb50',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/raw-body/-/raw-body-2.1.4.tgz' },
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/raw-body/-/raw-body-2.1.4.tgz' },
+402 silly install resolved   { name: 'qs',
+402 silly install resolved     description: 'A querystring parser that supports nesting and arrays, with a depth limit',
+402 silly install resolved     homepage: 'https://github.com/hapijs/qs',
+402 silly install resolved     version: '5.1.0',
+402 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/hapijs/qs.git' },
+402 silly install resolved     main: 'lib/index.js',
+402 silly install resolved     keywords: [ 'querystring', 'qs' ],
+402 silly install resolved     engines: '>=0.10.40',
+402 silly install resolved     dependencies: {},
+402 silly install resolved     devDependencies: { browserify: '^10.2.1', code: '1.x.x', lab: '5.x.x' },
+402 silly install resolved     scripts:
+402 silly install resolved      { test: 'lab -a code -t 100 -L',
+402 silly install resolved        'test-tap': 'lab -a code -r tap -o tests.tap',
+402 silly install resolved        'test-cov-html': 'lab -a code -r html -o coverage.html',
+402 silly install resolved        dist: 'browserify --standalone Qs lib/index.js > dist/qs.js' },
+402 silly install resolved     license: 'BSD-3-Clause',
+402 silly install resolved     gitHead: '9e9759ec5be2dd99ce90961bbff47075cd5a8160',
+402 silly install resolved     bugs: { url: 'https://github.com/hapijs/qs/issues' },
+402 silly install resolved     _id: 'qs@5.1.0',
+402 silly install resolved     _shasum: '4d932e5c7ea411cca76a312d39a606200fd50cd9',
+402 silly install resolved     _from: 'qs@5.1.0',
+402 silly install resolved     _npmVersion: '2.14.1',
+402 silly install resolved     _nodeVersion: '0.12.7',
+402 silly install resolved     _npmUser: { name: 'nlf', email: 'quitlahok@gmail.com' },
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: '4d932e5c7ea411cca76a312d39a606200fd50cd9',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/qs/-/qs-5.1.0.tgz' },
+402 silly install resolved     maintainers: [ [Object], [Object] ],
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/qs/-/qs-5.1.0.tgz' },
+402 silly install resolved   { name: 'iconv-lite',
+402 silly install resolved     description: 'Convert character encodings in pure javascript.',
+402 silly install resolved     version: '0.4.12',
+402 silly install resolved     license: 'MIT',
+402 silly install resolved     keywords: [ 'iconv', 'convert', 'charset', 'icu' ],
+402 silly install resolved     author: { name: 'Alexander Shtuchkin', email: 'ashtuchkin@gmail.com' },
+402 silly install resolved     contributors:
+402 silly install resolved      [ [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object],
+402 silly install resolved        [Object] ],
+402 silly install resolved     main: './lib/index.js',
+402 silly install resolved     homepage: 'https://github.com/ashtuchkin/iconv-lite',
+402 silly install resolved     bugs: { url: 'https://github.com/ashtuchkin/iconv-lite/issues' },
+402 silly install resolved     repository:
+402 silly install resolved      { type: 'git',
+402 silly install resolved        url: 'git://github.com/ashtuchkin/iconv-lite.git' },
+402 silly install resolved     engines: { node: '>=0.8.0' },
+402 silly install resolved     scripts:
+402 silly install resolved      { coverage: 'istanbul cover _mocha -- --grep .',
+402 silly install resolved        'coverage-open': 'open coverage/lcov-report/index.html',
+402 silly install resolved        test: 'mocha --reporter spec --grep .' },
+402 silly install resolved     browser: { './extend-node': false, './streams': false },
+402 silly install resolved     devDependencies:
+402 silly install resolved      { mocha: '*',
+402 silly install resolved        request: '2.47',
+402 silly install resolved        unorm: '*',
+402 silly install resolved        errto: '*',
+402 silly install resolved        async: '*',
+402 silly install resolved        istanbul: '*',
+402 silly install resolved        iconv: '2.1' },
+402 silly install resolved     gitHead: '5f5f71492e287c9c7231009103ddf9e8884df62d',
+402 silly install resolved     _id: 'iconv-lite@0.4.12',
+402 silly install resolved     _shasum: 'ef4bb2cb28f406d3c05fc89feea4504624b5ac87',
+402 silly install resolved     _from: 'iconv-lite@0.4.12',
+402 silly install resolved     _npmVersion: '2.14.4',
+402 silly install resolved     _nodeVersion: '4.1.1',
+402 silly install resolved     _npmUser: { name: 'ashtuchkin', email: 'ashtuchkin@gmail.com' },
+402 silly install resolved     maintainers: [ [Object] ],
+402 silly install resolved     dist:
+402 silly install resolved      { shasum: 'ef4bb2cb28f406d3c05fc89feea4504624b5ac87',
+402 silly install resolved        tarball: 'http://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.12.tgz' },
+402 silly install resolved     directories: {},
+402 silly install resolved     _resolved: 'https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.12.tgz' } ]
+403 info install on-finished@2.3.0 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+404 info install content-type@1.0.1 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+405 info install type-is@1.6.9 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+406 info install http-errors@1.3.1 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+407 info install debug@2.2.0 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+408 info install depd@1.1.0 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+409 info install bytes@2.1.0 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+410 info install raw-body@2.1.4 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+411 info install qs@5.1.0 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+412 info install iconv-lite@0.4.12 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser
+413 info installOne on-finished@2.3.0
+414 verbose installOne of on-finished to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+415 info installOne content-type@1.0.1
+416 verbose installOne of content-type to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+417 info installOne type-is@1.6.9
+418 verbose installOne of type-is to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+419 info installOne http-errors@1.3.1
+420 verbose installOne of http-errors to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+421 info installOne debug@2.2.0
+422 verbose installOne of debug to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+423 info installOne depd@1.1.0
+424 verbose installOne of depd to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+425 info installOne bytes@2.1.0
+426 verbose installOne of bytes to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+427 info installOne raw-body@2.1.4
+428 verbose installOne of raw-body to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+429 info installOne qs@5.1.0
+430 verbose installOne of qs to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+431 info installOne iconv-lite@0.4.12
+432 verbose installOne of iconv-lite to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser not in flight; installing
+433 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\content-type-6b5ebe08ba506161.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type
+434 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\http-errors-b24debddc81dc58d.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+435 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\debug-283f376aa0cf9f85.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug
+436 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\raw-body-402dedc54d235bc7.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body
+437 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\bytes-40ea1ed6a11a73e6.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes
+438 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\depd-d4e6042caeb615af.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd
+439 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\type-is-5751f31f95a885e5.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is
+440 silly install write writing content-type 1.0.1 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type
+441 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\iconv-lite-30f8fb4d7861aee1.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite
+442 silly install write writing http-errors 1.3.1 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+443 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\on-finished-23d8d2ed98c94393.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished
+444 silly install write writing debug 2.2.0 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug
+445 silly install write writing raw-body 2.1.4 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body
+446 silly install write writing bytes 2.1.0 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes
+447 silly install write writing depd 1.1.0 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd
+448 silly install write writing type-is 1.6.9 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is
+449 silly install write writing iconv-lite 0.4.12 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite
+450 silly install write writing on-finished 2.3.0 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished
+451 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\qs-fd4410a3b44176f6.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs
+452 silly install write writing qs 5.1.0 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs
+453 verbose unbuild node_modules\body-parser\node_modules\content-type
+454 verbose unbuild node_modules\body-parser\node_modules\http-errors
+455 verbose unbuild node_modules\body-parser\node_modules\debug
+456 verbose unbuild node_modules\body-parser\node_modules\raw-body
+457 verbose unbuild node_modules\body-parser\node_modules\bytes
+458 verbose unbuild node_modules\body-parser\node_modules\depd
+459 verbose unbuild node_modules\body-parser\node_modules\type-is
+460 verbose unbuild node_modules\body-parser\node_modules\iconv-lite
+461 verbose unbuild node_modules\body-parser\node_modules\on-finished
+462 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+463 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type
+464 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+465 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+466 verbose unbuild node_modules\body-parser\node_modules\qs
+467 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+468 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug
+469 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+470 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body
+471 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+472 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes
+473 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+474 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd
+475 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+476 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is
+477 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\content-type\1.0.1\package.tgz
+478 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type
+479 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type is being purged
+480 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type
+481 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+482 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite
+483 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\http-errors\1.3.1\package.tgz
+484 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+485 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors is being purged
+486 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+487 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+488 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished
+489 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\debug\2.2.0\package.tgz
+490 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug
+491 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug is being purged
+492 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug
+493 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\raw-body\2.1.4\package.tgz
+494 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body
+495 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body is being purged
+496 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body
+497 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\bytes\2.1.0\package.tgz
+498 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes
+499 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes is being purged
+500 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes
+501 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\depd\1.1.0\package.tgz
+502 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd
+503 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd is being purged
+504 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd
+505 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\type-is\1.6.9\package.tgz
+506 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is
+507 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is is being purged
+508 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is
+509 silly gunzTarPerm modes [ '777', '666' ]
+510 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\iconv-lite\0.4.12\package.tgz
+511 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite
+512 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite is being purged
+513 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite
+514 silly gunzTarPerm modes [ '777', '666' ]
+515 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\on-finished\2.3.0\package.tgz
+516 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished
+517 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished is being purged
+518 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished
+519 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+520 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs
+521 silly gunzTarPerm modes [ '777', '666' ]
+522 silly gunzTarPerm modes [ '777', '666' ]
+523 silly gunzTarPerm modes [ '777', '666' ]
+524 silly gunzTarPerm modes [ '777', '666' ]
+525 silly gunzTarPerm modes [ '777', '666' ]
+526 silly gunzTarPerm modes [ '777', '666' ]
+527 silly gunzTarPerm modes [ '777', '666' ]
+528 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\qs\5.1.0\package.tgz
+529 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs
+530 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs is being purged
+531 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs
+532 silly gunzTarPerm modes [ '777', '666' ]
+533 silly gunzTarPerm extractEntry package.json
+534 silly gunzTarPerm extractEntry package.json
+535 silly gunzTarPerm extractEntry package.json
+536 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+537 silly gunzTarPerm extractEntry package.json
+538 silly gunzTarPerm extractEntry package.json
+539 silly gunzTarPerm extractEntry package.json
+540 silly gunzTarPerm extractEntry package.json
+541 silly gunzTarPerm extractEntry package.json
+542 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+543 silly gunzTarPerm extractEntry package.json
+544 silly gunzTarPerm extractEntry package.json
+545 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+546 silly gunzTarPerm extractEntry README.md
+547 silly gunzTarPerm extractEntry LICENSE
+548 silly gunzTarPerm extractEntry README.md
+549 silly gunzTarPerm extractEntry LICENSE
+550 silly gunzTarPerm extractEntry .npmignore
+551 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+552 silly gunzTarPerm extractEntry node.js
+553 silly gunzTarPerm modified mode [ 'node.js', 420, 438 ]
+554 silly gunzTarPerm extractEntry README.md
+555 silly gunzTarPerm extractEntry LICENSE
+556 silly gunzTarPerm extractEntry index.js
+557 silly gunzTarPerm extractEntry History.md
+558 silly gunzTarPerm extractEntry LICENSE
+559 silly gunzTarPerm extractEntry index.js
+560 silly gunzTarPerm extractEntry README.md
+561 silly gunzTarPerm extractEntry LICENSE
+562 silly gunzTarPerm extractEntry .npmignore
+563 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+564 silly gunzTarPerm extractEntry README.md
+565 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+566 silly gunzTarPerm extractEntry README.md
+567 silly gunzTarPerm extractEntry LICENSE
+568 silly gunzTarPerm extractEntry .npmignore
+569 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+570 silly gunzTarPerm extractEntry README.md
+571 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+572 silly gunzTarPerm extractEntry index.js
+573 silly gunzTarPerm extractEntry HISTORY.md
+574 silly gunzTarPerm extractEntry index.js
+575 silly gunzTarPerm extractEntry HISTORY.md
+576 silly gunzTarPerm extractEntry debug.js
+577 silly gunzTarPerm modified mode [ 'debug.js', 420, 438 ]
+578 silly gunzTarPerm extractEntry browser.js
+579 silly gunzTarPerm modified mode [ 'browser.js', 420, 438 ]
+580 silly gunzTarPerm extractEntry Readme.md
+581 silly gunzTarPerm extractEntry History.md
+582 silly gunzTarPerm extractEntry Readme.md
+583 silly gunzTarPerm extractEntry lib/browser/index.js
+584 silly gunzTarPerm extractEntry lib/compat/buffer-concat.js
+585 silly gunzTarPerm extractEntry lib/compat/callsite-tostring.js
+586 silly gunzTarPerm extractEntry lib/compat/event-listener-count.js
+587 silly gunzTarPerm extractEntry lib/compat/index.js
+588 silly gunzTarPerm extractEntry index.js
+589 silly gunzTarPerm extractEntry HISTORY.md
+590 silly gunzTarPerm extractEntry index.js
+591 silly gunzTarPerm extractEntry HISTORY.md
+592 silly gunzTarPerm extractEntry index.js
+593 silly gunzTarPerm extractEntry HISTORY.md
+594 silly gunzTarPerm extractEntry LICENSE
+595 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+596 silly gunzTarPerm extractEntry CHANGELOG.md
+597 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 438 ]
+598 silly gunzTarPerm extractEntry LICENSE
+599 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+600 silly gunzTarPerm extractEntry encodings/dbcs-codec.js
+601 silly gunzTarPerm modified mode [ 'encodings/dbcs-codec.js', 420, 438 ]
+602 silly gunzTarPerm extractEntry Readme.md
+603 silly gunzTarPerm modified mode [ 'Readme.md', 420, 438 ]
+604 silly gunzTarPerm extractEntry CONTRIBUTING.md
+605 silly gunzTarPerm modified mode [ 'CONTRIBUTING.md', 420, 438 ]
+606 silly gunzTarPerm extractEntry encodings/dbcs-data.js
+607 silly gunzTarPerm modified mode [ 'encodings/dbcs-data.js', 420, 438 ]
+608 silly gunzTarPerm extractEntry bower.json
+609 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+610 silly gunzTarPerm extractEntry .jshintrc
+611 silly gunzTarPerm modified mode [ '.jshintrc', 420, 438 ]
+612 silly gunzTarPerm extractEntry encodings/index.js
+613 silly gunzTarPerm modified mode [ 'encodings/index.js', 420, 438 ]
+614 silly gunzTarPerm extractEntry encodings/internal.js
+615 silly gunzTarPerm modified mode [ 'encodings/internal.js', 420, 438 ]
+616 silly gunzTarPerm extractEntry .eslintignore
+617 silly gunzTarPerm modified mode [ '.eslintignore', 420, 438 ]
+618 silly gunzTarPerm extractEntry bower.json
+619 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+620 silly gunzTarPerm extractEntry encodings/sbcs-codec.js
+621 silly gunzTarPerm modified mode [ 'encodings/sbcs-codec.js', 420, 438 ]
+622 silly gunzTarPerm extractEntry encodings/sbcs-data-generated.js
+623 silly gunzTarPerm modified mode [ 'encodings/sbcs-data-generated.js', 420, 438 ]
+624 silly gunzTarPerm extractEntry encodings/sbcs-data.js
+625 silly gunzTarPerm modified mode [ 'encodings/sbcs-data.js', 420, 438 ]
+626 silly gunzTarPerm extractEntry component.json
+627 silly gunzTarPerm modified mode [ 'component.json', 420, 438 ]
+628 silly gunzTarPerm extractEntry Makefile
+629 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+630 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes\package.json
+631 silly gunzTarPerm extractEntry component.json
+632 silly gunzTarPerm modified mode [ 'component.json', 420, 438 ]
+633 silly gunzTarPerm extractEntry dist/qs.js
+634 silly gunzTarPerm modified mode [ 'dist/qs.js', 420, 438 ]
+635 info preinstall bytes@2.1.0
+636 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes\package.json
+637 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\package.json
+638 info preinstall http-errors@1.3.1
+639 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type\package.json
+640 silly gunzTarPerm extractEntry History.md
+641 silly gunzTarPerm modified mode [ 'History.md', 420, 438 ]
+642 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\package.json
+643 info preinstall content-type@1.0.1
+644 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes\package.json
+645 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished\package.json
+646 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type\package.json
+647 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\package.json
+648 silly prepareForInstallMany adding inherits@~2.0.1 from http-errors dependencies
+649 silly prepareForInstallMany adding statuses@1 from http-errors dependencies
+650 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\package.json
+651 silly gunzTarPerm extractEntry lib/index.js
+652 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 438 ]
+653 silly gunzTarPerm extractEntry lib/parse.js
+654 silly gunzTarPerm modified mode [ 'lib/parse.js', 420, 438 ]
+655 info preinstall on-finished@2.3.0
+656 info preinstall type-is@1.6.9
+657 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type\package.json
+658 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\package.json
+659 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished\package.json
+660 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\package.json
+661 silly cache add args [ 'inherits@~2.0.1', null ]
+662 verbose cache add spec inherits@~2.0.1
+663 silly cache add parsed spec { raw: 'inherits@~2.0.1',
+663 silly cache add   scope: null,
+663 silly cache add   name: 'inherits',
+663 silly cache add   rawSpec: '~2.0.1',
+663 silly cache add   spec: '>=2.0.1 <2.1.0',
+663 silly cache add   type: 'range' }
+664 silly addNamed inherits@>=2.0.1 <2.1.0
+665 verbose addNamed ">=2.0.1 <2.1.0" is a valid semver range for inherits
+666 silly addNameRange { name: 'inherits', range: '>=2.0.1 <2.1.0', hasData: false }
+667 silly mapToRegistry name inherits
+668 silly mapToRegistry using default registry
+669 silly mapToRegistry registry https://registry.npmjs.org/
+670 silly mapToRegistry uri https://registry.npmjs.org/inherits
+671 verbose addNameRange registry:https://registry.npmjs.org/inherits not in flight; fetching
+672 silly cache add args [ 'statuses@1', null ]
+673 verbose cache add spec statuses@1
+674 silly cache add parsed spec { raw: 'statuses@1',
+674 silly cache add   scope: null,
+674 silly cache add   name: 'statuses',
+674 silly cache add   rawSpec: '1',
+674 silly cache add   spec: '>=1.0.0 <2.0.0',
+674 silly cache add   type: 'range' }
+675 silly addNamed statuses@>=1.0.0 <2.0.0
+676 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for statuses
+677 silly addNameRange { name: 'statuses', range: '>=1.0.0 <2.0.0', hasData: false }
+678 silly mapToRegistry name statuses
+679 silly mapToRegistry using default registry
+680 silly mapToRegistry registry https://registry.npmjs.org/
+681 silly mapToRegistry uri https://registry.npmjs.org/statuses
+682 verbose addNameRange registry:https://registry.npmjs.org/statuses not in flight; fetching
+683 silly install resolved []
+684 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes
+685 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes
+686 info preinstall raw-body@2.1.4
+687 silly gunzTarPerm extractEntry lib/stringify.js
+688 silly gunzTarPerm modified mode [ 'lib/stringify.js', 420, 438 ]
+689 silly gunzTarPerm extractEntry lib/utils.js
+690 silly gunzTarPerm modified mode [ 'lib/utils.js', 420, 438 ]
+691 silly gunzTarPerm extractEntry encodings/utf16.js
+692 silly gunzTarPerm modified mode [ 'encodings/utf16.js', 420, 438 ]
+693 silly install resolved []
+694 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type
+695 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type
+696 silly prepareForInstallMany adding ee-first@1.1.1 from on-finished dependencies
+697 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\on-finished\package.json
+698 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\package.json
+699 verbose request uri https://registry.npmjs.org/inherits
+700 verbose request no auth needed
+701 info attempt registry request try #1 at 22:48:27
+702 verbose etag "DPT0HCFHSA8NG4H8MNHKEH1FI"
+703 http request GET https://registry.npmjs.org/inherits
+704 verbose request uri https://registry.npmjs.org/statuses
+705 verbose request no auth needed
+706 info attempt registry request try #1 at 22:48:27
+707 verbose etag "DBWZSA8GI6L8CNTRFYQ7KFMMA"
+708 http request GET https://registry.npmjs.org/statuses
+709 silly prepareForInstallMany adding media-typer@0.3.0 from type-is dependencies
+710 silly prepareForInstallMany adding mime-types@~2.1.7 from type-is dependencies
+711 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\package.json
+712 info linkStuff content-type@1.0.1
+713 silly linkStuff content-type@1.0.1 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules as its parent node_modules
+714 silly gunzTarPerm extractEntry .travis.yml
+715 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+716 silly gunzTarPerm extractEntry test/parse.js
+717 silly gunzTarPerm modified mode [ 'test/parse.js', 420, 438 ]
+718 verbose linkBins content-type@1.0.1
+719 verbose linkMans content-type@1.0.1
+720 verbose rebuildBundles content-type@1.0.1
+721 info linkStuff bytes@2.1.0
+722 silly linkStuff bytes@2.1.0 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules as its parent node_modules
+723 info install content-type@1.0.1
+724 silly cache add args [ 'ee-first@1.1.1', null ]
+725 verbose cache add spec ee-first@1.1.1
+726 silly cache add parsed spec { raw: 'ee-first@1.1.1',
+726 silly cache add   scope: null,
+726 silly cache add   name: 'ee-first',
+726 silly cache add   rawSpec: '1.1.1',
+726 silly cache add   spec: '1.1.1',
+726 silly cache add   type: 'version' }
+727 silly addNamed ee-first@1.1.1
+728 verbose addNamed "1.1.1" is a plain semver version for ee-first
+729 silly mapToRegistry name ee-first
+730 silly mapToRegistry using default registry
+731 silly mapToRegistry registry https://registry.npmjs.org/
+732 silly mapToRegistry uri https://registry.npmjs.org/ee-first
+733 verbose addNameVersion registry:https://registry.npmjs.org/ee-first not in flight; fetching
+734 silly cache add args [ 'media-typer@0.3.0', null ]
+735 verbose cache add spec media-typer@0.3.0
+736 silly cache add parsed spec { raw: 'media-typer@0.3.0',
+736 silly cache add   scope: null,
+736 silly cache add   name: 'media-typer',
+736 silly cache add   rawSpec: '0.3.0',
+736 silly cache add   spec: '0.3.0',
+736 silly cache add   type: 'version' }
+737 silly addNamed media-typer@0.3.0
+738 verbose addNamed "0.3.0" is a plain semver version for media-typer
+739 silly mapToRegistry name media-typer
+740 silly mapToRegistry using default registry
+741 silly mapToRegistry registry https://registry.npmjs.org/
+742 silly mapToRegistry uri https://registry.npmjs.org/media-typer
+743 verbose addNameVersion registry:https://registry.npmjs.org/media-typer not in flight; fetching
+744 silly cache add args [ 'mime-types@~2.1.7', null ]
+745 verbose cache add spec mime-types@~2.1.7
+746 silly cache add parsed spec { raw: 'mime-types@~2.1.7',
+746 silly cache add   scope: null,
+746 silly cache add   name: 'mime-types',
+746 silly cache add   rawSpec: '~2.1.7',
+746 silly cache add   spec: '>=2.1.7 <2.2.0',
+746 silly cache add   type: 'range' }
+747 silly addNamed mime-types@>=2.1.7 <2.2.0
+748 verbose addNamed ">=2.1.7 <2.2.0" is a valid semver range for mime-types
+749 silly addNameRange { name: 'mime-types', range: '>=2.1.7 <2.2.0', hasData: false }
+750 silly mapToRegistry name mime-types
+751 silly mapToRegistry using default registry
+752 silly mapToRegistry registry https://registry.npmjs.org/
+753 silly mapToRegistry uri https://registry.npmjs.org/mime-types
+754 verbose addNameRange registry:https://registry.npmjs.org/mime-types not in flight; fetching
+755 verbose linkBins bytes@2.1.0
+756 verbose linkMans bytes@2.1.0
+757 verbose rebuildBundles bytes@2.1.0
+758 info postinstall content-type@1.0.1
+759 info install bytes@2.1.0
+760 silly prepareForInstallMany adding unpipe@1.0.0 from raw-body dependencies
+761 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\package.json
+762 info postinstall bytes@2.1.0
+763 verbose request uri https://registry.npmjs.org/ee-first
+764 verbose request no auth needed
+765 info attempt registry request try #1 at 22:48:27
+766 verbose etag "28AY4PMFXJHG8YALE6QZHIRHL"
+767 http request GET https://registry.npmjs.org/ee-first
+768 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\content-type-6b5ebe08ba506161.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\content-type
+769 silly gunzTarPerm extractEntry test/stringify.js
+770 silly gunzTarPerm modified mode [ 'test/stringify.js', 420, 438 ]
+771 silly gunzTarPerm extractEntry test/utils.js
+772 silly gunzTarPerm modified mode [ 'test/utils.js', 420, 438 ]
+773 verbose request uri https://registry.npmjs.org/media-typer
+774 verbose request no auth needed
+775 info attempt registry request try #1 at 22:48:27
+776 verbose etag "EBBA17SMBE80K6FCTCN6G8KK3"
+777 http request GET https://registry.npmjs.org/media-typer
+778 verbose request uri https://registry.npmjs.org/mime-types
+779 verbose request no auth needed
+780 info attempt registry request try #1 at 22:48:27
+781 verbose etag "5E021C2P0BA35N73SRLTW02TQ"
+782 http request GET https://registry.npmjs.org/mime-types
+783 silly gunzTarPerm extractEntry encodings/utf7.js
+784 silly gunzTarPerm modified mode [ 'encodings/utf7.js', 420, 438 ]
+785 silly gunzTarPerm extractEntry encodings/tables/big5-added.json
+786 silly gunzTarPerm modified mode [ 'encodings/tables/big5-added.json', 420, 438 ]
+787 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\bytes-40ea1ed6a11a73e6.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\bytes
+788 silly cache add args [ 'unpipe@1.0.0', null ]
+789 verbose cache add spec unpipe@1.0.0
+790 silly cache add parsed spec { raw: 'unpipe@1.0.0',
+790 silly cache add   scope: null,
+790 silly cache add   name: 'unpipe',
+790 silly cache add   rawSpec: '1.0.0',
+790 silly cache add   spec: '1.0.0',
+790 silly cache add   type: 'version' }
+791 silly addNamed unpipe@1.0.0
+792 verbose addNamed "1.0.0" is a plain semver version for unpipe
+793 silly mapToRegistry name unpipe
+794 silly mapToRegistry using default registry
+795 silly mapToRegistry registry https://registry.npmjs.org/
+796 silly mapToRegistry uri https://registry.npmjs.org/unpipe
+797 verbose addNameVersion registry:https://registry.npmjs.org/unpipe not in flight; fetching
+798 verbose request uri https://registry.npmjs.org/unpipe
+799 verbose request no auth needed
+800 info attempt registry request try #1 at 22:48:27
+801 verbose etag "CUYWL81QRNALZ6DFGKEASW9Q0"
+802 http request GET https://registry.npmjs.org/unpipe
+803 silly gunzTarPerm extractEntry encodings/tables/cp936.json
+804 silly gunzTarPerm modified mode [ 'encodings/tables/cp936.json', 420, 438 ]
+805 silly gunzTarPerm extractEntry encodings/tables/cp949.json
+806 silly gunzTarPerm modified mode [ 'encodings/tables/cp949.json', 420, 438 ]
+807 silly gunzTarPerm extractEntry encodings/tables/cp950.json
+808 silly gunzTarPerm modified mode [ 'encodings/tables/cp950.json', 420, 438 ]
+809 silly gunzTarPerm extractEntry encodings/tables/eucjp.json
+810 silly gunzTarPerm modified mode [ 'encodings/tables/eucjp.json', 420, 438 ]
+811 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\package.json
+812 info preinstall debug@2.2.0
+813 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\package.json
+814 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd\package.json
+815 silly gunzTarPerm extractEntry encodings/tables/gb18030-ranges.json
+816 silly gunzTarPerm modified mode [ 'encodings/tables/gb18030-ranges.json', 420, 438 ]
+817 info preinstall depd@1.1.0
+818 silly prepareForInstallMany adding ms@0.7.1 from debug dependencies
+819 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\package.json
+820 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd\package.json
+821 silly gunzTarPerm extractEntry encodings/tables/gbk-added.json
+822 silly gunzTarPerm modified mode [ 'encodings/tables/gbk-added.json', 420, 438 ]
+823 silly gunzTarPerm extractEntry encodings/tables/shiftjis.json
+824 silly gunzTarPerm modified mode [ 'encodings/tables/shiftjis.json', 420, 438 ]
+825 silly gunzTarPerm extractEntry .travis.yml
+826 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+827 silly cache add args [ 'ms@0.7.1', null ]
+828 verbose cache add spec ms@0.7.1
+829 silly cache add parsed spec { raw: 'ms@0.7.1',
+829 silly cache add   scope: null,
+829 silly cache add   name: 'ms',
+829 silly cache add   rawSpec: '0.7.1',
+829 silly cache add   spec: '0.7.1',
+829 silly cache add   type: 'version' }
+830 silly addNamed ms@0.7.1
+831 verbose addNamed "0.7.1" is a plain semver version for ms
+832 silly mapToRegistry name ms
+833 silly mapToRegistry using default registry
+834 silly mapToRegistry registry https://registry.npmjs.org/
+835 silly mapToRegistry uri https://registry.npmjs.org/ms
+836 verbose addNameVersion registry:https://registry.npmjs.org/ms not in flight; fetching
+837 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd\package.json
+838 verbose request uri https://registry.npmjs.org/ms
+839 verbose request no auth needed
+840 info attempt registry request try #1 at 22:48:27
+841 verbose etag "6O39FMYH4BZFL1MBGQXTNOTX2"
+842 http request GET https://registry.npmjs.org/ms
+843 silly install resolved []
+844 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd
+845 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd
+846 info linkStuff depd@1.1.0
+847 silly linkStuff depd@1.1.0 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules as its parent node_modules
+848 silly gunzTarPerm extractEntry lib/bom-handling.js
+849 silly gunzTarPerm modified mode [ 'lib/bom-handling.js', 420, 438 ]
+850 verbose linkBins depd@1.1.0
+851 verbose linkMans depd@1.1.0
+852 verbose rebuildBundles depd@1.1.0
+853 info install depd@1.1.0
+854 info postinstall depd@1.1.0
+855 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\depd-d4e6042caeb615af.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\depd
+856 silly gunzTarPerm extractEntry lib/extend-node.js
+857 silly gunzTarPerm modified mode [ 'lib/extend-node.js', 420, 438 ]
+858 silly gunzTarPerm extractEntry lib/index.js
+859 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 438 ]
+860 silly gunzTarPerm extractEntry lib/streams.js
+861 silly gunzTarPerm modified mode [ 'lib/streams.js', 420, 438 ]
+862 silly gunzTarPerm extractEntry Changelog.md
+863 silly gunzTarPerm modified mode [ 'Changelog.md', 420, 438 ]
+864 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs\package.json
+865 info preinstall qs@5.1.0
+866 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs\package.json
+867 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs\package.json
+868 silly install resolved []
+869 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs
+870 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs
+871 info linkStuff qs@5.1.0
+872 silly linkStuff qs@5.1.0 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules as its parent node_modules
+873 verbose linkBins qs@5.1.0
+874 verbose linkMans qs@5.1.0
+875 verbose rebuildBundles qs@5.1.0
+876 info install qs@5.1.0
+877 info postinstall qs@5.1.0
+878 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\qs-fd4410a3b44176f6.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\qs
+879 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite\package.json
+880 info preinstall iconv-lite@0.4.12
+881 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite\package.json
+882 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite\package.json
+883 silly install resolved []
+884 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite
+885 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite
+886 info linkStuff iconv-lite@0.4.12
+887 silly linkStuff iconv-lite@0.4.12 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules as its parent node_modules
+888 verbose linkBins iconv-lite@0.4.12
+889 verbose linkMans iconv-lite@0.4.12
+890 verbose rebuildBundles iconv-lite@0.4.12
+891 info install iconv-lite@0.4.12
+892 info postinstall iconv-lite@0.4.12
+893 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\iconv-lite-30f8fb4d7861aee1.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\iconv-lite
+894 http 304 https://registry.npmjs.org/unpipe
+895 silly get cb [ 304,
+895 silly get   { date: 'Fri, 23 Oct 2015 20:48:25 GMT',
+895 silly get     via: '1.1 varnish',
+895 silly get     'cache-control': 'max-age=60',
+895 silly get     etag: '"CUYWL81QRNALZ6DFGKEASW9Q0"',
+895 silly get     age: '25',
+895 silly get     connection: 'keep-alive',
+895 silly get     'x-served-by': 'cache-fra1247-FRA',
+895 silly get     'x-cache': 'HIT',
+895 silly get     'x-cache-hits': '1',
+895 silly get     'x-timer': 'S1445633305.290563,VS0,VE0',
+895 silly get     vary: 'Accept' } ]
+896 verbose etag https://registry.npmjs.org/unpipe from cache
+897 verbose get saving unpipe to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\unpipe\.cache.json
+898 silly cache afterAdd unpipe@1.0.0
+899 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\unpipe\1.0.0\package\package.json not in flight; writing
+900 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\unpipe\1.0.0\package\package.json written
+901 silly install resolved [ { name: 'unpipe',
+901 silly install resolved     description: 'Unpipe a stream from all destinations',
+901 silly install resolved     version: '1.0.0',
+901 silly install resolved     author:
+901 silly install resolved      { name: 'Douglas Christopher Wilson',
+901 silly install resolved        email: 'doug@somethingdoug.com' },
+901 silly install resolved     license: 'MIT',
+901 silly install resolved     repository:
+901 silly install resolved      { type: 'git',
+901 silly install resolved        url: 'git+https://github.com/stream-utils/unpipe.git' },
+901 silly install resolved     devDependencies:
+901 silly install resolved      { istanbul: '0.3.15',
+901 silly install resolved        mocha: '2.2.5',
+901 silly install resolved        'readable-stream': '1.1.13' },
+901 silly install resolved     files: [ 'HISTORY.md', 'LICENSE', 'README.md', 'index.js' ],
+901 silly install resolved     engines: { node: '>= 0.8' },
+901 silly install resolved     scripts:
+901 silly install resolved      { test: 'mocha --reporter spec --bail --check-leaks test/',
+901 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/',
+901 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/' },
+901 silly install resolved     gitHead: 'd2df901c06487430e78dca62b6edb8bb2fc5e99d',
+901 silly install resolved     bugs: { url: 'https://github.com/stream-utils/unpipe/issues' },
+901 silly install resolved     homepage: 'https://github.com/stream-utils/unpipe',
+901 silly install resolved     _id: 'unpipe@1.0.0',
+901 silly install resolved     _shasum: 'b2bf4ee8514aae6165b4817829d21b2ef49904ec',
+901 silly install resolved     _from: 'unpipe@1.0.0',
+901 silly install resolved     _npmVersion: '1.4.28',
+901 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+901 silly install resolved     maintainers: [ [Object] ],
+901 silly install resolved     dist:
+901 silly install resolved      { shasum: 'b2bf4ee8514aae6165b4817829d21b2ef49904ec',
+901 silly install resolved        tarball: 'http://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz' },
+901 silly install resolved     directories: {},
+901 silly install resolved     _resolved: 'https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz',
+901 silly install resolved     readme: 'ERROR: No README data found!' } ]
+902 info install unpipe@1.0.0 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body
+903 info installOne unpipe@1.0.0
+904 verbose installOne of unpipe to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body not in flight; installing
+905 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\unpipe-20d1f1dd691fff3c.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe
+906 silly install write writing unpipe 1.0.0 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe
+907 verbose unbuild node_modules\body-parser\node_modules\raw-body\node_modules\unpipe
+908 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+909 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe
+910 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\unpipe\1.0.0\package.tgz
+911 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe
+912 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe is being purged
+913 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe
+914 silly gunzTarPerm modes [ '777', '666' ]
+915 silly gunzTarPerm extractEntry package.json
+916 silly gunzTarPerm extractEntry README.md
+917 silly gunzTarPerm extractEntry LICENSE
+918 silly gunzTarPerm extractEntry index.js
+919 silly gunzTarPerm extractEntry HISTORY.md
+920 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe\package.json
+921 info preinstall unpipe@1.0.0
+922 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe\package.json
+923 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe\package.json
+924 silly install resolved []
+925 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe
+926 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe
+927 info linkStuff unpipe@1.0.0
+928 silly linkStuff unpipe@1.0.0 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules as its parent node_modules
+929 verbose linkBins unpipe@1.0.0
+930 verbose linkMans unpipe@1.0.0
+931 verbose rebuildBundles unpipe@1.0.0
+932 info install unpipe@1.0.0
+933 info postinstall unpipe@1.0.0
+934 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\unpipe-20d1f1dd691fff3c.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body\node_modules\unpipe
+935 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body
+936 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body
+937 info linkStuff raw-body@2.1.4
+938 silly linkStuff raw-body@2.1.4 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules as its parent node_modules
+939 verbose linkBins raw-body@2.1.4
+940 verbose linkMans raw-body@2.1.4
+941 verbose rebuildBundles raw-body@2.1.4
+942 verbose rebuildBundles [ 'unpipe' ]
+943 info install raw-body@2.1.4
+944 info postinstall raw-body@2.1.4
+945 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\raw-body-402dedc54d235bc7.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\raw-body
+946 http 200 https://registry.npmjs.org/inherits
+947 silly get cb [ 200,
+947 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+947 silly get     etag: '"83S1U6S25IVR6LLBMEY64SYT2"',
+947 silly get     'content-type': 'application/json',
+947 silly get     'cache-control': 'max-age=60',
+947 silly get     'content-length': '7112',
+947 silly get     'accept-ranges': 'bytes',
+947 silly get     date: 'Fri, 23 Oct 2015 20:48:25 GMT',
+947 silly get     via: '1.1 varnish',
+947 silly get     age: '0',
+947 silly get     connection: 'keep-alive',
+947 silly get     'x-served-by': 'cache-fra1246-FRA',
+947 silly get     'x-cache': 'HIT',
+947 silly get     'x-cache-hits': '1',
+947 silly get     'x-timer': 'S1445633305.287947,VS0,VE99',
+947 silly get     vary: 'Accept' } ]
+948 verbose get saving inherits to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\inherits\.cache.json
+949 silly addNameRange number 2 { name: 'inherits', range: '>=2.0.1 <2.1.0', hasData: true }
+950 silly addNameRange versions [ 'inherits', [ '1.0.0', '2.0.0', '2.0.1', '1.0.1', '1.0.2' ] ]
+951 silly addNamed inherits@2.0.1
+952 verbose addNamed "2.0.1" is a plain semver version for inherits
+953 silly cache afterAdd inherits@2.0.1
+954 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\inherits\2.0.1\package\package.json not in flight; writing
+955 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\inherits\2.0.1\package\package.json written
+956 http 304 https://registry.npmjs.org/statuses
+957 silly get cb [ 304,
+957 silly get   { date: 'Fri, 23 Oct 2015 20:48:26 GMT',
+957 silly get     via: '1.1 varnish',
+957 silly get     'cache-control': 'max-age=60',
+957 silly get     etag: '"DBWZSA8GI6L8CNTRFYQ7KFMMA"',
+957 silly get     age: '26',
+957 silly get     connection: 'keep-alive',
+957 silly get     'x-served-by': 'cache-fra1230-FRA',
+957 silly get     'x-cache': 'HIT',
+957 silly get     'x-cache-hits': '1',
+957 silly get     'x-timer': 'S1445633306.589321,VS0,VE0',
+957 silly get     vary: 'Accept' } ]
+958 verbose etag https://registry.npmjs.org/statuses from cache
+959 verbose get saving statuses to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\statuses\.cache.json
+960 http 304 https://registry.npmjs.org/media-typer
+961 silly get cb [ 304,
+961 silly get   { date: 'Fri, 23 Oct 2015 20:48:26 GMT',
+961 silly get     via: '1.1 varnish',
+961 silly get     'cache-control': 'max-age=60',
+961 silly get     etag: '"EBBA17SMBE80K6FCTCN6G8KK3"',
+961 silly get     age: '57',
+961 silly get     connection: 'keep-alive',
+961 silly get     'x-served-by': 'cache-fra1224-FRA',
+961 silly get     'x-cache': 'HIT',
+961 silly get     'x-cache-hits': '1',
+961 silly get     'x-timer': 'S1445633306.588676,VS0,VE0',
+961 silly get     vary: 'Accept' } ]
+962 verbose etag https://registry.npmjs.org/media-typer from cache
+963 verbose get saving media-typer to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\media-typer\.cache.json
+964 http 304 https://registry.npmjs.org/ms
+965 silly get cb [ 304,
+965 silly get   { date: 'Fri, 23 Oct 2015 20:48:26 GMT',
+965 silly get     via: '1.1 varnish',
+965 silly get     'cache-control': 'max-age=60',
+965 silly get     etag: '"6O39FMYH4BZFL1MBGQXTNOTX2"',
+965 silly get     age: '44',
+965 silly get     connection: 'keep-alive',
+965 silly get     'x-served-by': 'cache-fra1239-FRA',
+965 silly get     'x-cache': 'HIT',
+965 silly get     'x-cache-hits': '1',
+965 silly get     'x-timer': 'S1445633306.597403,VS0,VE0',
+965 silly get     vary: 'Accept' } ]
+966 verbose etag https://registry.npmjs.org/ms from cache
+967 verbose get saving ms to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\ms\.cache.json
+968 http 304 https://registry.npmjs.org/mime-types
+969 silly get cb [ 304,
+969 silly get   { date: 'Fri, 23 Oct 2015 20:48:26 GMT',
+969 silly get     via: '1.1 varnish',
+969 silly get     'cache-control': 'max-age=60',
+969 silly get     etag: '"5E021C2P0BA35N73SRLTW02TQ"',
+969 silly get     age: '24',
+969 silly get     connection: 'keep-alive',
+969 silly get     'x-served-by': 'cache-fra1220-FRA',
+969 silly get     'x-cache': 'HIT',
+969 silly get     'x-cache-hits': '2',
+969 silly get     'x-timer': 'S1445633306.597338,VS0,VE0',
+969 silly get     vary: 'Accept' } ]
+970 verbose etag https://registry.npmjs.org/mime-types from cache
+971 verbose get saving mime-types to C:\Users\saphire\AppData\Roaming\npm-cache\registry.npmjs.org\mime-types\.cache.json
+972 silly addNameRange number 2 { name: 'statuses', range: '>=1.0.0 <2.0.0', hasData: true }
+973 silly addNameRange versions [ 'statuses',
+973 silly addNameRange   [ '1.0.1',
+973 silly addNameRange     '1.0.2',
+973 silly addNameRange     '1.0.3',
+973 silly addNameRange     '1.0.4',
+973 silly addNameRange     '1.1.0',
+973 silly addNameRange     '1.1.1',
+973 silly addNameRange     '1.2.0',
+973 silly addNameRange     '1.2.1' ] ]
+974 silly addNamed statuses@1.2.1
+975 verbose addNamed "1.2.1" is a plain semver version for statuses
+976 silly cache afterAdd statuses@1.2.1
+977 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\statuses\1.2.1\package\package.json not in flight; writing
+978 silly addNameRange number 2 { name: 'mime-types', range: '>=2.1.7 <2.2.0', hasData: true }
+979 silly addNameRange versions [ 'mime-types',
+979 silly addNameRange   [ '0.1.0',
+979 silly addNameRange     '1.0.0',
+979 silly addNameRange     '1.0.1',
+979 silly addNameRange     '1.0.2',
+979 silly addNameRange     '2.0.0',
+979 silly addNameRange     '2.0.1',
+979 silly addNameRange     '2.0.2',
+979 silly addNameRange     '2.0.3',
+979 silly addNameRange     '2.0.4',
+979 silly addNameRange     '2.0.5',
+979 silly addNameRange     '2.0.6',
+979 silly addNameRange     '2.0.7',
+979 silly addNameRange     '2.0.8',
+979 silly addNameRange     '2.0.9',
+979 silly addNameRange     '2.0.10',
+979 silly addNameRange     '2.0.11',
+979 silly addNameRange     '2.0.12',
+979 silly addNameRange     '2.0.13',
+979 silly addNameRange     '2.0.14',
+979 silly addNameRange     '2.1.0',
+979 silly addNameRange     '2.1.1',
+979 silly addNameRange     '2.1.2',
+979 silly addNameRange     '2.1.3',
+979 silly addNameRange     '2.1.4',
+979 silly addNameRange     '2.1.5',
+979 silly addNameRange     '2.1.6',
+979 silly addNameRange     '2.1.7' ] ]
+980 silly addNamed mime-types@2.1.7
+981 verbose addNamed "2.1.7" is a plain semver version for mime-types
+982 silly cache afterAdd ms@0.7.1
+983 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\ms\0.7.1\package\package.json not in flight; writing
+984 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\statuses\1.2.1\package\package.json written
+985 silly install resolved [ { name: 'inherits',
+985 silly install resolved     description: 'Browser-friendly inheritance fully compatible with standard node.js inherits()',
+985 silly install resolved     version: '2.0.1',
+985 silly install resolved     keywords:
+985 silly install resolved      [ 'inheritance',
+985 silly install resolved        'class',
+985 silly install resolved        'klass',
+985 silly install resolved        'oop',
+985 silly install resolved        'object-oriented',
+985 silly install resolved        'inherits',
+985 silly install resolved        'browser',
+985 silly install resolved        'browserify' ],
+985 silly install resolved     main: './inherits.js',
+985 silly install resolved     browser: './inherits_browser.js',
+985 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/inherits.git' },
+985 silly install resolved     license: 'ISC',
+985 silly install resolved     scripts: { test: 'node test' },
+985 silly install resolved     bugs: { url: 'https://github.com/isaacs/inherits/issues' },
+985 silly install resolved     _id: 'inherits@2.0.1',
+985 silly install resolved     dist:
+985 silly install resolved      { shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+985 silly install resolved        tarball: 'http://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz' },
+985 silly install resolved     _from: 'inherits@>=2.0.1 <2.1.0',
+985 silly install resolved     _npmVersion: '1.3.8',
+985 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+985 silly install resolved     maintainers: [ [Object] ],
+985 silly install resolved     directories: {},
+985 silly install resolved     _shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+985 silly install resolved     _resolved: 'https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz',
+985 silly install resolved     readme: 'ERROR: No README data found!',
+985 silly install resolved     homepage: 'https://github.com/isaacs/inherits' },
+985 silly install resolved   { name: 'statuses',
+985 silly install resolved     description: 'HTTP status utility',
+985 silly install resolved     version: '1.2.1',
+985 silly install resolved     author:
+985 silly install resolved      { name: 'Jonathan Ong',
+985 silly install resolved        email: 'me@jongleberry.com',
+985 silly install resolved        url: 'http://jongleberry.com' },
+985 silly install resolved     repository:
+985 silly install resolved      { type: 'git',
+985 silly install resolved        url: 'git+https://github.com/jshttp/statuses.git' },
+985 silly install resolved     license: 'MIT',
+985 silly install resolved     keywords: [ 'http', 'status', 'code' ],
+985 silly install resolved     files: [ 'index.js', 'codes.json', 'LICENSE' ],
+985 silly install resolved     devDependencies:
+985 silly install resolved      { 'csv-parse': '0.0.6',
+985 silly install resolved        istanbul: '0',
+985 silly install resolved        mocha: '1',
+985 silly install resolved        'stream-to-array': '2' },
+985 silly install resolved     scripts:
+985 silly install resolved      { build: 'node scripts/build.js',
+985 silly install resolved        update: 'node scripts/update.js',
+985 silly install resolved        test: 'mocha --reporter spec --bail --check-leaks',
+985 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks',
+985 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks' },
+985 silly install resolved     gitHead: '49e6ac7ae4c63ee8186f56cb52112a7eeda28ed7',
+985 silly install resolved     bugs: { url: 'https://github.com/jshttp/statuses/issues' },
+985 silly install resolved     homepage: 'https://github.com/jshttp/statuses',
+985 silly install resolved     _id: 'statuses@1.2.1',
+985 silly install resolved     _shasum: 'dded45cc18256d51ed40aec142489d5c61026d28',
+985 silly install resolved     _from: 'statuses@>=1.0.0 <2.0.0',
+985 silly install resolved     _npmVersion: '1.4.28',
+985 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+985 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+985 silly install resolved     dist:
+985 silly install resolved      { shasum: 'dded45cc18256d51ed40aec142489d5c61026d28',
+985 silly install resolved        tarball: 'http://registry.npmjs.org/statuses/-/statuses-1.2.1.tgz' },
+985 silly install resolved     directories: {},
+985 silly install resolved     _resolved: 'https://registry.npmjs.org/statuses/-/statuses-1.2.1.tgz',
+985 silly install resolved     readme: 'ERROR: No README data found!' } ]
+986 info install inherits@2.0.1 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+987 info install statuses@1.2.1 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+988 info installOne inherits@2.0.1
+989 verbose installOne of inherits to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors not in flight; installing
+990 info installOne statuses@1.2.1
+991 verbose installOne of statuses to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors not in flight; installing
+992 silly cache afterAdd media-typer@0.3.0
+993 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\media-typer\0.3.0\package\package.json not in flight; writing
+994 silly cache afterAdd mime-types@2.1.7
+995 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\mime-types\2.1.7\package\package.json not in flight; writing
+996 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\statuses-7f9c688590372d8d.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses
+997 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\inherits-23bf48b4a16df2e5.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits
+998 silly install write writing statuses 1.2.1 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses
+999 silly install write writing inherits 2.0.1 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits
+1000 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\media-typer\0.3.0\package\package.json written
+1001 verbose unbuild node_modules\body-parser\node_modules\http-errors\node_modules\statuses
+1002 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\ms\0.7.1\package\package.json written
+1003 silly install resolved [ { name: 'ms',
+1003 silly install resolved     version: '0.7.1',
+1003 silly install resolved     description: 'Tiny ms conversion utility',
+1003 silly install resolved     repository: { type: 'git', url: 'git://github.com/guille/ms.js.git' },
+1003 silly install resolved     main: './index',
+1003 silly install resolved     devDependencies: { mocha: '*', 'expect.js': '*', serve: '*' },
+1003 silly install resolved     component: { scripts: [Object] },
+1003 silly install resolved     gitHead: '713dcf26d9e6fd9dbc95affe7eff9783b7f1b909',
+1003 silly install resolved     bugs: { url: 'https://github.com/guille/ms.js/issues' },
+1003 silly install resolved     homepage: 'https://github.com/guille/ms.js',
+1003 silly install resolved     _id: 'ms@0.7.1',
+1003 silly install resolved     scripts: {},
+1003 silly install resolved     _shasum: '9cd13c03adbff25b65effde7ce864ee952017098',
+1003 silly install resolved     _from: 'ms@0.7.1',
+1003 silly install resolved     _npmVersion: '2.7.5',
+1003 silly install resolved     _nodeVersion: '0.12.2',
+1003 silly install resolved     _npmUser: { name: 'rauchg', email: 'rauchg@gmail.com' },
+1003 silly install resolved     maintainers: [ [Object] ],
+1003 silly install resolved     dist:
+1003 silly install resolved      { shasum: '9cd13c03adbff25b65effde7ce864ee952017098',
+1003 silly install resolved        tarball: 'http://registry.npmjs.org/ms/-/ms-0.7.1.tgz' },
+1003 silly install resolved     directories: {},
+1003 silly install resolved     _resolved: 'https://registry.npmjs.org/ms/-/ms-0.7.1.tgz',
+1003 silly install resolved     readme: 'ERROR: No README data found!' } ]
+1004 info install ms@0.7.1 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug
+1005 info installOne ms@0.7.1
+1006 verbose installOne of ms to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug not in flight; installing
+1007 verbose afterAdd C:\Users\saphire\AppData\Roaming\npm-cache\mime-types\2.1.7\package\package.json written
+1008 silly install resolved [ { name: 'media-typer',
+1008 silly install resolved     description: 'Simple RFC 6838 media type parser and formatter',
+1008 silly install resolved     version: '0.3.0',
+1008 silly install resolved     author:
+1008 silly install resolved      { name: 'Douglas Christopher Wilson',
+1008 silly install resolved        email: 'doug@somethingdoug.com' },
+1008 silly install resolved     license: 'MIT',
+1008 silly install resolved     repository:
+1008 silly install resolved      { type: 'git',
+1008 silly install resolved        url: 'git+https://github.com/jshttp/media-typer.git' },
+1008 silly install resolved     devDependencies: { istanbul: '0.3.2', mocha: '~1.21.4', should: '~4.0.4' },
+1008 silly install resolved     files: [ 'LICENSE', 'HISTORY.md', 'index.js' ],
+1008 silly install resolved     engines: { node: '>= 0.6' },
+1008 silly install resolved     scripts:
+1008 silly install resolved      { test: 'mocha --reporter spec --check-leaks --bail test/',
+1008 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/',
+1008 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/' },
+1008 silly install resolved     gitHead: 'd49d41ffd0bb5a0655fa44a59df2ec0bfc835b16',
+1008 silly install resolved     bugs: { url: 'https://github.com/jshttp/media-typer/issues' },
+1008 silly install resolved     homepage: 'https://github.com/jshttp/media-typer',
+1008 silly install resolved     _id: 'media-typer@0.3.0',
+1008 silly install resolved     _shasum: '8710d7af0aa626f8fffa1ce00168545263255748',
+1008 silly install resolved     _from: 'media-typer@0.3.0',
+1008 silly install resolved     _npmVersion: '1.4.21',
+1008 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+1008 silly install resolved     maintainers: [ [Object] ],
+1008 silly install resolved     dist:
+1008 silly install resolved      { shasum: '8710d7af0aa626f8fffa1ce00168545263255748',
+1008 silly install resolved        tarball: 'http://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz' },
+1008 silly install resolved     directories: {},
+1008 silly install resolved     _resolved: 'https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz',
+1008 silly install resolved     readme: 'ERROR: No README data found!' },
+1008 silly install resolved   { name: 'mime-types',
+1008 silly install resolved     description: 'The ultimate javascript content-type utility.',
+1008 silly install resolved     version: '2.1.7',
+1008 silly install resolved     contributors: [ [Object], [Object], [Object] ],
+1008 silly install resolved     license: 'MIT',
+1008 silly install resolved     keywords: [ 'mime', 'types' ],
+1008 silly install resolved     repository:
+1008 silly install resolved      { type: 'git',
+1008 silly install resolved        url: 'git+https://github.com/jshttp/mime-types.git' },
+1008 silly install resolved     dependencies: { 'mime-db': '~1.19.0' },
+1008 silly install resolved     devDependencies: { istanbul: '0.3.20', mocha: '~1.21.5' },
+1008 silly install resolved     files: [ 'HISTORY.md', 'LICENSE', 'index.js' ],
+1008 silly install resolved     engines: { node: '>= 0.6' },
+1008 silly install resolved     scripts:
+1008 silly install resolved      { test: 'mocha --reporter spec test/test.js',
+1008 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js',
+1008 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js' },
+1008 silly install resolved     gitHead: '43f860c7df4a70246272194d601348865d550298',
+1008 silly install resolved     bugs: { url: 'https://github.com/jshttp/mime-types/issues' },
+1008 silly install resolved     homepage: 'https://github.com/jshttp/mime-types',
+1008 silly install resolved     _id: 'mime-types@2.1.7',
+1008 silly install resolved     _shasum: 'ff603970e3c731ef6f7f4df3c9a0f463a13c2755',
+1008 silly install resolved     _from: 'mime-types@>=2.1.7 <2.2.0',
+1008 silly install resolved     _npmVersion: '1.4.28',
+1008 silly install resolved     _npmUser: { name: 'dougwilson', email: 'doug@somethingdoug.com' },
+1008 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+1008 silly install resolved     dist:
+1008 silly install resolved      { shasum: 'ff603970e3c731ef6f7f4df3c9a0f463a13c2755',
+1008 silly install resolved        tarball: 'http://registry.npmjs.org/mime-types/-/mime-types-2.1.7.tgz' },
+1008 silly install resolved     directories: {},
+1008 silly install resolved     _resolved: 'https://registry.npmjs.org/mime-types/-/mime-types-2.1.7.tgz',
+1008 silly install resolved     readme: 'ERROR: No README data found!' } ]
+1009 info install media-typer@0.3.0 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is
+1010 info install mime-types@2.1.7 into C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is
+1011 info installOne media-typer@0.3.0
+1012 verbose installOne of media-typer to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is not in flight; installing
+1013 info installOne mime-types@2.1.7
+1014 verbose installOne of mime-types to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is not in flight; installing
+1015 verbose unbuild node_modules\body-parser\node_modules\http-errors\node_modules\inherits
+1016 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+1017 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses
+1018 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+1019 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits
+1020 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\statuses\1.2.1\package.tgz
+1021 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses
+1022 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses is being purged
+1023 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses
+1024 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\inherits\2.0.1\package.tgz
+1025 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits
+1026 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits is being purged
+1027 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits
+1028 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\media-typer-619e076c8cfeb22a.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer
+1029 silly gunzTarPerm modes [ '777', '666' ]
+1030 silly gunzTarPerm modes [ '777', '666' ]
+1031 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\ms-75f1aaef079db5f0.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms
+1032 silly install write writing media-typer 0.3.0 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer
+1033 verbose lock using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\mime-types-061e8a607b20fe4f.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types
+1034 silly install write writing ms 0.7.1 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms
+1035 silly install write writing mime-types 2.1.7 to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types
+1036 silly gunzTarPerm extractEntry package.json
+1037 verbose unbuild node_modules\body-parser\node_modules\type-is\node_modules\media-typer
+1038 silly gunzTarPerm extractEntry package.json
+1039 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+1040 verbose unbuild node_modules\body-parser\node_modules\debug\node_modules\ms
+1041 verbose unbuild node_modules\body-parser\node_modules\type-is\node_modules\mime-types
+1042 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+1043 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer
+1044 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+1045 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms
+1046 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\media-typer\0.3.0\package.tgz
+1047 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer
+1048 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer is being purged
+1049 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer
+1050 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types is being purged from base C:\Users\saphire\Desktop\server\AGHacksServer
+1051 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types
+1052 silly gunzTarPerm extractEntry README.md
+1053 silly gunzTarPerm extractEntry LICENSE
+1054 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\ms\0.7.1\package.tgz
+1055 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms
+1056 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms is being purged
+1057 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms
+1058 silly gunzTarPerm modes [ '777', '666' ]
+1059 verbose tar unpack C:\Users\saphire\AppData\Roaming\npm-cache\mime-types\2.1.7\package.tgz
+1060 verbose tar unpacking to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types
+1061 silly gentlyRm C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types is being purged
+1062 verbose gentlyRm don't care about contents; nuking C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types
+1063 silly gunzTarPerm extractEntry README.md
+1064 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+1065 silly gunzTarPerm extractEntry LICENSE
+1066 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+1067 silly gunzTarPerm modes [ '777', '666' ]
+1068 silly gunzTarPerm modes [ '777', '666' ]
+1069 silly gunzTarPerm extractEntry package.json
+1070 silly gunzTarPerm extractEntry package.json
+1071 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+1072 silly gunzTarPerm extractEntry package.json
+1073 silly gunzTarPerm extractEntry inherits.js
+1074 silly gunzTarPerm modified mode [ 'inherits.js', 420, 438 ]
+1075 silly gunzTarPerm extractEntry inherits_browser.js
+1076 silly gunzTarPerm modified mode [ 'inherits_browser.js', 420, 438 ]
+1077 silly gunzTarPerm extractEntry index.js
+1078 silly gunzTarPerm extractEntry codes.json
+1079 silly gunzTarPerm extractEntry README.md
+1080 silly gunzTarPerm extractEntry LICENSE
+1081 silly gunzTarPerm extractEntry .npmignore
+1082 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+1083 silly gunzTarPerm extractEntry README.md
+1084 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+1085 silly gunzTarPerm extractEntry README.md
+1086 silly gunzTarPerm extractEntry LICENSE
+1087 silly gunzTarPerm extractEntry LICENSE
+1088 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+1089 silly gunzTarPerm extractEntry index.js
+1090 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+1091 silly gunzTarPerm extractEntry index.js
+1092 silly gunzTarPerm extractEntry HISTORY.md
+1093 silly gunzTarPerm extractEntry test.js
+1094 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
+1095 silly gunzTarPerm extractEntry index.js
+1096 silly gunzTarPerm extractEntry HISTORY.md
+1097 silly gunzTarPerm extractEntry History.md
+1098 silly gunzTarPerm modified mode [ 'History.md', 420, 438 ]
+1099 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits\package.json
+1100 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses\package.json
+1101 info preinstall inherits@2.0.1
+1102 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits\package.json
+1103 info preinstall statuses@1.2.1
+1104 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses\package.json
+1105 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits\package.json
+1106 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses\package.json
+1107 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer\package.json
+1108 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types\package.json
+1109 silly install resolved []
+1110 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits
+1111 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits
+1112 silly install resolved []
+1113 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses
+1114 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses
+1115 info preinstall media-typer@0.3.0
+1116 info preinstall mime-types@2.1.7
+1117 verbose write writing to C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms\package.json
+1118 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer\package.json
+1119 info linkStuff inherits@2.0.1
+1120 silly linkStuff inherits@2.0.1 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules as its parent node_modules
+1121 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types\package.json
+1122 verbose linkBins inherits@2.0.1
+1123 verbose linkMans inherits@2.0.1
+1124 verbose rebuildBundles inherits@2.0.1
+1125 info linkStuff statuses@1.2.1
+1126 silly linkStuff statuses@1.2.1 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules as its parent node_modules
+1127 info install inherits@2.0.1
+1128 verbose linkBins statuses@1.2.1
+1129 verbose linkMans statuses@1.2.1
+1130 verbose rebuildBundles statuses@1.2.1
+1131 info preinstall ms@0.7.1
+1132 info postinstall inherits@2.0.1
+1133 info install statuses@1.2.1
+1134 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer\package.json
+1135 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms\package.json
+1136 silly prepareForInstallMany adding mime-db@~1.19.0 from mime-types dependencies
+1137 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\mime-types\package.json
+1138 info postinstall statuses@1.2.1
+1139 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\inherits-23bf48b4a16df2e5.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\inherits
+1140 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\statuses-7f9c688590372d8d.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors\node_modules\statuses
+1141 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+1142 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+1143 silly install resolved []
+1144 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer
+1145 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer
+1146 verbose readDependencies loading dependencies from C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms\package.json
+1147 silly cache add args [ 'mime-db@~1.19.0', null ]
+1148 verbose cache add spec mime-db@~1.19.0
+1149 silly cache add parsed spec { raw: 'mime-db@~1.19.0',
+1149 silly cache add   scope: null,
+1149 silly cache add   name: 'mime-db',
+1149 silly cache add   rawSpec: '~1.19.0',
+1149 silly cache add   spec: '>=1.19.0 <1.20.0',
+1149 silly cache add   type: 'range' }
+1150 silly addNamed mime-db@>=1.19.0 <1.20.0
+1151 verbose addNamed ">=1.19.0 <1.20.0" is a valid semver range for mime-db
+1152 silly addNameRange { name: 'mime-db', range: '>=1.19.0 <1.20.0', hasData: false }
+1153 silly mapToRegistry name mime-db
+1154 silly mapToRegistry using default registry
+1155 silly mapToRegistry registry https://registry.npmjs.org/
+1156 silly mapToRegistry uri https://registry.npmjs.org/mime-db
+1157 verbose addNameRange registry:https://registry.npmjs.org/mime-db not in flight; fetching
+1158 info linkStuff http-errors@1.3.1
+1159 silly linkStuff http-errors@1.3.1 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules as its parent node_modules
+1160 info linkStuff media-typer@0.3.0
+1161 silly linkStuff media-typer@0.3.0 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules as its parent node_modules
+1162 verbose linkBins http-errors@1.3.1
+1163 verbose linkMans http-errors@1.3.1
+1164 verbose rebuildBundles http-errors@1.3.1
+1165 verbose linkBins media-typer@0.3.0
+1166 verbose linkMans media-typer@0.3.0
+1167 verbose rebuildBundles media-typer@0.3.0
+1168 silly install resolved []
+1169 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms
+1170 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms
+1171 verbose rebuildBundles [ 'inherits', 'statuses' ]
+1172 info install http-errors@1.3.1
+1173 info install media-typer@0.3.0
+1174 verbose request uri https://registry.npmjs.org/mime-db
+1175 verbose request no auth needed
+1176 info attempt registry request try #1 at 22:48:32
+1177 verbose etag "6SCT70RUYM18UG97XGE3JN4HI"
+1178 http request GET https://registry.npmjs.org/mime-db
+1179 info postinstall http-errors@1.3.1
+1180 info postinstall media-typer@0.3.0
+1181 info linkStuff ms@0.7.1
+1182 silly linkStuff ms@0.7.1 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules as its parent node_modules
+1183 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\http-errors-b24debddc81dc58d.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\http-errors
+1184 verbose linkBins ms@0.7.1
+1185 verbose linkMans ms@0.7.1
+1186 verbose rebuildBundles ms@0.7.1
+1187 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\media-typer-619e076c8cfeb22a.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\type-is\node_modules\media-typer
+1188 info install ms@0.7.1
+1189 info postinstall ms@0.7.1
+1190 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\ms-75f1aaef079db5f0.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug\node_modules\ms
+1191 verbose about to build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug
+1192 info build C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug
+1193 info linkStuff debug@2.2.0
+1194 silly linkStuff debug@2.2.0 has C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules as its parent node_modules
+1195 verbose linkBins debug@2.2.0
+1196 verbose linkMans debug@2.2.0
+1197 verbose rebuildBundles debug@2.2.0
+1198 verbose rebuildBundles [ 'ms' ]
+1199 info install debug@2.2.0
+1200 info postinstall debug@2.2.0
+1201 verbose unlock done using C:\Users\saphire\AppData\Roaming\npm-cache\_locks\debug-283f376aa0cf9f85.lock for C:\Users\saphire\Desktop\server\AGHacksServer\node_modules\body-parser\node_modules\debug
+1202 verbose stack Error: read ECONNRESET
+1202 verbose stack     at exports._errnoException (util.js:746:11)
+1202 verbose stack     at TCP.onread (net.js:559:26)
+1203 verbose cwd C:\Users\saphire\Desktop\server\AGHacksServer
+1204 error Windows_NT 6.1.7601
+1205 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "body-parser" "--save"
+1206 error node v0.12.5
+1207 error npm  v2.11.2
+1208 error code ECONNRESET
+1209 error errno ECONNRESET
+1210 error syscall read
+1211 error network read ECONNRESET
+1211 error network This is most likely not a problem with npm itself
+1211 error network and is related to network connectivity.
+1211 error network In most cases you are behind a proxy or have bad network settings.
+1211 error network
+1211 error network If you are behind a proxy, please make sure that the
+1211 error network 'proxy' config is set properly.  See: 'npm help config'
+1212 verbose exit [ 1, true ]
