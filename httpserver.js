@@ -34,7 +34,7 @@ app.use(allowCrossDomain);
 // POST http://localhost:8080/api/users
 // parameters sent with 
 app.post('/modifyTime', function(req, res) {
-	console.log(req);
+	console.log(req.body);
 	res.send('It Works!! Path Hit: ' + req.url);
     //res.send(user_id + ' ' + token + ' ' + geo);
 });
