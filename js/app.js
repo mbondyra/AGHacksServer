@@ -13,7 +13,7 @@ $(document).foundation();
 var app = angular.module('trunkApp', ['ngRoute']);
 
 // basic routing config
-app.config(function ($routeProvider, $httpProvider) {
+app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/start.html',
