@@ -12,12 +12,16 @@
 
     <!-- SCROLLS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- SPELLS -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/end.js"></script>
+    <script src="js/controllers/main.js"></script>
     <script src="js/controllers/start.js"></script>
     <script src="js/controllers/game.js"></script>
     <script src="js/controllers/rank.js"></script>
@@ -27,7 +31,7 @@
     <script src="js/services/gameData.js"></script>
 </head>
 
-<body>
+<body ng-app="hacksApp">
 <div class="container">
     <div ng-view=""></div>
 </div>

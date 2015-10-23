@@ -4,14 +4,6 @@
 
 'use strict';
 
-app.controller('GameOverCtrl',['$scope', '$location', 'ConfigService', 'AuthenticationService', function($scope, $location, ConfigService, AuthenticationService){
+app.controller('GameOverCtrl',['$scope', '$location', function($scope, $location){
 
-    ConfigService.getMenu()
-        .then(
-        function(res){
-            $scope.menu = res.data;
-        },
-        function(error){
-            throw error.status+" : "+error.statusText;
-        });
 }]);

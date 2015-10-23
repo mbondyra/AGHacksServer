@@ -4,14 +4,15 @@
 
 'use strict';
 
-app.controller('NewGameCtrl',['$scope', '$location', 'ConfigService', 'AuthenticationService', function($scope, $location, ConfigService, AuthenticationService){
+app.controller('NewGameCtrl',['$scope', '$location', '$http', 'appConfig', function($scope, $location, $http, appConfig){
+    $scope.game = {};
 
-    ConfigService.getMenu()
-        .then(
-        function(res){
-            $scope.menu = res.data;
-        },
-        function(error){
-            throw error.status+" : "+error.statusText;
-        });
+    $scope.create = function(game){
+        $http.post(appConfig.gameServerApi+'/modifyTime',game)
+            .then(function(response){
+                console.log(response);
+            },function(error){
+                console.log(error)
+            });
+    }
 }]);
