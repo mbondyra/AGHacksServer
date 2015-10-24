@@ -29,7 +29,6 @@ var counterInterval;
 
 
 app.get('/game/players', function(req, res){
-	var publicPlayers = game.players;
 	res.send({players: game.players});
 });
 
@@ -38,9 +37,7 @@ app.get('/game/status', function(req, res){
 });
 
 app.get('/game/:id', function (req, res){
-	console.log(req.params.id)
 	var player = getPlayerById(req.params.id);
-	console.log(player)
 	res.send({
 		time: game.timeRemaining,
 		puzzle: player.puzzle
@@ -57,7 +54,6 @@ var Player = function (id, name){
 };
 
 var getPlayerById =  function (id){
-	console.log(game.players)
 	for (var i = 0; i < game.players.length; i++){
 		if (id == game.players[i].id){
 			return game.players[i];
