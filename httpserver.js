@@ -33,8 +33,6 @@ app.get('/game/status', function(req, res){
 	res.send({status: game.status});
 });
 
-
-
 app.get('/game/:id', function (req, res){
 	var player = getPlayerById(req.params.id);
 	res.send({
@@ -151,6 +149,9 @@ var server = app.listen(PORT, function(){
 
 var Puzzle;
 Puzzle = {
+	getRandom: function(min, max){
+		return Math.floor(Math.random()*(max-min+1)+min)
+	},
 	Sum: {
 		result : function (inputValues) {
 			return inputValues.val1 + inputValues.val2;
@@ -159,24 +160,29 @@ Puzzle = {
 			return {
 				type:"sum",
 				inputValues:{
-					val1:Math.random(),
-					val2:Math.random()
+					val1:Puzzle.getRandom(1,10),
+					val2:Puzzle.getRandom(1,10)
 				}
 			}
 		}
 	},
 	ConvertBase: {
+		getRandomBase: function(){
+			var standardBases = [2,8,10,16];
+			return standardBases[Puzzle.getRandom(0,3)];
+		},
 		result : function (inputValues) {
 			var num = parseInt(inputValues.number, inputValues.in_base);
 			return num.toString(inputValues.out_base);
 		},
+
 		createNew : function () {
 			return {
 				type:"convertBase",
 				inputValues: {
-					number: Math.random(),
-					in_base : 10,
-					out_base : 2
+					number: Puzzle.getRandom(1,10),
+					in_base : Puzzle.ConvertBase.getRandomBase(),
+					out_base : Puzzle.ConvertBase.getRandomBase()
 				}
 			}
 		}
