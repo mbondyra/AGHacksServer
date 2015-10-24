@@ -12,6 +12,10 @@ var allowCrossDomain = function(req, res, next) {
 	next();
 };
 
+var logger = function(log){
+	console.log(log);
+}
+
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -91,7 +95,6 @@ app.post('/game/start', function(req, res) {
 		time : game.timeRemaining
 	});
 });
-
 
 app.post('/game/end', function(req, res) {
 
@@ -185,6 +188,34 @@ Puzzle = {
 					out_base : Puzzle.ConvertBase.getRandomBase()
 				}
 			}
+		}
+	},
+	Simon:{
+		result : function() {
+			return true
+		},
+		createNew: function(){
+			var inputValues = [];
+			for (var i = 0; i < 12; i++){
+				inputValues += Puzzle.getRandom(0,9);
+			}
+			return {
+				type: "Simon",
+				inputValues: inputValues
+			}
+		}
+	},
+	LedFun: {
+		createNew: function (){
+			var ledCombination = [{
+
+			},{
+
+			}
+			];
+			var rules = [
+
+			];
 		}
 	}
 };
