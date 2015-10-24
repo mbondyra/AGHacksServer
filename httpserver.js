@@ -2,12 +2,9 @@
 var http = require('http');
 var fs = require('fs');
 var bodyParser = require('body-parser');
-var spawn = require("child_process").spawn;
 var express = require('express');
 
-
 const PORT = 8081;
-var database = 'database.json';
 
 var allowCrossDomain = function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -52,7 +49,6 @@ app.post('/new/player', function(req, res){
 			}
 		}
 	};
-
 	game.players.push(player);
 	game.secretCodes.push({
 		code: (Math.floor(Math.random() *10)),
@@ -61,7 +57,6 @@ app.post('/new/player', function(req, res){
 	res.send({id: player.id});
 
 });
-
 
 app.post('/game/end', function(req, res) {
 	game.status = 'end';
@@ -98,7 +93,6 @@ app.post('/new/game', function(req, res) {
 app.post('/game/start', function(req, res) {
 	game.status = 'inprogress';
 	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
-	timeHandler.saveTimeToFile();
 	timeHandler.countdown();
 	res.send({
 		time : game.timeRemaining
@@ -210,7 +204,7 @@ var puzzle;
 puzzle = {
 	sum: {
 		result : function (inputValues) {
-			return inputValues.val1 + inputValues.val2
+			return inputValues.val1 + inputValues.val2;
 		}
 	},
 	convertBase: {
@@ -240,20 +234,9 @@ var timeHandler = {
 			}
 		}, 1000);
 	},
-	saveTimeToFile: function(){
-		fs.writeFile(database,JSON.stringify({"timeRemaining":game.timeRemaining}));
-	},
+
 	convertTimeToEpoch: function(min){
 		return  Date.now()+min*60000;
-	},
-	updateFile: function(dt, callback){
-		 fs.readFile(database, function(err, data){
-			var objFile = JSON.parse(data);
-			objFile.realTime = timeHandler.updateRealTime();
-			objFile.timeRemaining = timeHandler.updateTimeRemaining(objFile.timeRemaining, dt);
-			fs.writeFile(database,JSON.stringify(objFile));
-			callback();
-		});
 	},
 	updateRealTime: function(){
 		return new Date().getTime();
