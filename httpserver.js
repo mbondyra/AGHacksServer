@@ -198,10 +198,11 @@ Puzzle = {
 			while (in_base == out_base){
 				out_base = standardBases[Puzzle.getRandom(0,3)];
 			}
+			var randNum = Puzzle.getRandom(1,32);
 			return {
 				type:"convertbase",
 				inputValues: {
-					number: parseInt(Puzzle.getRandom(1,32),in_base),
+					number: randNum.toString(in_base),
 					in_base : in_base,
 					out_base : out_base
 				}
