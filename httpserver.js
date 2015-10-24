@@ -110,7 +110,7 @@ app.post('/try/solve', function (req, res){
 				res.send({secretCode: code.code});
 			}
 		} else {
-			res.send({secretCode: -1})
+			res.send({secretCode: -1});
 		}
 	} else {
 		//losuj nowa zagadkê
@@ -186,22 +186,24 @@ Puzzle = {
 		}
 	},
 	convertbase: {
-		getRandomBase: function(){
-			var standardBases = [2,8,10,16];
-			return standardBases[Puzzle.getRandom(0,3)];
-		},
 		result : function (inputValues) {
 			var num = parseInt(inputValues.number, inputValues.in_base);
 			return num.toString(inputValues.out_base);
 		},
 
 		createNew : function () {
+			var standardBases = [2,8,10,16];
+			var in_base = Puzzle.getRandom(0,3);
+			var out_base = Puzzle.getRandom(0,3);
+			while (in_base == out_base){
+				out_base = Puzzle.getRandom(0,3);
+			}
 			return {
 				type:"convertbase",
 				inputValues: {
-					number: Puzzle.getRandom(1,10),
-					in_base : Puzzle.convertbase.getRandomBase(),
-					out_base : Puzzle.convertbase.getRandomBase()
+					number: parseInt(Puzzle.getRandom(1,32),in_base),
+					in_base : in_base,
+					out_base : out_base
 				}
 			}
 		}
@@ -224,7 +226,7 @@ Puzzle = {
 			}
 		}
 	},
-	LedFun: {
+	ledfun: {
 		createNew: function (){
 			var ledCombination = [{
 
