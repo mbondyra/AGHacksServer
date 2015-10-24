@@ -2,12 +2,9 @@
 var http = require('http');
 var fs = require('fs');
 var bodyParser = require('body-parser');
-var spawn = require("child_process").spawn;
 var express = require('express');
 
-
 const PORT = 8081;
-var database = 'database.json';
 
 var allowCrossDomain = function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -27,16 +24,9 @@ game.secretCodes = [];
 game.status = "pending";
 var counterInterval;
 
-app.get('/readTime', function (req, res) {
-   fs.readFile( __dirname + "/" + database, 'utf8', function (err, data) {
-       console.log( data );
-       res.end( data );
-   });
-});
 
 app.get('/game/players', function(req, res){
 	var publicPlayers = game.players;
-
 	res.send({players: game.players});
 });
 
@@ -47,7 +37,6 @@ app.get('/game/status', function(req, res){
 
 
 app.post('/new/player', function(req, res){
-	console.log(req.body);
 	var player = {
 		id : game.players.length,
 		name : req.body.name,
@@ -60,7 +49,6 @@ app.post('/new/player', function(req, res){
 			}
 		}
 	};
-
 	game.players.push(player);
 	game.secretCodes.push({
 		code: (Math.floor(Math.random() *10)),
@@ -69,7 +57,6 @@ app.post('/new/player', function(req, res){
 	res.send({id: player.id});
 
 });
-
 
 app.post('/game/end', function(req, res) {
 	game.status = 'end';
@@ -106,31 +93,11 @@ app.post('/new/game', function(req, res) {
 app.post('/game/start', function(req, res) {
 	game.status = 'inprogress';
 	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
-	timeHandler.saveTimeToFile();
 	timeHandler.countdown();
 	res.send({
 		time : game.timeRemaining
 	});
 });
-
-
-var puzzle;
-puzzle = {
-	sum: {
-		result : function (inputValues) {
-			return inputValues.val1 + inputValues.val2
-		}
-	},
-	convertBase: {
-		result : function () {
-			number = inputValues.number;
-			in_base = inputValues.in_base;
-			out_base = inputValues.out_base;
-		}
-	}
-};
-
-
 
 /*
  return
@@ -166,6 +133,7 @@ app.get('/game/:id', function (req, res){
 
 app.post('/try/solve', function (req, res){
 	var id = req.body.id;
+	var i = game.players.length;
 
 	var player;
 	for (var i= 0; i< game.players.length; i++){
@@ -175,32 +143,53 @@ app.post('/try/solve', function (req, res){
 			break;
 		}
 	};
-	if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)){
-		var code;
-		console.log(game.secretCodes);
-		for (var i= 0; i< game.secretCodes.length; i++){
-			if (game.secretCodes[i].status == "hidden"){
-				code = game.secretCodes[i];
-				game.secretCodes[i].status = "revealed";
-				break;
+
+	if (id!=0) {
+		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
+			var code;
+			for (var i = 0; i < game.secretCodes.length; i++) {
+				if (game.secretCodes[i].status == "hidden") {
+					code = game.secretCodes[i];
+					game.secretCodes[i].status = "revealed";
+					break;
+				}
 			}
+			if (code && code.code) {
+				res.send({secretCode: code.code});
+			}
+		} else {
+			res.send({secretCode: -1})
 		}
-		if (code && code.code)
-			res.send({secretCode: code.code});
-
-	} else {
-		res.send ({secretCode: -1})
+	} else if (id == 0){
+		//losuj nowa zagadkê
+		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
+			//dodaj czas
+			//res.send(updatedTime, new puzzle)
+			res.send({
+				time: game.timeRemaining,
+				puzzle: {
+					type: "sum",
+					inputValues: {
+						val1: 3,
+						val2: 4
+					}
+				}
+			});
+		} else {
+			//odejmij czas
+			//res.send(updatedTime, new puzzle)
+			res.send({
+				time: game.timeRemaining,
+				puzzle: {
+					type: "sum",
+					inputValues: {
+						val1: 5,
+						val2: 2
+					}
+				}
+			});
+		}
 	}
-});
-
-
-// POST http://localhost:8080/api/users
-// parameters sent with
-app.post('/updateTime', function(req, res) {
-	var dt = req.body.dt;
-	timeHandler.updateFile(dt, function(){
-		res.send(dt);
-	});
 });
 
 
@@ -211,6 +200,27 @@ var server = app.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
 });
 
+var puzzle;
+puzzle = {
+	sum: {
+		result : function (inputValues) {
+			return inputValues.val1 + inputValues.val2;
+		}
+	},
+	convertBase: {
+		result : function (inputValues) {
+			number = inputValues.number;
+			in_base = inputValues.in_base;
+			out_base = inputValues.out_base;
+			var num = parseInt(number, in_base);
+			return num.toString(out_base);
+		}
+	},
+	ledButtons:{
+
+	},
+};
+
 
 
 var timeHandler = {
@@ -218,28 +228,15 @@ var timeHandler = {
 		var dt;
 		counterInterval = setInterval(function(){
 			dt = Math.floor(game.timeRemaining/1000)-(Math.floor(Date.now()/1000));
-			console.log(dt);
 			if (dt <= 0){
 				game.status = "end";
 				clearInterval(counterInterval);
 			}
-
 		}, 1000);
 	},
-	saveTimeToFile: function(){
-		fs.writeFile(database,JSON.stringify({"timeRemaining":game.timeRemaining}));
-	},
+
 	convertTimeToEpoch: function(min){
 		return  Date.now()+min*60000;
-	},
-	updateFile: function(dt, callback){
-		 fs.readFile(database, function(err, data){
-			var objFile = JSON.parse(data);
-			objFile.realTime = timeHandler.updateRealTime();
-			objFile.timeRemaining = timeHandler.updateTimeRemaining(objFile.timeRemaining, dt);
-			fs.writeFile(database,JSON.stringify(objFile));
-			callback();
-		});
 	},
 	updateRealTime: function(){
 		return new Date().getTime();
