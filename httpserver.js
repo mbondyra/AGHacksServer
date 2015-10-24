@@ -21,11 +21,24 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(allowCrossDomain);
 
+
+var game={};
+game.players = [];
+game.status="pending";
+
 app.get('/readTime', function (req, res) {
    fs.readFile( __dirname + "/" + database, 'utf8', function (err, data) {
        console.log( data );
        res.end( data );
    });
+});
+
+app.get('/game/players', function(req, res){
+	res.send({players: game.players});
+});
+
+app.get('/game/status', function(req, res){
+	res.send({"status":game.status});
 });
 
 // POST http://localhost:8080/api/users
@@ -38,54 +51,46 @@ app.post('/updateTime', function(req, res) {
 	});
 });
 
-var game={};
-game.players = [];
-
-app.get('/game/players', function(req, res){
-	if (!game){
-		game={}
-		game.players=[];
-	}
-	res.send(game.players);
-});
-
-
 app.post('/new/player', function(req, res){
 	var player = {
 		id : game.players.length,
 		name : req.body.name,
-		getRole : function(){
-			if ( player.id == '0' ){
-				return "Leader"
-			} else {
-				return "CT"
-			}
-		}
+		role : "CT" 
 	};
+	game.players.push(player);
+	res.send({id: player.id});
 	
+});
+
+
+
+app.post('/game/finish', function(req, res) {
+	game.status = 'end';
+	res.send({end : true });
+});
+
+app.post('/new/game', function(req, res) {
 	if (!game){
 		game={}
 		game.players=[];
 	}
-	player.role = player.getRole();
-	game.players.push(player);
-	res.send(player);
+	game.players.push({
+		id: 0,
+		name: req.body.name || "Leader",
+		role: "Leader"
+	});
 	
-});
-
-
-
-app.post('/new/game', function(req, res) {
-    //getCurrentTime
 	game.conf = req.body;
 	game.status = 'pending';
-	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
-	timeHandler.saveTimeToFile();
-	console.log("kons");
-	
 	res.send("Game started");
 });
 
+app.post('/game/start', function(req, res) {
+	game.status = 'inprogress';
+	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
+	timeHandler.saveTimeToFile();
+	res.send({time : game.timeRemaining});	
+});
 
 //Create a server
 //var server = http.createServer(handleRequest);
@@ -93,6 +98,7 @@ app.post('/new/game', function(req, res) {
 var server = app.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
 });
+
 
 
 var timeHandler = {
@@ -121,4 +127,3 @@ var timeHandler = {
 		return time+dt;
 	}
 }
-
