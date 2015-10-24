@@ -34,6 +34,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/end.html',
             controller: 'GameOverCtrl'
         })
+        .when('/lobby', {
+            templateUrl: 'views/lobby.html',
+            controller: 'LobbyCtrl'
+        })
         .when('/howto', {
             templateUrl: 'views/howto.html',
             controller: 'HowToCtrl'
