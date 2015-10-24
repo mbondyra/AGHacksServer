@@ -211,13 +211,15 @@ Puzzle = {
 			return true;
 		},
 		createNew: function(){
-			var inputValues = {seq:""};
+			var inputValues = {};
 			for (var i = 0; i < 12; i++){
 				seq += Puzzle.getRandom(0,9);
 			}
 			return {
 				type: "simon",
-				inputValues: inputValues
+				inputValues: {
+					seq:seq
+				}
 			}
 		}
 	},
