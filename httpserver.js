@@ -21,12 +21,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(allowCrossDomain);
 
-var game = {};
-game.players = [];
-game.secretCodes = [];
-game.status = "pending";
-var counterInterval;
+var game ={};
+	game.players=[];
 
+var	counterInterval;
 
 app.get('/game/players', function(req, res){
 	res.send({players: game.players});
@@ -37,62 +35,46 @@ app.get('/game/status', function(req, res){
 });
 
 app.get('/game/:id', function (req, res){
+	var id=req.params.id;
 	var player = getPlayerById(req.params.id);
-	res.send({
-		time: game.timeRemaining,
-		puzzle: player.puzzle
-	});
-});
-
-var Player = function (id, name){
-	this.id = id;
-	this.name = name;
-	if (id == 0) {
-		this.role = "Leader"
+	if (player === -1){
+		res.send({
+			error:"User does not exist"
+		});
 	} else {
-		this.role = "CT";
-	};
-	this.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
-};
-
-var getPlayerById =  function (id){
-	for (var i = 0; i < game.players.length; i++){
-		if (id == game.players[i].id){
-			return game.players[i];
-		}
-	};
-};
-
+		res.send({
+			time: game.timeEnd,
+			puzzle: player.puzzle
+		});
+	}
+});
 
 app.post('/new/player', function(req, res){
 	var player = new Player(game.players.length, req.body.name);
 	game.players.push(player);
-	game.secretCodes.push({
-		code: (Math.floor(Math.random() * 10)),
-		status: "hidden"
-	});
+	game.secretCodes.push(new SecretCode());
 	res.send({id: player.id});
 
 });
 
-
 app.post('/new/game', function(req, res) {
-	if (!game){
-		game = {};
-	}
-	game.players = [];
-	game.players.push(new Player(0, req.body.name||"Leader"));
-	game.conf = req.body;
-	game.status = 'pending';
+
+	var leader = new Player(0, req.body.name||"Leader");
+	game = {
+		players:[leader],
+		secretCodes:[],
+		status:"pending",
+		conf:req.body
+	};
 	res.send("Game started");
 });
 
 app.post('/game/start', function(req, res) {
 	game.status = 'inprogress';
-	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
-	timeHandler.countdown();
+	game.timeEnd = Date.now()+60000 * (game.conf.time);
+	countdown();
 	res.send({
-		time : game.timeRemaining
+		time : game.timeEnd
 	});
 });
 
@@ -109,8 +91,11 @@ app.post('/game/end', function(req, res) {
 app.post('/try/solve', function (req, res){
 	var id = req.body.id;
 	var player = getPlayerById(id);
-
-	if (id != 0) {
+	if (id === -1){
+		res.send ({
+			error: "Player does not exist"
+		});
+	} else if (id != 0) {
 		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
 			var code;
 			for (var i = 0; i < game.secretCodes.length; i++) {
@@ -131,12 +116,12 @@ app.post('/try/solve', function (req, res){
 		player.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
 
 		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
-			game.timeRemaining+=5000;
+			game.timeEnd+=5000;
 		}	else {
-			game.timeRemaining-=5000;
+			game.timeEnd-=5000;
 		}
 		res.send({
-			time: game.timeRemaining,
+			time: game.timeEnd,
 			puzzle: player.puzzle
 		});
 	}
@@ -150,16 +135,42 @@ var server = app.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
 });
 
+var SecretCode = function(){
+	this.code = Math.floor(Math.random()*10);
+	this.status = "hidden";
+}
+
+var Player = function (id, name){
+	this.id = id;
+	this.name = name;
+	if (id == 0) {
+		this.role = "Leader"
+	} else {
+		this.role = "CT";
+	};
+	this.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
+};
+
+var getPlayerById =  function (id){
+	for (var i = 0; i < game.players.length; i++){
+		if (id == game.players[i].id){
+			return game.players[i];
+		}
+	};
+	return -1;
+};
+
+
 var Puzzle;
 Puzzle = {
 	getRandom: function (min, max){
 		return Math.floor(Math.random()*(max-min+1)+min)
 	},
 	getRandomPuzzle: function (){
-		var arr= [ "Sum", 	"ConvertBase", "Simon" ];
+		var arr= [ "sum", 	"convertbase", "simon" ];
 		return arr[Puzzle.getRandom(0,arr.length-1)];
 	},
-	Sum: {
+	sum: {
 		result : function (inputValues) {
 			return inputValues.val1 + inputValues.val2;
 		},
@@ -173,7 +184,7 @@ Puzzle = {
 			}
 		}
 	},
-	ConvertBase: {
+	convertbase: {
 		getRandomBase: function(){
 			var standardBases = [2,8,10,16];
 			return standardBases[Puzzle.getRandom(0,3)];
@@ -185,7 +196,7 @@ Puzzle = {
 
 		createNew : function () {
 			return {
-				type:"convertBase",
+				type:"convertbase",
 				inputValues: {
 					number: Puzzle.getRandom(1,10),
 					in_base : Puzzle.ConvertBase.getRandomBase(),
@@ -194,17 +205,17 @@ Puzzle = {
 			}
 		}
 	},
-	Simon:{
+	simon:{
 		result : function() {
-			return true
+			return true;
 		},
 		createNew: function(){
-			var inputValues = [];
+			var inputValues = {seq:""};
 			for (var i = 0; i < 12; i++){
-				inputValues += Puzzle.getRandom(0,9);
+				seq += Puzzle.getRandom(0,9);
 			}
 			return {
-				type: "Simon",
+				type: "simon",
 				inputValues: inputValues
 			}
 		}
@@ -224,18 +235,13 @@ Puzzle = {
 	}
 };
 
-var timeHandler = {
-	countdown: function(){
-		var dt;
-		counterInterval = setInterval(function(){
-			dt = Math.floor(game.timeRemaining/1000)-(Math.floor(Date.now()/1000));
-			if (dt <= 0){
-				game.status = "end";
-				clearInterval(counterInterval);
-			}
-		}, 1000);
-	},
-	convertTimeToEpoch: function(min){
-		return  Date.now()+min*60000;
-	},
-}
+var countdown =  function() {
+	var dt;
+	counterInterval = setInterval(function () {
+		dt = Math.floor(game.timeEnd / 1000) - (Math.floor(Date.now() / 1000));
+		if (dt <= 0) {
+			game.status = "end";
+			clearInterval(counterInterval);
+		}
+	}, 1000);
+};
