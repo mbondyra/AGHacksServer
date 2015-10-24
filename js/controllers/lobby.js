@@ -4,11 +4,10 @@
 
 'use strict';
 
-app.controller('LobbyCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService','$interval', function($scope, $location, $http, appConfig, GameDataService, $interval) {
+app.controller('LobbyCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService','$interval', 'PuzzleService', function($scope, $location, $http, appConfig, GameDataService, $interval, PuzzleService) {
     var game = GameDataService.getData();
     var totalPlayers = game.players;
     $scope.startGame = false;
-    $scope.players = [1,2,3,4];
 
     var refresh = function (callback) {
         $http.get(appConfig.gameServerApi + "/game/players")
@@ -28,6 +27,8 @@ app.controller('LobbyCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDa
         }
     };
 
+
+
     var lobbyRefresh = $interval(function(){
         refresh(function(data){
             checkPlayers(data);
@@ -38,7 +39,9 @@ app.controller('LobbyCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDa
         $http.post(appConfig.gameServerApi+"/game/start",{start: true})
             .then(function(response){
                 GameDataService.addToData('endTime',response.data.time);
-                $location.path('/game').replace();
+                GameDataService.addToData('playersList',$scope.players);
+                var newPath = PuzzleService.checkGameType();
+                $location.path(newPath).replace();
             },function(error){
                 $scope.toast = "Something went wrong :( Try again!";
                 $scope.showToast = true;
