@@ -168,7 +168,7 @@ Puzzle = {
 		return Math.floor(Math.random()*(max-min+1)+min)
 	},
 	getRandomPuzzle: function (){
-		var arr= [ "sum", 	"convertbase", "simon" ];
+		var arr= [ "sum", "convertbase", "simon" ];
 		return arr[Puzzle.getRandom(0,arr.length-1)];
 	},
 	sum: {
@@ -193,10 +193,10 @@ Puzzle = {
 
 		createNew : function () {
 			var standardBases = [2,8,10,16];
-			var in_base = Puzzle.getRandom(0,3);
-			var out_base = Puzzle.getRandom(0,3);
+			var in_base = standardBases[Puzzle.getRandom(0,3)];
+			var out_base = standardBases[Puzzle.getRandom(0,3)];
 			while (in_base == out_base){
-				out_base = Puzzle.getRandom(0,3);
+				out_base = standardBases[Puzzle.getRandom(0,3)];
 			}
 			return {
 				type:"convertbase",
