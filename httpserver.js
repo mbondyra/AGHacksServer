@@ -227,7 +227,7 @@ Puzzle = {
 			var inputValues = {};
 			var seq="";
 			for (var i = 0; i < 10; i++){
-				seq += Puzzle.getRandom(0,9);
+				seq += Puzzle.getRandom(1,4);
 			}
 			return {
 				type: "simon",
@@ -239,16 +239,19 @@ Puzzle = {
 	},
 	ledfun: {
 		createNew: function (){
-			var ledCombination = [{
+			var ledCombination = {
+				ledLight: [2,1],
+				ledTips: [
+					"Press 3 if ratio leds lighted/unlighted < 0.5",
+					"Press 2 if number of green lights multiplied by 3 is bigger than sum of all leds",
+					"Press 1 if number of yellow leds is bigger than green leds"
+				],
+				correct: 2,
+				runLeds: function (){
+					spawn('/usr/bin/sudo', ['/usr/bin/python', "/home/pi/System/start_led.py", '3']);
+				}
+			};
 
-			},{
-
-			}
-			];
-			var rules = [
-
-			];
-			spawn('/usr/bin/sudo', ['/usr/bin/python', "/home/pi/System/start_led.py", '3']);
 		}
 	}
 };
