@@ -1,6 +1,5 @@
 //Lets require/import the HTTP module
 var http = require('http');
-var fs = require('fs');
 var bodyParser = require('body-parser');
 var express = require('express');
 
@@ -35,78 +34,6 @@ app.get('/game/status', function(req, res){
 });
 
 
-
-app.post('/new/player', function(req, res){
-	var player = {
-		id : game.players.length,
-		name : req.body.name,
-		role : "CT",
-		puzzle: {
-			type: "sum",
-			inputValues: {
-				val1: 1,
-				val2: 2
-			}
-		}
-	};
-	game.players.push(player);
-	game.secretCodes.push({
-		code: (Math.floor(Math.random() *10)),
-		status: "hidden"
-	});
-	res.send({id: player.id});
-
-});
-
-app.post('/game/end', function(req, res) {
-	game.status = 'end';
-	var game={};
-	game.players = [];
-	game.status = "end";
-	clearInterval(counterInterval);
-	res.send({end : true });
-});
-
-app.post('/new/game', function(req, res) {
-	if (!game){
-		game = {};
-		game.players = [];
-	}
-	game.players = [];
-	game.players.push({
-		id: 0,
-		name: req.body.name || "Leader",
-		role: "Leader",
-		puzzle: {
-			type: "sum",
-			inputValues: {
-				val1: 1,
-				val2: 2
-			}
-		}
-	});
-	game.conf = req.body;
-	game.status = 'pending';
-	res.send("Game started");
-});
-
-app.post('/game/start', function(req, res) {
-	game.status = 'inprogress';
-	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
-	timeHandler.countdown();
-	res.send({
-		time : game.timeRemaining
-	});
-});
-
-/*
- return
- czas do konca
- zagadki
- secretCode
- idBeaconow
-  */
-
 app.get('/game/:id', function (req, res){
 	var player;
 	var i = game.players.length;
@@ -128,8 +55,64 @@ app.get('/game/:id', function (req, res){
 	});
 });
 
+var Player = function (id, name){
+	this.id = id;
+	this.name = name;
+	this.role = function (){
+		id==0?"Leader":"CT";
+	};
+	this.puzzle = {
+		type: "sum",
+		inputValues: {
+			val1: 1,
+			val2: 2
+		}
+	};
+}
 
-//kto, zagadka, rozwiazanie
+app.post('/new/player', function(req, res){
+	var player = new Player(game.players.length, req.body.name);
+	game.players.push(player);
+	game.secretCodes.push({
+		code: (Math.floor(Math.random() *10)),
+		status: "hidden"
+	});
+	res.send({id: player.id});
+
+});
+
+
+app.post('/new/game', function(req, res) {
+	if (!game){
+		game = {};
+		game.players = [];
+	}
+	game.players = [];
+	game.players.push(new Player(0, req.body.name||"Leader"));
+	game.conf = req.body;
+	game.status = 'pending';
+	res.send("Game started");
+});
+
+app.post('/game/start', function(req, res) {
+	game.status = 'inprogress';
+	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
+	timeHandler.countdown();
+	res.send({
+		time : game.timeRemaining
+	});
+});
+
+
+app.post('/game/end', function(req, res) {
+	game.status = 'end';
+	var game={};
+	game.players = [];
+	game.status = "end";
+	clearInterval(counterInterval);
+	res.send({end : true });
+});
+
 
 app.post('/try/solve', function (req, res){
 	var id = req.body.id;
@@ -218,10 +201,8 @@ puzzle = {
 	},
 	ledButtons:{
 
-	},
+	}
 };
-
-
 
 var timeHandler = {
 	countdown: function(){
@@ -234,14 +215,7 @@ var timeHandler = {
 			}
 		}, 1000);
 	},
-
 	convertTimeToEpoch: function(min){
 		return  Date.now()+min*60000;
 	},
-	updateRealTime: function(){
-		return new Date().getTime();
-	},
-	updateTimeRemaining: function(time, dt){
-		return time+dt;
-	}
 }
