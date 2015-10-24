@@ -97,7 +97,7 @@ app.post('/try/solve', function (req, res){
 			error: "Player does not exist"
 		});
 	} else if (id != 0) {
-		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
+		if (req.body.result == Puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
 			var code;
 			for (var i = 0; i < game.secretCodes.length; i++) {
 				if (game.secretCodes[i].status == "hidden") {
