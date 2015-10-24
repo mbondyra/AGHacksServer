@@ -60,7 +60,7 @@ app.post('/new/player', function(req, res){
 
 	game.players.push(player);
 	game.secretCodes.push({
-		code: Math.random(9),
+		code: (Math.floor(Math.random() * (max - min + 1)) + min),
 		status: "hidden"
 	});
 	res.send({id: player.id});
@@ -88,7 +88,7 @@ app.post('/new/game', function(req, res) {
 		id: 0,
 		name: req.body.name || "Leader",
 		role: "Leader",
-		riddle: {
+		puzzle: {
 			type: "sum",
 			inputValues: [1,2]
 		}
@@ -113,7 +113,7 @@ var puzzle = {
 		var i = inputValues.length;
 		var result = 0;
 		while (i--){
-			result+=inputValues(i);
+			result+=inputValues[i];
 		}
 		return result;
 	}
@@ -143,7 +143,6 @@ app.get('/game/:id', function (req, res){
 			inputValues: [1,2]
 		}
 	});
-
 });
 
 
@@ -152,18 +151,21 @@ app.get('/game/:id', function (req, res){
 app.post('/try/solve', function (req, res){
 	var id = req.body.id;
 	var i = game.players.length;
+
 	var player;
-	while (i--){
-		if (id == game.players[i]){
+	for (var i= 0; i< game.players.length; i++){
+
+		if (id == game.players[i].id){
 			player=game.players[i];
 			break;
 		}
 	};
-
-	if (req.body.riddleAns == puzzle[player.puzzle.type](player.puzzle.input)){
-		var i = game.secretCodes.length;
+	console.log("SIEMA"+player);
+	//console.log(puzzle[player.puzzle.type](player.puzzle.inputValues));
+	console.log(player.puzzle.type);
+	if (req.body.riddleAns == puzzle[player.puzzle.type](player.puzzle.inputValues)){
 		var code;
-		while (i--){
+		for (var i= 0; i< game.secretCodes.length; i++){
 			if (game.secretCodes[i].status == "hidden"){
 				code = game.secretCodes[i];
 				game.secretCodes[i].status = "revealed";
@@ -193,6 +195,8 @@ app.post('/updateTime', function(req, res) {
 //Lets start our server
 var server = app.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
+
+	puzzle.sum([1,2]);
 });
 
 
