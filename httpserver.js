@@ -2,6 +2,7 @@
 var http = require('http');
 var bodyParser = require('body-parser');
 var express = require('express');
+var spawn = require("child_process").spawn;
 
 const PORT = 8081;
 
@@ -116,9 +117,9 @@ app.post('/try/solve', function (req, res){
 		player.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
 
 		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
-			game.timeEnd+=5000;
+			//game.timeEnd+=5000;
 		}	else {
-			game.timeEnd-=5000;
+			//game.timeEnd-=5000;
 		}
 		res.send({
 			time: game.timeEnd,
@@ -199,8 +200,8 @@ Puzzle = {
 				type:"convertbase",
 				inputValues: {
 					number: Puzzle.getRandom(1,10),
-					in_base : Puzzle.ConvertBase.getRandomBase(),
-					out_base : Puzzle.ConvertBase.getRandomBase()
+					in_base : Puzzle.convertbase.getRandomBase(),
+					out_base : Puzzle.convertbase.getRandomBase()
 				}
 			}
 		}
