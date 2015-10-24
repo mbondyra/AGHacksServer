@@ -1,8 +1,9 @@
 <div class="timer-container">
     <span id="timer">{{mminutes}}{{minutes}}:{{sseconds}}{{seconds}}</span>
 </div>
+
 <div class="sum-container">
-    <span ng-repeat="value in puzzle.inputValues"><span class="sum-plus" ng-if="$index > 0">+</span>{{input}}</span>
+    <span ng-repeat="(key,value) in puzzle.inputValues"><span class="sum-plus" ng-if="$index > 0">+</span>{{value}}</span>
     <span class="sum-equal">=</span>
     <input type="number" ng-model="result"/>
 </div>

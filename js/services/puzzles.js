@@ -2,22 +2,11 @@
  * Created by ezimonczyk on 23/10/15.
  */
 
+'use strict';
+
 app.service('PuzzleService', ['$http', 'appConfig', 'GameDataService', function($http,appConfig,GameDataService) {
 
-    var checkGameType = function() {
-
-        var type = "";
-
-        $http.get(appConfig.gameServerApi+'/game/0')
-            .then(function(response){
-                type = response.data.type;
-                GameDataService.addToData('puzzle',response.data);
-            },
-            function(){
-                console.log("error");
-                type = "";
-            });
-        return type;
-    };
-
+    this.checkGameType = function() {
+        return $http.get(appConfig.gameServerApi+'/game/0');
+    }
 }]);

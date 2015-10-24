@@ -78,7 +78,7 @@ body, html, .custom-container {
     transition: all 0.5s linear;
 }
 
-.menu-element a:hover {
+.menu-element a:hover, .menu-element a:active, .menu-element a:focus {
     background: rgba(255, 116, 0, 0.95);
     color: #fff;
     font-size: 22pt;
@@ -121,7 +121,7 @@ input {
     padding: 10px 0 0;
 }
 
-.form-element:hover {
+.form-element:hover, .form-element:active, .form-element:focus {
     background: rgba(255, 116, 0, 0.95);
     color: #fff;
 }

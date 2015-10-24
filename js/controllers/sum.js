@@ -4,14 +4,12 @@
 
 'use strict';
 
-app.controller('GameCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService','$interval', 'PuzzleService', function($scope, $location, $http, appConfig, GameDataService, $interval, PuzzleService){
-    if(GameDataService.getDataKey("puzzle")){
-        var type = PuzzleService.checkGameType();
-        $location.path("/"+type);
-    } else {
+app.controller('SumCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService','$interval', 'PuzzleService', function($scope, $location, $http, appConfig, GameDataService, $interval, PuzzleService){
+
         $scope.result = null;
 
         $scope.puzzle = GameDataService.getDataKey("puzzle");
+        console.log($scope.puzzle);
 
         var endTime = GameDataService.getDataKey('endTime'),
             secondsLeft = parseInt((endTime - Date.now()) / 1000);
@@ -51,5 +49,5 @@ app.controller('GameCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDat
                    console.log(error);
                 });
         }
-    }
+
 }]);
