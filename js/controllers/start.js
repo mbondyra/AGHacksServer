@@ -4,11 +4,11 @@
 
 'use strict';
 
-app.controller('NewGameCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService', function($scope, $location, $http, appConfig, GameDataService){
-    $scope.game = {time: 5, players: 5, difficulty: '2'};
+app.controller('NewGameCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService', '$timeout', function($scope, $location, $http, appConfig, GameDataService, $timeout){
+    $scope.game = {time: 5, players: 5};
 
     $scope.create = function(game){
-        if(game && game.time && game.players && game.difficulty)
+        if(game && game.time && game.players && game.name)
             $http.post(appConfig.gameServerApi+'/new/game',game)
                 .then(function(response){
                     GameDataService.putData(game);
@@ -18,6 +18,11 @@ app.controller('NewGameCtrl',['$scope', '$location', '$http', 'appConfig', 'Game
                     $scope.showToast = true;
                 });
         else {
+            $scope.toast = "Wrong parameters";
+            $scope.showToast = true;
+            $timeout(function(){
+                $scope.showToast = false;
+            },3000);
 
         }
     }

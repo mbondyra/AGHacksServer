@@ -41,7 +41,7 @@ app.get('/game/players', function(req, res){
 });
 
 app.get('/game/status', function(req, res){
-	res.send({"status":game.status});
+	res.send({status: game.status});
 });
 
 
