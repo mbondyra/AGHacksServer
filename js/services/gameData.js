@@ -2,7 +2,7 @@
  * Created by ezimonczyk on 23/10/15.
  */
 
-app.service('DatasetService', function() {
+app.service('GameDataService', function() {
     var gameData = {};
 
     this.putData = function(newDataset) {
