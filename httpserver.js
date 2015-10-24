@@ -6,7 +6,7 @@ var spawn = require("child_process").spawn;
 var express = require('express');
 
 //Lets define a port we want to listen to
-const PORT=8081; 
+const PORT = 8081;
 var database = 'database.json';
 
 var allowCrossDomain = function(req, res, next) {
@@ -54,13 +54,16 @@ app.post('/new/player', function(req, res){
 		role : "CT",
 		riddle: {
 			type: "sum",
-			inputValues: [1,2]
+			inputValues: {
+				val1: 1,
+				val2: 2
+			}
 		}
 	};
 
 	game.players.push(player);
 	game.secretCodes.push({
-		code: (Math.floor(Math.random() * (max - min + 1)) + min),
+		code: (Math.floor(Math.random() *10)),
 		status: "hidden"
 	});
 	res.send({id: player.id});
@@ -70,7 +73,6 @@ app.post('/new/player', function(req, res){
 
 app.post('/game/end', function(req, res) {
 	game.status = 'end';
-
 	var game={};
 	game.players = [];
 	game.status = "end";
@@ -90,7 +92,11 @@ app.post('/new/game', function(req, res) {
 		role: "Leader",
 		puzzle: {
 			type: "sum",
-			inputValues: [1,2]
+			inputValues: {
+				val1: 1,
+				val2: 2
+			}
+
 		}
 	});
 	game.conf = req.body;
@@ -110,12 +116,7 @@ app.post('/game/start', function(req, res) {
 
 var puzzle = {
 	sum: function(inputValues) {
-		var i = inputValues.length;
-		var result = 0;
-		while (i--){
-			result+=inputValues[i];
-		}
-		return result;
+		return inputValues.val1 + inputValues.val2;
 	}
 }
 
@@ -140,7 +141,10 @@ app.get('/game/:id', function (req, res){
 		time: game.timeRemaining,
 		puzzle: {
 			type: "sum",
-			inputValues: [1,2]
+			inputValues: {
+				val1: 1,
+				val2: 2
+			}
 		}
 	});
 });
@@ -172,7 +176,7 @@ app.post('/try/solve', function (req, res){
 				break;
 			}
 		}
-		res.send({secretCode: code});
+		res.send({secretCode: code.code});
 	}
 });
 
