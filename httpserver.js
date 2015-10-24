@@ -47,10 +47,12 @@ app.get('/game/:id', function (req, res){
 var Player = function (id, name){
 	this.id = id;
 	this.name = name;
-	this.role = function (){
-		id==0?"Leader":"CT";
+	if (id == 0) {
+		this.role = "Leader"
+	} else {
+		this.role = "CT";
 	};
-	this.puzzle = Puzzle.Sum.createNew();
+	this.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
 };
 
 var getPlayerById =  function (id){
@@ -126,7 +128,7 @@ app.post('/try/solve', function (req, res){
 		}
 	} else {
 		//losuj nowa zagadkê
-		player.puzzle = Puzzle.Sum.createNew();
+		player.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
 
 		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
 			game.timeRemaining+=5000;
@@ -150,8 +152,12 @@ var server = app.listen(PORT, function(){
 
 var Puzzle;
 Puzzle = {
-	getRandom: function(min, max){
+	getRandom: function (min, max){
 		return Math.floor(Math.random()*(max-min+1)+min)
+	},
+	getRandomPuzzle: function (){
+		var arr= [ "Sum", 	"ConvertBase", "Simon" ];
+		return arr[Puzzle.getRandom(0,arr.length-1)];
 	},
 	Sum: {
 		result : function (inputValues) {
