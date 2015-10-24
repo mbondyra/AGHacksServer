@@ -31,7 +31,6 @@ app.controller('GameCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDat
 
     var detonate = function(){
         GameDataService.addToData('win',false);
-
-    }
+    };
 
 }]);

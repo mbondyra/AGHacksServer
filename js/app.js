@@ -42,6 +42,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/howto.html',
             controller: 'HowToCtrl'
         })
+        .when('/sum', {
+            templateUrl: 'views/sum.html',
+            controller: 'SumCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
