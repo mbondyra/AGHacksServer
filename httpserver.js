@@ -116,7 +116,7 @@ app.post('/try/solve', function (req, res){
 		//losuj nowa zagadkê
 		player.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
 
-		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
+		if (req.body.result == Puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
 			//game.timeEnd+=5000;
 		}	else {
 			//game.timeEnd-=5000;
