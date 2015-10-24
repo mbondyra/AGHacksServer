@@ -4,7 +4,7 @@
 
 'use strict';
 
-app.controller('LedCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService','$interval', 'PuzzleService', function($scope, $location, $http, appConfig, GameDataService, $interval, PuzzleService){
+app.controller('LedCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService','$interval', 'PuzzleService','$route', function($scope, $location, $http, appConfig, GameDataService, $interval, PuzzleService, $route){
 
         $scope.result = null;
 

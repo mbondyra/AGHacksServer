@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Mono);
 
 body, html, .custom-container {
     height: 100%;
@@ -92,7 +93,7 @@ h1.lobby-title {
     margin: 10px 0;
 }
 
-.menu-element span.title,.player-wrapper {
+.menu-element span.title,.player-wrapper, .convert-wrapper {
     display: table-cell;
     vertical-align: middle;
 }
@@ -106,7 +107,7 @@ input {
     text-align: center;
 }
 
-.form-element, .player-element {
+.form-element, .player-element, .sum-container, .convert-container {
     text-decoration: none !important;
     display: table;
     height: 100px;
@@ -184,3 +185,39 @@ span.player-name {
     padding-bottom: 15px;
     margin: 0 auto;
 }
+
+.timer-container {
+    background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+    display: table;
+    height: 50px;
+    width: 100%;
+}
+
+#timer {
+    color: #fd0e00;
+    display: table-cell;
+    font-family: "PT Mono";
+    font-size: 34px;
+    margin: auto;
+    padding: 13px;
+    text-align: center;
+}
+
+.convert-base {
+    font-size: 15px;
+    position: relative;
+    top: 12px;
+}
+
+.convert-number, .convert-equal, .convert-wrapper input {
+    font-size: 30px;
+}
+
+input {
+    color: #111 !important;
+}
+
+.convert-wrapper input {
+    width: 40px;
+}
+

@@ -29,7 +29,7 @@ app.controller('SumCtrl',['$scope', '$location', '$http', 'appConfig', 'GameData
 
             $scope.sseconds = ($scope.seconds > 9) ? "" : 0;
 
-            if ($scope.seconds == 0 && $scope.minutes == 0) {
+            if ($scope.seconds < 0) {
                 $interval.cancel(timer);
                 detonate();
             }
