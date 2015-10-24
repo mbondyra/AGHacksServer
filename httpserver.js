@@ -177,6 +177,8 @@ app.post('/try/solve', function (req, res){
 			}
 		}
 		res.send({secretCode: code.code});
+	} else {
+		res.send ({secretCode: -1})
 	}
 });
 
