@@ -59,7 +59,6 @@ app.post('/new/player', function(req, res){
 });
 
 app.post('/new/game', function(req, res) {
-
 	var leader = new Player(0, req.body.name||"Leader");
 	game = {
 		players:[leader],
@@ -67,6 +66,7 @@ app.post('/new/game', function(req, res) {
 		status:"pending",
 		conf:req.body
 	};
+	game.puzzlesLeft = game.conf.time*3;
 	res.send("Game started");
 });
 
@@ -113,19 +113,28 @@ app.post('/try/solve', function (req, res){
 			res.send({secretCode: -1});
 		}
 	} else {
-		//losuj nowa zagadkê
-		player.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
-		var correct;
-		if (req.body.result == Puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
-			correct=true;
-		}	else {
-			correct=false;
+		if (game.puzzlesLeft){
+			game.puzzlesLeft--;
+			console.log(game.puzzlesLeft);
+			//losuj nowa zagadkê
+			player.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
+			var correct;
+			if (req.body.result == Puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
+				correct = true;
+			}	else {
+				correct = false;
+			}
+			res.send({
+				correct: correct,
+				time: game.timeEnd,
+				puzzle: player.puzzle
+			});
+		} else {
+			res.send({
+				secret:true,
+				time: game.timeEnd
+			});
 		}
-		res.send({
-			correct:correct,
-			time: game.timeEnd,
-			puzzle: player.puzzle
-		});
 	}
 });
 
@@ -180,8 +189,8 @@ Puzzle = {
 			return {
 				type:"sum",
 				inputValues:{
-					val1:Puzzle.getRandom(1,10),
-					val2:Puzzle.getRandom(1,10)
+					val1:Puzzle.getRandom(10,20),
+					val2:Puzzle.getRandom(1,30)
 				}
 			}
 		}
@@ -217,7 +226,7 @@ Puzzle = {
 		createNew: function(){
 			var inputValues = {};
 			var seq="";
-			for (var i = 0; i < 12; i++){
+			for (var i = 0; i < 10; i++){
 				seq += Puzzle.getRandom(0,9);
 			}
 			return {
