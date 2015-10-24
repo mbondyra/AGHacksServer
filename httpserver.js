@@ -115,13 +115,14 @@ app.post('/try/solve', function (req, res){
 	} else {
 		//losuj nowa zagadkê
 		player.puzzle = Puzzle[Puzzle.getRandomPuzzle()].createNew();
-
+		var correct;
 		if (req.body.result == Puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
-			//game.timeEnd+=5000;
+			correct=true;
 		}	else {
-			//game.timeEnd-=5000;
+			correct=false;
 		}
 		res.send({
+			correct:correct,
 			time: game.timeEnd,
 			puzzle: player.puzzle
 		});
@@ -211,7 +212,7 @@ Puzzle = {
 	},
 	simon:{
 		result : function() {
-			return true;
+			return 1;
 		},
 		createNew: function(){
 			var inputValues = {};
@@ -238,6 +239,7 @@ Puzzle = {
 			var rules = [
 
 			];
+			spawn('/usr/bin/sudo', ['/usr/bin/python', "/home/pi/System/start_led.py", '3']);
 		}
 	}
 };
