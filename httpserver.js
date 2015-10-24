@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var spawn = require("child_process").spawn;
 var express = require('express');
 
-//Lets define a port we want to listen to
+
 const PORT = 8081;
 var database = 'database.json';
 
@@ -17,14 +17,14 @@ var allowCrossDomain = function(req, res, next) {
 };
 
 var app = express();
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(allowCrossDomain);
 
-var game={};
+var game = {};
 game.players = [];
 game.secretCodes = [];
-game.status="pending";
+game.status = "pending";
 var counterInterval;
 
 app.get('/readTime', function (req, res) {
@@ -52,7 +52,7 @@ app.post('/new/player', function(req, res){
 		id : game.players.length,
 		name : req.body.name,
 		role : "CT",
-		riddle: {
+		puzzle: {
 			type: "sum",
 			inputValues: {
 				val1: 1,
@@ -82,10 +82,10 @@ app.post('/game/end', function(req, res) {
 
 app.post('/new/game', function(req, res) {
 	if (!game){
-		game={};
-		game.players=[];
+		game = {};
+		game.players = [];
 	}
-	game.players=[];
+	game.players = [];
 	game.players.push({
 		id: 0,
 		name: req.body.name || "Leader",
@@ -96,7 +96,6 @@ app.post('/new/game', function(req, res) {
 				val1: 1,
 				val2: 2
 			}
-
 		}
 	});
 	game.conf = req.body;
@@ -109,16 +108,29 @@ app.post('/game/start', function(req, res) {
 	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
 	timeHandler.saveTimeToFile();
 	timeHandler.countdown();
-	console.log(game.conf.time);
-	res.send({time : game.timeRemaining});	
+	res.send({
+		time : game.timeRemaining
+	});
 });
 
 
-var puzzle = {
-	sum: function(inputValues) {
-		return inputValues.val1 + inputValues.val2;
+var puzzle;
+puzzle = {
+	sum: {
+		result : function (inputValues) {
+			return inputValues.val1 + inputValues.val2
+		}
+	},
+	convertBase: {
+		result : function () {
+			number = inputValues.number;
+			in_base = inputValues.in_base;
+			out_base = inputValues.out_base;
+		}
 	}
-}
+};
+
+
 
 /*
  return
@@ -164,11 +176,9 @@ app.post('/try/solve', function (req, res){
 			break;
 		}
 	};
-	console.log("SIEMA"+player);
-	//console.log(puzzle[player.puzzle.type](player.puzzle.inputValues));
-	console.log(player.puzzle.type);
-	if (req.body.puzzleAns == puzzle[player.puzzle.type](player.puzzle.inputValues)){
+	if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)){
 		var code;
+		console.log(game.secretCodes);
 		for (var i= 0; i< game.secretCodes.length; i++){
 			if (game.secretCodes[i].status == "hidden"){
 				code = game.secretCodes[i];
@@ -176,14 +186,12 @@ app.post('/try/solve', function (req, res){
 				break;
 			}
 		}
-		res.send({secretCode: code.code});
+			res.send({secretCode: code.code});
+
 	} else {
 		res.send ({secretCode: -1})
 	}
 });
-
-
-
 
 
 // POST http://localhost:8080/api/users
@@ -201,8 +209,6 @@ app.post('/updateTime', function(req, res) {
 //Lets start our server
 var server = app.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
-
-	puzzle.sum([1,2]);
 });
 
 
