@@ -13,13 +13,13 @@ var allowCrossDomain = function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
 	res.header('Access-Control-Allow-Headers', 'Content-Type');
-
 	next();
 };
 
 var app = express();
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(allowCrossDomain);
 
 app.get('/readTime', function (req, res) {
    fs.readFile( __dirname + "/" + database, 'utf8', function (err, data) {
@@ -28,11 +28,9 @@ app.get('/readTime', function (req, res) {
    });
 });
 
-app.use(allowCrossDomain);
 // POST http://localhost:8080/api/users
 // parameters sent with 
 app.post('/updateTime', function(req, res) {
-    //getCurrentTime
 	var dt = req.body.dt;
 	console.log('siema, tu post'+dt);
 	timeHandler.updateFile(dt, function(){
@@ -40,14 +38,51 @@ app.post('/updateTime', function(req, res) {
 	});
 });
 
-var conf;
+var game={};
+game.players = [];
+
+app.get('/game/players', function(req, res){
+	if (!game){
+		game={}
+		game.players=[];
+	}
+	res.send(game.players);
+});
+
+
+app.post('/new/player', function(req, res){
+	var player = {
+		id : game.players.length,
+		name : req.body.name,
+		getRole : function(){
+			if ( player.id == '0' ){
+				return "Leader"
+			} else {
+				return "CT"
+			}
+		}
+	};
+	
+	if (!game){
+		game={}
+		game.players=[];
+	}
+	player.role = player.getRole();
+	game.players.push(player);
+	res.send(player);
+	
+});
+
+
 
 app.post('/new/game', function(req, res) {
     //getCurrentTime
-	conf = req.body;
-	conf.timeRemaining = timeHandler.convertTimeToEpoch(conf.time);
+	game.conf = req.body;
+	game.status = 'pending';
+	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
 	timeHandler.saveTimeToFile();
-	console.log("kons")
+	console.log("kons");
+	
 	res.send("Game started");
 });
 
@@ -62,7 +97,7 @@ var server = app.listen(PORT, function(){
 
 var timeHandler = {
 	saveTimeToFile: function(){
-		fs.writeFile(database,JSON.stringify({"timeRemaining":conf.timeRemaining}));
+		fs.writeFile(database,JSON.stringify({"timeRemaining":game.timeRemaining}));
 	},
 	convertTimeToEpoch:function(min){
 		return new Date().getTime() + min * 60;
