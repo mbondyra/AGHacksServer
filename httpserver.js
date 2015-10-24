@@ -179,7 +179,8 @@ Puzzle = {
 	},
 	getRandomPuzzle: function (){
 		var arr= [ "sum", "convertbase", "simon" ];
-		return arr[Puzzle.getRandom(0,arr.length-1)];
+		//return arr[Puzzle.getRandom(0,arr.length-1)];
+		return arr[2];
 	},
 	sum: {
 		result : function (inputValues) {
