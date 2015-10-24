@@ -167,7 +167,7 @@ app.post('/try/solve', function (req, res){
 	console.log("SIEMA"+player);
 	//console.log(puzzle[player.puzzle.type](player.puzzle.inputValues));
 	console.log(player.puzzle.type);
-	if (req.body.riddleAns == puzzle[player.puzzle.type](player.puzzle.inputValues)){
+	if (req.body.puzzleAns == puzzle[player.puzzle.type](player.puzzle.inputValues)){
 		var code;
 		for (var i= 0; i< game.secretCodes.length; i++){
 			if (game.secretCodes[i].status == "hidden"){
