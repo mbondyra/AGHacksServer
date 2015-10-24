@@ -29,7 +29,6 @@ var counterInterval;
 
 
 app.get('/game/players', function(req, res){
-	var publicPlayers = game.players;
 	res.send({players: game.players});
 });
 
@@ -52,16 +51,15 @@ var Player = function (id, name){
 		id==0?"Leader":"CT";
 	};
 	this.puzzle = Puzzle.Sum.createNew();
-}
+};
+
 var getPlayerById =  function (id){
-	var i = game.players.length;
-	while (i--){
-		if (id == game.players[i]){
-			return game.players[i]
+	for (var i = 0; i < game.players.length; i++){
+		if (id == game.players[i].id){
+			return game.players[i];
 		}
 	};
 };
-
 
 
 app.post('/new/player', function(req, res){
