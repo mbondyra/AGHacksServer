@@ -1,15 +1,16 @@
 <div class="form-container">
     <form novalidate class="simple-form">
         <span>Time -</span><input type="number" ng-model="game.time" min="0"/> min
-        <span>Players</span><input type="number" ng-model="game.players" min="3" max="5"/>
+        <span>Players</span><input type="number" ng-model="game.players" min="1" max="5"/>
         <span>Difficulty</span>
         <select ng-model="game.difficulty">
             <option value="1">Easy</option>
             <option value="2" selected>Normal</option>
             <option value="3">(Die) Hard!</option>
         </select>
+        <input type="text" placeholder="Player name" ng-model="game.name"/>
     </form>
     <div class="button green" ng-click="create(game)">Create game</div>
     <div class="button red" ng-click="cancel()">Cancel</div>
-    <div class="toast" ng-show="showToast">{toast}</div>
+    <div class="toast" ng-show="showToast">{{toast}}</div>
 </div>

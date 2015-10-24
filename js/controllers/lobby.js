@@ -22,7 +22,7 @@ app.controller('LobbyCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDa
     };
 
     var checkPlayers = function(data){
-        if(data === totalPlayers){
+        if(data >= totalPlayers){
             $scope.startGame = true;
             $interval.cancel(lobbyRefresh);
         }
@@ -32,6 +32,17 @@ app.controller('LobbyCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDa
         refresh(function(data){
             checkPlayers(data);
         });
-    },1000)
+    },1000);
+
+    $scope.start = function(){
+        $http.post(appConfig.gameServerApi+"/game/start",{start: true})
+            .then(function(response){
+                GameDataService.addToData('endTime',response.data.time);
+                $location.path('/game').replace();
+            },function(error){
+                $scope.toast = "Something went wrong :( Try again!";
+                $scope.showToast = true;
+            });
+    }
 
 }]);

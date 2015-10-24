@@ -16,4 +16,10 @@ app.service('GameDataService', function() {
     this.addToData = function(key,value) {
         gameData[key] = value;
     };
+
+    this.getDataKey = function(key){
+        if(gameData.hasOwnProperty(key)){
+            return gameData[key];
+        }
+    };
 });

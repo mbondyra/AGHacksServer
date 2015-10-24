@@ -3,4 +3,5 @@
         <li ng-repeat="player in players">{{player}}</li>
     </ul>
 </div>
-<div ng-class="{active: startGame}" class="start-button">Start</div>
+<div ng-class="{active: startGame}" class="start-button" ng-click="start()">Start</div>
+<div class="toast" ng-show="showToast">{{toast}}</div>

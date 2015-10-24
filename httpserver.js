@@ -21,7 +21,6 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(allowCrossDomain);
 
-
 var game={};
 game.players = [];
 game.status="pending";
@@ -52,6 +51,7 @@ app.post('/updateTime', function(req, res) {
 });
 
 app.post('/new/player', function(req, res){
+	console.log(req.body);
 	var player = {
 		id : game.players.length,
 		name : req.body.name,
@@ -71,7 +71,7 @@ app.post('/game/finish', function(req, res) {
 
 app.post('/new/game', function(req, res) {
 	if (!game){
-		game={}
+		game={};
 		game.players=[];
 	}
 	game.players.push({
@@ -89,6 +89,7 @@ app.post('/game/start', function(req, res) {
 	game.status = 'inprogress';
 	game.timeRemaining = timeHandler.convertTimeToEpoch(game.conf.time);
 	timeHandler.saveTimeToFile();
+	console.log(game.conf.time);
 	res.send({time : game.timeRemaining});	
 });
 
@@ -105,8 +106,8 @@ var timeHandler = {
 	saveTimeToFile: function(){
 		fs.writeFile(database,JSON.stringify({"timeRemaining":game.timeRemaining}));
 	},
-	convertTimeToEpoch:function(min){
-		return new Date().getTime() + min * 60;
+	convertTimeToEpoch: function(min){
+		return  Date.now()+min*60000;
 	},
 	updateFile: function(dt, callback){
 		console.log(dt);
