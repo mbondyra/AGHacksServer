@@ -34,24 +34,12 @@ app.get('/game/status', function(req, res){
 });
 
 
+
 app.get('/game/:id', function (req, res){
-	var player;
-	var i = game.players.length;
-	while (i--){
-		if (req.params.id == game.players[i]){
-			player=game.players[i];
-			break;
-		}
-	};
+	var player = getPlayerById(req.params.id);
 	res.send({
 		time: game.timeRemaining,
-		puzzle: {
-			type: "sum",
-			inputValues: {
-				val1: 1,
-				val2: 2
-			}
-		}
+		puzzle: player.puzzle
 	});
 });
 
@@ -61,20 +49,24 @@ var Player = function (id, name){
 	this.role = function (){
 		id==0?"Leader":"CT";
 	};
-	this.puzzle = {
-		type: "sum",
-		inputValues: {
-			val1: 1,
-			val2: 2
+	this.puzzle = Puzzle.Sum.createNew();
+}
+var getPlayerById =  function (id){
+	var i = game.players.length;
+	while (i--){
+		if (id == game.players[i]){
+			return game.players[i]
 		}
 	};
-}
+};
+
+
 
 app.post('/new/player', function(req, res){
 	var player = new Player(game.players.length, req.body.name);
 	game.players.push(player);
 	game.secretCodes.push({
-		code: (Math.floor(Math.random() *10)),
+		code: (Math.floor(Math.random() * 10)),
 		status: "hidden"
 	});
 	res.send({id: player.id});
@@ -85,7 +77,6 @@ app.post('/new/player', function(req, res){
 app.post('/new/game', function(req, res) {
 	if (!game){
 		game = {};
-		game.players = [];
 	}
 	game.players = [];
 	game.players.push(new Player(0, req.body.name||"Leader"));
@@ -105,7 +96,7 @@ app.post('/game/start', function(req, res) {
 
 
 app.post('/game/end', function(req, res) {
-	game.status = 'end';
+
 	var game={};
 	game.players = [];
 	game.status = "end";
@@ -116,18 +107,9 @@ app.post('/game/end', function(req, res) {
 
 app.post('/try/solve', function (req, res){
 	var id = req.body.id;
-	var i = game.players.length;
+	var player = getPlayerById(id);
 
-	var player;
-	for (var i= 0; i< game.players.length; i++){
-
-		if (id == game.players[i].id){
-			player=game.players[i];
-			break;
-		}
-	};
-
-	if (id!=0) {
+	if (id != 0) {
 		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
 			var code;
 			for (var i = 0; i < game.secretCodes.length; i++) {
@@ -143,35 +125,19 @@ app.post('/try/solve', function (req, res){
 		} else {
 			res.send({secretCode: -1})
 		}
-	} else if (id == 0){
+	} else {
 		//losuj nowa zagadkê
+		player.puzzle = Puzzle.Sum.createNew();
+
 		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
-			//dodaj czas
-			//res.send(updatedTime, new puzzle)
-			res.send({
-				time: game.timeRemaining,
-				puzzle: {
-					type: "sum",
-					inputValues: {
-						val1: 3,
-						val2: 4
-					}
-				}
-			});
-		} else {
-			//odejmij czas
-			//res.send(updatedTime, new puzzle)
-			res.send({
-				time: game.timeRemaining,
-				puzzle: {
-					type: "sum",
-					inputValues: {
-						val1: 5,
-						val2: 2
-					}
-				}
-			});
+			game.timeRemaining+=5000;
+		}	else {
+			game.timeRemaining-=5000;
 		}
+		res.send({
+			time: game.timeRemaining,
+			puzzle: player.puzzle
+		});
 	}
 });
 
@@ -183,24 +149,37 @@ var server = app.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
 });
 
-var puzzle;
-puzzle = {
-	sum: {
+var Puzzle;
+Puzzle = {
+	Sum: {
 		result : function (inputValues) {
 			return inputValues.val1 + inputValues.val2;
+		},
+		createNew : function (){
+			return {
+				type:"sum",
+				inputValues:{
+					val1:Math.random(),
+					val2:Math.random()
+				}
+			}
 		}
 	},
-	convertBase: {
+	ConvertBase: {
 		result : function (inputValues) {
-			number = inputValues.number;
-			in_base = inputValues.in_base;
-			out_base = inputValues.out_base;
-			var num = parseInt(number, in_base);
-			return num.toString(out_base);
+			var num = parseInt(inputValues.number, inputValues.in_base);
+			return num.toString(inputValues.out_base);
+		},
+		createNew : function () {
+			return {
+				type:"convertBase",
+				inputValues: {
+					number: Math.random(),
+					in_base : 10,
+					out_base : 2
+				}
+			}
 		}
-	},
-	ledButtons:{
-
 	}
 };
 
