@@ -1,6 +1,5 @@
 //Lets require/import the HTTP module
 var http = require('http');
-var fs = require('fs');
 var bodyParser = require('body-parser');
 var express = require('express');
 
@@ -12,6 +11,10 @@ var allowCrossDomain = function(req, res, next) {
 	res.header('Access-Control-Allow-Headers', 'Content-Type');
 	next();
 };
+
+var logger = function(log){
+	console.log(log);
+}
 
 var app = express();
 app.use(bodyParser.json());
@@ -34,57 +37,51 @@ app.get('/game/status', function(req, res){
 	res.send({status: game.status});
 });
 
+app.get('/game/:id', function (req, res){
+	var player = getPlayerById(req.params.id);
+	res.send({
+		time: game.timeRemaining,
+		puzzle: player.puzzle
+	});
+});
+
+var Player = function (id, name){
+	this.id = id;
+	this.name = name;
+	this.role = function (){
+		id==0?"Leader":"CT";
+	};
+	this.puzzle = Puzzle.Sum.createNew();
+}
+var getPlayerById =  function (id){
+	var i = game.players.length;
+	while (i--){
+		if (id == game.players[i]){
+			return game.players[i]
+		}
+	};
+};
+
 
 
 app.post('/new/player', function(req, res){
-	var player = {
-		id : game.players.length,
-		name : req.body.name,
-		role : "CT",
-		puzzle: {
-			type: "sum",
-			inputValues: {
-				val1: 1,
-				val2: 2
-			}
-		}
-	};
+	var player = new Player(game.players.length, req.body.name);
 	game.players.push(player);
 	game.secretCodes.push({
-		code: (Math.floor(Math.random() *10)),
+		code: (Math.floor(Math.random() * 10)),
 		status: "hidden"
 	});
 	res.send({id: player.id});
 
 });
 
-app.post('/game/end', function(req, res) {
-	game.status = 'end';
-	var game={};
-	game.players = [];
-	game.status = "end";
-	clearInterval(counterInterval);
-	res.send({end : true });
-});
 
 app.post('/new/game', function(req, res) {
 	if (!game){
 		game = {};
-		game.players = [];
 	}
 	game.players = [];
-	game.players.push({
-		id: 0,
-		name: req.body.name || "Leader",
-		role: "Leader",
-		puzzle: {
-			type: "sum",
-			inputValues: {
-				val1: 1,
-				val2: 2
-			}
-		}
-	});
+	game.players.push(new Player(0, req.body.name||"Leader"));
 	game.conf = req.body;
 	game.status = 'pending';
 	res.send("Game started");
@@ -99,52 +96,21 @@ app.post('/game/start', function(req, res) {
 	});
 });
 
-/*
- return
- czas do konca
- zagadki
- secretCode
- idBeaconow
-  */
+app.post('/game/end', function(req, res) {
 
-app.get('/game/:id', function (req, res){
-	var player;
-	var i = game.players.length;
-	while (i--){
-		if (req.params.id == game.players[i]){
-			player=game.players[i];
-			break;
-		}
-	};
-	res.send({
-		time: game.timeRemaining,
-		puzzle: {
-			type: "sum",
-			inputValues: {
-				val1: 1,
-				val2: 2
-			}
-		}
-	});
+	var game={};
+	game.players = [];
+	game.status = "end";
+	clearInterval(counterInterval);
+	res.send({end : true });
 });
 
 
-//kto, zagadka, rozwiazanie
-
 app.post('/try/solve', function (req, res){
 	var id = req.body.id;
-	var i = game.players.length;
+	var player = getPlayerById(id);
 
-	var player;
-	for (var i= 0; i< game.players.length; i++){
-
-		if (id == game.players[i].id){
-			player=game.players[i];
-			break;
-		}
-	};
-
-	if (id!=0) {
+	if (id != 0) {
 		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
 			var code;
 			for (var i = 0; i < game.secretCodes.length; i++) {
@@ -160,35 +126,19 @@ app.post('/try/solve', function (req, res){
 		} else {
 			res.send({secretCode: -1})
 		}
-	} else if (id == 0){
+	} else {
 		//losuj nowa zagadkê
+		player.puzzle = Puzzle.Sum.createNew();
+
 		if (req.body.result == puzzle[player.puzzle.type].result(player.puzzle.inputValues)) {
-			//dodaj czas
-			//res.send(updatedTime, new puzzle)
-			res.send({
-				time: game.timeRemaining,
-				puzzle: {
-					type: "sum",
-					inputValues: {
-						val1: 3,
-						val2: 4
-					}
-				}
-			});
-		} else {
-			//odejmij czas
-			//res.send(updatedTime, new puzzle)
-			res.send({
-				time: game.timeRemaining,
-				puzzle: {
-					type: "sum",
-					inputValues: {
-						val1: 5,
-						val2: 2
-					}
-				}
-			});
+			game.timeRemaining+=5000;
+		}	else {
+			game.timeRemaining-=5000;
 		}
+		res.send({
+			time: game.timeRemaining,
+			puzzle: player.puzzle
+		});
 	}
 });
 
@@ -200,28 +150,75 @@ var server = app.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
 });
 
-var puzzle;
-puzzle = {
-	sum: {
+var Puzzle;
+Puzzle = {
+	getRandom: function(min, max){
+		return Math.floor(Math.random()*(max-min+1)+min)
+	},
+	Sum: {
 		result : function (inputValues) {
 			return inputValues.val1 + inputValues.val2;
+		},
+		createNew : function (){
+			return {
+				type:"sum",
+				inputValues:{
+					val1:Puzzle.getRandom(1,10),
+					val2:Puzzle.getRandom(1,10)
+				}
+			}
 		}
 	},
-	convertBase: {
+	ConvertBase: {
+		getRandomBase: function(){
+			var standardBases = [2,8,10,16];
+			return standardBases[Puzzle.getRandom(0,3)];
+		},
 		result : function (inputValues) {
-			number = inputValues.number;
-			in_base = inputValues.in_base;
-			out_base = inputValues.out_base;
-			var num = parseInt(number, in_base);
-			return num.toString(out_base);
+			var num = parseInt(inputValues.number, inputValues.in_base);
+			return num.toString(inputValues.out_base);
+		},
+
+		createNew : function () {
+			return {
+				type:"convertBase",
+				inputValues: {
+					number: Puzzle.getRandom(1,10),
+					in_base : Puzzle.ConvertBase.getRandomBase(),
+					out_base : Puzzle.ConvertBase.getRandomBase()
+				}
+			}
 		}
 	},
-	ledButtons:{
-
+	Simon:{
+		result : function() {
+			return true
+		},
+		createNew: function(){
+			var inputValues = [];
+			for (var i = 0; i < 12; i++){
+				inputValues += Puzzle.getRandom(0,9);
+			}
+			return {
+				type: "Simon",
+				inputValues: inputValues
+			}
+		}
 	},
+	LedFun: {
+		createNew: function (){
+			var ledCombination = [{
+
+			},{
+
+			}
+			];
+			var rules = [
+
+			];
+		}
+	}
 };
-
-
 
 var timeHandler = {
 	countdown: function(){
@@ -234,14 +231,7 @@ var timeHandler = {
 			}
 		}, 1000);
 	},
-
 	convertTimeToEpoch: function(min){
 		return  Date.now()+min*60000;
 	},
-	updateRealTime: function(){
-		return new Date().getTime();
-	},
-	updateTimeRemaining: function(time, dt){
-		return time+dt;
-	}
 }
