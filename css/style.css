@@ -35,7 +35,7 @@ body, html, .custom-container {
 }
 
 
-.welcome-header h1 {
+.welcome-header h1, .lobby-title {
     text-transform: uppercase;
     margin: 0 auto 20px;
     padding-top: 15px;
@@ -44,6 +44,10 @@ body, html, .custom-container {
     border-bottom: 2px solid white;
     width: 70%;
     font-weight: bold;
+}
+
+h1.lobby-title {
+    width: 100%;
 }
 
 .welcome-header .new-game-title {
@@ -58,7 +62,7 @@ body, html, .custom-container {
 }
 
 
-.menu-options {
+.menu-options, .player-list {
     list-style: none;
     text-align: center;
     margin-top: 50px;
@@ -88,7 +92,7 @@ body, html, .custom-container {
     margin: 10px 0;
 }
 
-.menu-element span.title {
+.menu-element span.title,.player-wrapper {
     display: table-cell;
     vertical-align: middle;
 }
@@ -102,7 +106,7 @@ input {
     text-align: center;
 }
 
-.form-element {
+.form-element, .player-element {
     text-decoration: none !important;
     display: table;
     height: 100px;
@@ -114,11 +118,21 @@ input {
     transition: all 0.5s linear;
 }
 
-.form-element span:not(.input-group-addon) {
+.form-element span:not(.input-group-addon), .player-element span {
     text-align: center;
     font-size: 20pt;
     font-weight: bold;
     padding: 10px 0 0;
+
+}
+
+.player-element span {
+    vertical-align: middle;
+}
+
+.player-name {
+    font-size: 25pt;
+    padding: 0;
 }
 
 .form-element:hover, .form-element:active, .form-element:focus {
@@ -141,4 +155,32 @@ input {
     text-align: center;
     font-size: 25px;
     height: 50px;
+}
+
+.btn-start-game {
+    width: 50%;
+    font-size: 20pt;
+    text-transform: uppercase;
+    margin: auto;
+    pointer-events: none !important;
+    background: #9d9d9d !important;
+    border-color: #AAAAAA !important;
+}
+
+.btn-start-game.active{
+    pointer-events: auto !important;
+    background: #449d44 !important;
+    border-color: #3c763d !important;
+    cursor: pointer;
+}
+
+.player-wrapper .glyphicon {
+    float: left;
+    margin-left: 20px;
+}
+
+span.player-name {
+    font-size: 30px;
+    padding-bottom: 15px;
+    margin: 0 auto;
 }

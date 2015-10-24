@@ -46,6 +46,18 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/sum.html',
             controller: 'SumCtrl'
         })
+        .when('/simon', {
+            templateUrl: 'views/simon.html',
+            controller: 'SimonCtrl'
+        })
+        .when('/convertbase', {
+            templateUrl: 'views/convert.html',
+            controller: 'ConvertCtrl'
+        })
+        .when('/ledfun', {
+            templateUrl: 'views/ledfun.html',
+            controller: 'LedCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });

@@ -1,7 +1,20 @@
-<div>
-    <ul>
-        <li ng-repeat="player in players">{{player}}</li>
-    </ul>
+<div class="center-column">
+    <header class="welcome-header">
+        <h1 class="lobby-title">Game lobby</h1>
+    </header>
+    <div class="list-container">
+        <ul class="player-list">
+            <li class="player-element" ng-repeat="player in players">
+                <span class="player-wrapper">
+                    <span class="glyphicon" ng-class="{'glyphicon-king': player.role === 'Leader','glyphicon-knight': player.role === 'CT'}"></span>
+                    <span class="player-name">{{player.name}}</span>
+                </span>
+                </li>
+            </li>
+        </ul>
+    </div>
+    <div class="btn-group-lg">
+        <div ng-class="{active: startGame}" class="btn-lg btn-success btn-start-game" ng-click="start()">Start</div>
+    </div>
+    <div class="toast" ng-show="showToast">{{toast}}</div>
 </div>
-<div ng-class="{active: startGame}" class="start-button" ng-click="start()">Start</div>
-<div class="toast" ng-show="showToast">{{toast}}</div>

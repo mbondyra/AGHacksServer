@@ -1,0 +1,15 @@
+<div class="center-column">
+    <header class="welcome-header">
+        <h1 class="lobby-title">Solve and defuse the bomb!</h1>
+    </header>
+    <div class="timer-container">
+        <span id="timer">{{mminutes}}{{minutes}}:{{sseconds}}{{seconds}}</span>
+    </div>
+
+    <div class="sum-container">
+        <span ng-repeat="(key,value) in puzzle.inputValues"><span class="sum-plus" ng-if="$index > 0">+</span>{{value}}</span>
+        <span class="sum-equal">=</span>
+        <input type="number" ng-model="result"/>
+    </div>
+    <div class="btn btn-success" ng-click="send(result)">Send</div>
+</div>
