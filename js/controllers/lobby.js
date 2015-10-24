@@ -36,12 +36,18 @@ app.controller('LobbyCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDa
     },1000);
 
     $scope.start = function(){
+        $interval.cancel(lobbyRefresh);
         $http.post(appConfig.gameServerApi+"/game/start",{start: true})
             .then(function(response){
                 GameDataService.addToData('endTime',response.data.time);
-                GameDataService.addToData('playersList',$scope.players);
-                var newPath = PuzzleService.checkGameType();
-                $location.path(newPath).replace();
+                PuzzleService.checkGameType()
+                    .then(function(response){
+                        GameDataService.addToData('puzzle',response.data.puzzle);
+                        $location.path("/"+response.data.puzzle.type).replace();
+                    }, function (error) {
+                        console.log(error);
+                    });
+
             },function(error){
                 $scope.toast = "Something went wrong :( Try again!";
                 $scope.showToast = true;

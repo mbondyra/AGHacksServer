@@ -4,7 +4,7 @@
 
 'use strict';
 
-app.controller('SumCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService','$interval', 'PuzzleService','$route', function($scope, $location, $http, appConfig, GameDataService, $interval, PuzzleService, $route){
+app.controller('ConvertCtrl',['$scope', '$location', '$http', 'appConfig', 'GameDataService','$interval', 'PuzzleService', function($scope, $location, $http, appConfig, GameDataService, $interval, PuzzleService){
 
         $scope.result = null;
 
