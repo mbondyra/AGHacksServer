@@ -212,6 +212,7 @@ Puzzle = {
 		},
 		createNew: function(){
 			var inputValues = {};
+			var seq="";
 			for (var i = 0; i < 12; i++){
 				seq += Puzzle.getRandom(0,9);
 			}
