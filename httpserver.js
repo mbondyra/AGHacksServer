@@ -100,19 +100,13 @@ app.post('/submit/secret', function(req, res) {
 	var expLen=game.secretCodes.length;
 	for (var j = 0; j< submittedSecret.length; j++){
 		for (var i = 0; i < expLen; i++){
-
-			console.log("spodziewany:"+game.secretCodes[i].code)
-			console.log("to co przesylasz"+submittedSecret[j])
 			if (submittedSecret[j]==game.secretCodes[i].code){
-				console.log("yo");
 				result++;
 			}
 
 		}
 	}
 	var success = false;
-	console.log(expLen);
-	console.log(result);
 	if (expLen <= result)
 		success = true;
 
