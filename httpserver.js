@@ -88,6 +88,32 @@ app.post('/game/end', function(req, res) {
 	res.send({end : true });
 });
 
+app.post('/submit/secret', function(req, res) {
+
+	var submittedSecret = [];
+	if (req.body.secretCode)
+		submittedSecret = req.body.secretCode;
+	var result = 0;
+	var expLen=game.secretCodes.length;
+	for (var j = 0; j< submittedSecret.length; j++){
+		for (var i = 0; i < expLen; i++){
+			console.log(game.secretCodes[i])
+			if (submittedSecret[j]==game.secretCodes[i].code){
+				result++;
+			}
+
+		}
+	}
+	var success = false;
+	if (expLen == result)
+		success = true;
+
+	res.send({
+		result : result,
+		success: success
+	});
+});
+
 
 app.post('/try/solve', function (req, res){
 	var id = req.body.id;
@@ -240,19 +266,38 @@ Puzzle = {
 	},
 	ledfun: {
 		createNew: function (){
-			var ledCombination = {
-				ledLight: [2,1],
-				ledTips: [
-					"Press 3 if ratio leds lighted/unlighted < 0.5",
-					"Press 2 if number of green lights multiplied by 3 is bigger than sum of all leds",
-					"Press 1 if number of yellow leds is bigger than green leds"
-				],
-				correct: 2,
-				runLeds: function (){
-					spawn('/usr/bin/sudo', ['/usr/bin/python', "/home/pi/System/start_led.py", '3']);
-				}
-			};
-
+			var ledCombination = [
+				{
+					ledLight: [2,1],
+					ledTips: [
+						"Press 3 if ratio leds lighted/unlighted < 0.5",
+						"Press 2 if number of green lights multiplied by 3 is bigger than sum of all leds",
+						"Press 1 if number of yellow leds is bigger than green leds"
+					],
+					correct: 2,
+					runLeds: function (){
+						spawn('/usr/bin/sudo', ['/usr/bin/python', "/home/pi/System/start_led.py", '3']);
+					}
+				},{
+					ledLight: [1,1],
+					ledTips: [
+						"Press doubled sum of all lights enabled",
+					],
+					correct: 4,
+					runLeds: function (){
+						spawn('/usr/bin/sudo', ['/usr/bin/python', "/home/pi/System/start_led.py", '3']);
+					}
+				},{
+					ledLight: [3,1],
+					ledTips: [
+						"Press difference between doubled sum of green lights and tripled sum of yellow leds"
+					],
+					correct: 3,
+					runLeds: function (){
+						spawn('/usr/bin/sudo', ['/usr/bin/python', "/home/pi/System/start_led.py", '3']);
+					}
+				},
+			];
 		}
 	}
 };
