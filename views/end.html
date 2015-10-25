@@ -1,0 +1,11 @@
+<div class="center-column">
+    <header class="welcome-header">
+        <h1 class="lobby-title">{{header}}</h1>
+    </header>
+    <section ng-hide="result">
+        <div class="codes-container" ng-repeat="player in players">
+            <input type="number"  ng-model="codes[$index]"/>
+        </div>
+        <div class="btn btn-warning" ng-click="sendCodes()">Disarm!</div>
+    </section>
+</div>

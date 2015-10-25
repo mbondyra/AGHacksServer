@@ -31,13 +31,9 @@ app.controller('LedCtrl',['$scope', '$location', '$http', 'appConfig', 'GameData
 
             if ($scope.seconds == 0 && $scope.minutes == 0) {
                 $interval.cancel(timer);
-                detonate();
+                $location.path("/end");
             }
         }, 1000);
-
-        var detonate = function () {
-            GameDataService.addToData('win', false);
-        };
 
         $scope.send = function(result){
             $http.post(appConfig.gameServerApi+"/try/solve",{result: result, id: 0})

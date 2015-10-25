@@ -107,7 +107,7 @@ input {
     text-align: center;
 }
 
-.form-element, .player-element, .sum-container, .convert-container {
+.form-element, .player-element, .sum-container, .convert-container, .codes-container {
     text-decoration: none !important;
     display: table;
     height: 100px;
@@ -218,6 +218,66 @@ input {
 }
 
 .convert-wrapper input {
-    width: 40px;
+    width: 50%;
 }
 
+.simon-box {
+    height: 235px;
+    width: 235px;
+    display: inline-block;
+}
+
+.yellow {
+    background: rgba(113, 72, 15, 0.79);
+}
+
+.yellow.active, .yellow:active {
+    background: #ffb70a;
+}
+
+.red {
+    background: rgba(63, 6, 0, 0.79);
+}
+
+.red.active, .red:active {
+    background: #c51100;
+}
+
+.blue {
+    background: rgba(14, 55, 67, 0.8);
+}
+
+.blue.active, .blue:active {
+    background: #2797bb;
+}
+
+.green {
+    background: rgba(35, 68, 35, 0.8);
+}
+
+.green.active,.green:active {
+    background: #50a050;
+}
+
+.codes-container {
+    text-align: center;
+}
+
+.codes-container input {
+    height: 100px;
+    margin: 10px auto;
+    font-size: 40px;
+    width: 180px;
+}
+
+section {
+    text-align: center;
+}
+
+.center-column {
+    text-align: center;
+}
+
+.sum-container {
+    font-size: 25px;
+}

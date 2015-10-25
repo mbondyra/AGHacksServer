@@ -31,20 +31,21 @@ app.controller('ConvertCtrl',['$scope', '$location', '$http', 'appConfig', 'Game
 
             if ($scope.seconds == 0 && $scope.minutes == 0) {
                 $interval.cancel(timer);
-                detonate();
+                $location.path("/end");
             }
         }, 1000);
-
-        var detonate = function () {
-            GameDataService.addToData('win', false);
-        };
 
         $scope.send = function(result){
             $http.post(appConfig.gameServerApi+"/try/solve",{result: result, id: 0})
                 .then(function(response){
-                    GameDataService.addToData('puzzle',response.data.puzzle);
-                    $location.path("/"+response.data.puzzle.type);
-                    $route.reload();
+                    console.log(response.data.secret);
+                    if(response.data.secret){
+                        $location.path("/end").replace();
+                    } else {
+                        GameDataService.addToData('puzzle', response.data.puzzle);
+                        $location.path("/" + response.data.puzzle.type);
+                        $route.reload();
+                    }
                 },function(error){
                    console.log(error);
                 });

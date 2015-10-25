@@ -1,15 +1,15 @@
 <div class="center-column">
     <header class="welcome-header">
-        <h1 class="lobby-title">Solve!</h1>
+        <h1 class="lobby-title">Repeat!</h1>
     </header>
     <div class="timer-container">
         <span id="timer">{{mminutes}}{{minutes}}:{{sseconds}}{{seconds}}</span>
     </div>
 
     <div class="simon-container">
-        <span ng-repeat="(key,value) in puzzle.inputValues"><span class="sum-plus" ng-if="$index > 0">+</span>{{value}}</span>
-        <span class="sum-equal">=</span>
-        <input type="number" ng-model="result"/>
+        <div class="simon-box red" ng-class="{active: currentButton === '1'}" ng-click="registerClick('1')"></div>
+        <div class="simon-box blue" ng-class="{active: currentButton === '2'}" ng-click="registerClick('2')"></div>
+        <div class="simon-box green" ng-class="{active: currentButton === '3'}" ng-click="registerClick('3')"></div>
+        <div class="simon-box yellow" ng-class="{active: currentButton === '4'}" ng-click="registerClick('4')"></div>
     </div>
-    <div class="btn btn-success" ng-click="send(result)">Send</div>
 </div>

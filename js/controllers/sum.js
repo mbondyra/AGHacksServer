@@ -42,9 +42,13 @@ app.controller('SumCtrl',['$scope', '$location', '$http', 'appConfig', 'GameData
         $scope.send = function(result){
             $http.post(appConfig.gameServerApi+"/try/solve",{result: result, id: 0})
                 .then(function(response){
-                    GameDataService.addToData('puzzle',response.data.puzzle);
-                    $location.path("/"+response.data.puzzle.type);
-                    $route.reload();
+                    if(response.data.secret){
+                        $location.path("/end").replace();
+                    } else {
+                        GameDataService.addToData('puzzle',response.data.puzzle);
+                        $location.path("/"+response.data.puzzle.type);
+                        $route.reload();
+                    }
                 },function(error){
                    console.log(error);
                 });

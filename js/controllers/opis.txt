@@ -1,0 +1,27 @@
+## Inspiration
+
+We all played Counter-Strike and we wanted to make it more real and also contribute to it.
+
+## What it does
+
+It creates a game for 3-5 players. One of them is responsible to plant mobile expolsives. The rest, one leader and CT, must defuse the main bomb (Raspberry-PI) and also mobile explosives (Estimote Beacons). The game ends when either the time runs out or the secret code is entered.
+
+## How I built it
+
+We used Raspberry-PI as a Node.js server which represents GameServer. It uses express.js framework to create REST API. The "leader" uses a webpage built with AngularJS to solve puzzles and manage game. "CT" use their Android phones and our app to find Estimote Beacons and solve a puzzle to disarm it, but first they must play a hot&cold game in order to localize them.
+
+## Challenges I ran into
+
+Time synchronization, Android - Web compatibility and many other problems.
+
+## Accomplishments that I'm proud of
+
+We have created a Simon Says game as one of the puzzles both on Anroid and Web :)
+
+## What I learned
+
+A lot! How to run python scripts in Node.js server, how to connect to REST API from Android and use a timeout callback to present data.
+
+## What's next for Pi Hard
+
+Raspberry-PI give us possibility to connect unlimited set of devices to make even more fun. We can add beacons to play with more people or challenge each other.
