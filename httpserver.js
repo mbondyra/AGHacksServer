@@ -90,22 +90,29 @@ app.post('/game/end', function(req, res) {
 
 app.post('/submit/secret', function(req, res) {
 
-	var submittedSecret = [];
-	if (req.body.secretCode)
+	var submittedSecret;
+	if (req.body.secretCode) {
 		submittedSecret = req.body.secretCode;
+		submittedSecret = submittedSecret.substring(1,submittedSecret.length-1);
+		submittedSecret = submittedSecret.split(',');
+	}
 	var result = 0;
 	var expLen=game.secretCodes.length;
-	console.log(game.secretCodes[i])
 	for (var j = 0; j< submittedSecret.length; j++){
 		for (var i = 0; i < expLen; i++){
+
+			console.log("spodziewany:"+game.secretCodes[i].code)
+			console.log("to co przesylasz"+submittedSecret[j])
 			if (submittedSecret[j]==game.secretCodes[i].code){
+				console.log("yo");
 				result++;
 			}
 
 		}
 	}
-	result%=expLen;
 	var success = false;
+	console.log(expLen);
+	console.log(result);
 	if (expLen <= result)
 		success = true;
 
