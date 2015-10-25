@@ -95,17 +95,18 @@ app.post('/submit/secret', function(req, res) {
 		submittedSecret = req.body.secretCode;
 	var result = 0;
 	var expLen=game.secretCodes.length;
+	console.log(game.secretCodes[i])
 	for (var j = 0; j< submittedSecret.length; j++){
 		for (var i = 0; i < expLen; i++){
-			console.log(game.secretCodes[i])
 			if (submittedSecret[j]==game.secretCodes[i].code){
 				result++;
 			}
 
 		}
 	}
+	result%=expLen;
 	var success = false;
-	if (expLen == result)
+	if (expLen <= result)
 		success = true;
 
 	res.send({
