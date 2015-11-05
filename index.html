@@ -10,12 +10,17 @@
 
     <title>Node/Angular Todo App</title>
 
-    <!-- SCROLLS -->
-    <link rel="stylesheet" href="css/style.css">
+
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="css/style.css">
+
     <!-- SPELLS -->
+
 
     <script src="js/vendor/angular.min.js"></script>
     <script src="js/vendor/angular-route.min.js"></script>
@@ -40,8 +45,46 @@
 </head>
 
 <body ng-app="hacksApp">
-<div ng-view="" class="custom-container">
-</div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Pi Hard</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#/">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                            &nbsp;
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/rank">
+                            <span class="fa fa-trophy" aria-hidden="true"></span>
+                            &nbsp;
+                            Scoreboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/howto">
+                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                            &nbsp;
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div ng-view="">
+    </div>
 
 
 </body>

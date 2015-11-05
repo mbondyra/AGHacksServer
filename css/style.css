@@ -1,283 +1,88 @@
-@import url(https://fonts.googleapis.com/css?family=PT+Mono);
 
-body, html, .custom-container {
-    height: 100%;
-}
 
-.custom-container {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ff6100+50,ffffff+100 */
-    background: #ffffff; /* Old browsers */
-    background: -moz-linear-gradient(left,  #ffffff 0%, #ff6100 50%, #ffffff 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(50%,#ff6100), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  #ffffff 0%,#ff6100 50%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  #ffffff 0%,#ff6100 50%,#ffffff 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  #ffffff 0%,#ff6100 50%,#ffffff 100%); /* IE10+ */
-    background: linear-gradient(to right,  #ffffff 0%,#ff6100 50%,#ffffff 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
-
-}
-
-.center-column {
-    background: #8b0d00 none no-repeat;
-    margin: 0 auto;
-    width: 480px;
-    height: 100%;
-    background-image: url('Raspberry_Pi_Logo.jpg');
-    background-size: 63% auto;
-    background-position: 50% 23%;
-    border-right: 3px solid #ff6100;
-    border-left: 3px solid #ff6100;
-
-}
-
-.welcome-header {
-    text-align: center;
+header.jumbotron {
+    background: #e83936;
     color: white;
 }
 
+header.jumbotron h1 {
+    padding: 30px 0;
+}
 
-.welcome-header h1, .lobby-title {
-    text-transform: uppercase;
-    margin: 0 auto 20px;
-    padding-top: 15px;
-    font-size: 50pt;
-    padding-bottom: 5px;
-    border-bottom: 2px solid white;
-    width: 70%;
+
+.container-max {
+    width: 100% !important;
+    padding-bottom: 30px;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    box-shadow: none;
+}
+
+.row-content .icon {
+    text-align: center;
+}
+
+.row-content {
+    text-align: justify;
+
+}
+
+.fa-max {
+    font-size: 10em;
+}
+
+.page-header {
+    border: none;
+}
+
+.content-white .page-header h1 span {
+    background: #e83936;
+    padding: 3px 5px;
+    color: white
+}
+
+.content-white .row-footer {
+    padding: 20px 0;
     font-weight: bold;
-}
-
-h1.lobby-title {
-    width: 100%;
-}
-
-.welcome-header .new-game-title {
-    text-transform: uppercase;
-    margin: 0 auto 50px;
-    padding-top: 15px;
-    font-size: 50pt;
-    padding-bottom: 5px;
-    border-bottom: 2px solid white;
-    font-weight: bold;
-    width: 80%;
-}
-
-
-.menu-options, .player-list {
-    list-style: none;
-    text-align: center;
-    margin-top: 50px;
-    font-size: 20pt;
-    font-weight: bold;
-    padding: 0;
-
-}
-
-.menu-element a {
-    text-decoration: none !important;
-    display: table;
-    height: 100px;
-    width: 100%;
-    color: #ffffff;
-    background: rgba(255, 97, 0, 0.90);
-    transition: all 0.5s linear;
-}
-
-.menu-element a:hover, .menu-element a:active, .menu-element a:focus {
-    background: rgba(255, 116, 0, 0.95);
-    color: #fff;
-    font-size: 22pt;
-}
-
-.menu-element {
-    margin: 10px 0;
-}
-
-.menu-element span.title,.player-wrapper, .convert-wrapper {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.input-group {
-    width: 50%;
-    margin: 0 auto;
-}
-
-input {
-    text-align: center;
-}
-
-.form-element, .player-element, .sum-container, .convert-container, .codes-container {
-    text-decoration: none !important;
-    display: table;
-    height: 100px;
-    width: 100%;
-    color: #ffffff;
-    background: rgba(255, 97, 0, 0.90);
-    margin: 10px 0;
-    text-align: center;
-    transition: all 0.5s linear;
-}
-
-.form-element span:not(.input-group-addon), .player-element span {
-    text-align: center;
-    font-size: 20pt;
-    font-weight: bold;
-    padding: 10px 0 0;
-
-}
-
-.player-element span {
-    vertical-align: middle;
-}
-
-.player-name {
-    font-size: 25pt;
-    padding: 0;
-}
-
-.form-element:hover, .form-element:active, .form-element:focus {
-    background: rgba(255, 116, 0, 0.95);
-    color: #fff;
-}
-
-.btn-group-lg {
-    text-align: center;
-}
-
-.toast {
-    position: fixed;
-    top: 20px;
-    background: #ff7968;
-    border-radius: 15px;
-    border: 3px solid #8b0d00;
-    width: 474px;
-    color: white;
-    text-align: center;
-    font-size: 25px;
-    height: 50px;
-}
-
-.btn-start-game {
-    width: 50%;
-    font-size: 20pt;
-    text-transform: uppercase;
-    margin: auto;
-    pointer-events: none !important;
-    background: #9d9d9d !important;
-    border-color: #AAAAAA !important;
-}
-
-.btn-start-game.active{
-    pointer-events: auto !important;
-    background: #449d44 !important;
-    border-color: #3c763d !important;
-    cursor: pointer;
-}
-
-.player-wrapper .glyphicon {
-    float: left;
-    margin-left: 20px;
-}
-
-span.player-name {
-    font-size: 30px;
-    padding-bottom: 15px;
-    margin: 0 auto;
-}
-
-.timer-container {
-    background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
-    display: table;
-    height: 50px;
-    width: 100%;
-}
-
-#timer {
-    color: #fd0e00;
-    display: table-cell;
-    font-family: "PT Mono";
-    font-size: 34px;
-    margin: auto;
-    padding: 13px;
-    text-align: center;
-}
-
-.convert-base {
     font-size: 15px;
-    position: relative;
-    top: 12px;
-}
-
-.convert-number, .convert-equal, .convert-wrapper input {
-    font-size: 30px;
-}
-
-input {
-    color: #111 !important;
-}
-
-.convert-wrapper input {
-    width: 50%;
-}
-
-.simon-box {
-    height: 235px;
-    width: 235px;
-    display: inline-block;
-}
-
-.yellow {
-    background: rgba(113, 72, 15, 0.79);
-}
-
-.yellow.active, .yellow:active {
-    background: #ffb70a;
-}
-
-.red {
-    background: rgba(63, 6, 0, 0.79);
-}
-
-.red.active, .red:active {
-    background: #c51100;
-}
-
-.blue {
-    background: rgba(14, 55, 67, 0.8);
-}
-
-.blue.active, .blue:active {
-    background: #2797bb;
-}
-
-.green {
-    background: rgba(35, 68, 35, 0.8);
-}
-
-.green.active,.green:active {
-    background: #50a050;
-}
-
-.codes-container {
     text-align: center;
+    margin-top: 30px;
+    color: #e83936;
 }
 
-.codes-container input {
-    height: 100px;
-    margin: 10px auto;
-    font-size: 40px;
-    width: 180px;
+.content-red .page-header h1 span {
+    background: white;
+    padding: 3px 5px;
+    color: #e83936;
 }
 
-section {
+.content-red {
+    background: #e83936;
+    color: white;
+}
+
+.content-red .icon {
+    color: #333;
+}
+
+.content-red .row-footer {
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: 15px;
     text-align: center;
+    margin-top: 30px;
+    color: white;
 }
 
-.center-column {
-    text-align: center;
+.content-red.container-max {
+    padding-bottom: 60px;
 }
 
-.sum-container {
-    font-size: 25px;
+@media screen and (max-width: 768px) {
+    .icon {
+        margin: 15px 0;
+    }
 }
